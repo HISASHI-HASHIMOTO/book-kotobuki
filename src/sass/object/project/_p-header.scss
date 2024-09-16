@@ -1,0 +1,46 @@
+@use "global" as *;
+
+.p-header {
+  background-color: #000;
+  color: #fff;
+  height: myrem(80);
+  z-index: 9999;
+  @include mq(md) {
+   height: myrem(80);
+  }
+
+}
+
+.p-header__inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-inline: calc((15/375) *100vw );
+  height: inherit;
+  @include mq(md) {
+    padding-inline: calc((50/1440) *100vw );
+  }
+}
+
+.p-header__title {
+  height: inherit;
+  width: calc((123/375) *100vw );
+  @include mq(md) {
+    width: calc((148/1440) *100vw );
+  }
+  @media (min-width:1440px) {
+    width: myrem(148);
+  }
+}
+
+.p-header__title-link {
+  width: inherit;
+  height: inherit;
+  display: flex;
+  align-items: center;
+}
+
+.p-header__title-link img {
+  width: 100%;
+  object-fit: contain;
+}

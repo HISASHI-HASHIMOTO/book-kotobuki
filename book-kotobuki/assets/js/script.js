@@ -31,3 +31,16 @@ $(document).on('click', 'a[href*="#"]', function () {
   $('html,body').animate({ scrollTop: targetY }, time, 'swing');
   return false;
 });
+
+//ナビバートグル
+$('.js-hamburger').on('click', function () {
+  if ($('.js-hamburger').hasClass('is-open')) {
+    $('.js-drawer-menu').fadeOut();
+    $(this).removeClass('is-open');
+    $('html').css('overflow', ''); // スクロールを元に戻す
+  } else {
+    $('.js-drawer-menu').fadeIn();  
+    $(this).addClass('is-open');
+    $('html').css('overflow','hidden') // 背景スクロールを固定にする
+  }
+});
