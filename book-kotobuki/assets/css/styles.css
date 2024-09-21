@@ -20,7 +20,7 @@ html {
 
 body {
   font-family: "Noto Sans JP", sans-serif;
-  color: #333;
+  color: #1a1917;
 }
 
 @media screen and (min-width: 768px) {
@@ -31,7 +31,6 @@ body {
   }
   a:hover,
   button:hover {
-    opacity: 0.7;
     cursor: pointer;
   }
 }
@@ -148,7 +147,7 @@ button {
 }
 
 .p-drawer-menu {
-  background-color: black;
+  background-color: #534132;
   position: fixed;
   top: 0;
   left: 0;
@@ -165,35 +164,50 @@ button {
 }
 
 .p-drawer-menu__inner {
-  padding: 0 0.9375rem 6.9375rem;
-  height: 100vh;
+  padding-inline: 0 4vw;
   overflow-y: scroll;
 }
 
-.p-drawer-menu__contents {
+.p-drawer-menu__item:first-of-type {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  gap: 0.4rem;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-}
-
-.p-drawer-menu__list {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  text-align: left;
-  width: 50%;
-}
-
-.p-drawer-menu__nav-list:not(:first-of-type) {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: inherit;
+  font-weight: bold;
+  color: #fff;
+  font-size: 1.125rem;
   margin-top: 1rem;
+}
+
+.p-drawer-menu__item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  color: #fff;
+  text-align: center;
+}
+
+.p-drawer-menu__item-link {
+  display: block;
+  height: inherit;
+  width: 100%;
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+  padding-left: 1.375rem;
+}
+
+@media screen and (min-width: 768px) {
+  .p-drawer-menu__nav__heading-link:hover,
+  .p-drawer-menu__nav__item-link:hover {
+    opacity: 0.7;
+  }
 }
 
 .footer {
@@ -429,10 +443,12 @@ button {
 }
 
 .p-header {
-  background-color: #000;
+  background-color: #534132 0.25;
   color: #fff;
   height: 5rem;
   z-index: 9999;
+  position: fixed;
+  width: 100%;
 }
 @media screen and (min-width: 768px) {
   .p-header {
@@ -452,6 +468,7 @@ button {
           align-items: center;
   padding-inline: 4vw;
   height: inherit;
+  width: 100%;
 }
 @media screen and (min-width: 768px) {
   .p-header__inner {
@@ -461,11 +478,12 @@ button {
 
 .p-header__title {
   height: inherit;
-  width: 32.8vw;
+  width: 8.25rem;
+  z-index: 9999;
 }
 @media screen and (min-width: 768px) {
   .p-header__title {
-    width: 10.2777777778vw;
+    width: 9.25rem;
   }
 }
 @media (min-width: 1440px) {
@@ -491,119 +509,230 @@ button {
      object-fit: contain;
 }
 
-.nav-list__heading-link {
-  display: block;
-  font-weight: bold;
-  color: #fff;
-  font-size: 1rem;
-  padding-top: 0.75rem;
-  padding-bottom: 0.75rem;
-  line-height: 1.125;
-  text-align: left;
+.p-header__drawer-menu {
+  padding-top: 5rem;
+}
+
+.cssbk {
   position: relative;
   width: 100%;
-  padding-left: 1.375rem;
+  background-image: url(/wp-content/themes/book-kotobuki/assets/images/mv-img01-left@2x.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100vh;
+  background-position: 174% 0%;
 }
-
-.nav-list__item-link {
-  display: block;
-  width: 100%;
-  padding-top: 0.75rem;
-  padding-bottom: 0.75rem;
-  padding-left: 1.375rem;
-  color: #fff;
-  text-align: left;
-  font-size: 1rem;
-  line-height: 1.125;
-}
-
 @media screen and (min-width: 768px) {
-  .nav-list__heading-link:hover,
-  .nav-list__item-link:hover {
-    opacity: 0.7;
+  .cssbk {
+    height: 100vh;
+    background-size: 50% 100%;
+    background-position: 0% 0%;
   }
 }
 
-.pc-nav {
+.cssbk .right {
+  position: absolute;
+  top: 0; /* 上に固定 */
+  right: 0; /* 右に固定 */
+  width: 50%; /* 画面の右半分を使用 */
+  height: 100vh; /* 高さを画面いっぱいにする */
+  background-image: url(/wp-content/themes/book-kotobuki/assets/images/mv-img03-right@2x.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 0 0;
+}
+@media screen and (min-width: 768px) {
+  .cssbk .right {
+    background-position: 0 50%;
+    height: 100vh;
+  }
+}
+
+.cssbk input {
   display: none;
-  height: 5.625rem;
+}
+
+.cssbk input ~ span {
+  -webkit-transition: 1.5s;
+  transition: 1.5s;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  position: absolute;
+  width: 50%;
+  height: 100vh;
+  background-color: #fffff8;
 }
 @media screen and (min-width: 768px) {
-  .pc-nav {
-    display: block;
+  .cssbk input ~ span {
+    height: 100vh;
   }
 }
 
-.pc-nav__items {
+.cssbk input + span {
+  left: 50%; /* ページの左側を中央に寄せる */
+  -webkit-transform-origin: left;
+          transform-origin: left; /* ページを左側を基準にめくる */
+  -webkit-transform: perspective(1500px) rotateY(0deg);
+          transform: perspective(1500px) rotateY(0deg); /* ページを立体的に見せる */
+}
+
+.cssbk input + span + span {
+  right: 50%; /* ページの右側を中央に寄せる */
+  -webkit-transform-origin: right;
+          transform-origin: right; /* ページを右側を基準にめくる */
+  -webkit-transform: perspective(1500px) rotateY(180deg);
+          transform: perspective(1500px) rotateY(180deg); /* ページを最初は裏返しにしておく */
+}
+
+.cssbk input:checked + span {
+  -webkit-transform: perspective(1500px) rotateY(-180deg);
+          transform: perspective(1500px) rotateY(-180deg); /* チェックされたら左側のページがめくられる */
+}
+
+.cssbk input:checked + span + span {
+  -webkit-transform: perspective(1500px) rotateY(0deg);
+          transform: perspective(1500px) rotateY(0deg); /* チェックされたら右側のページがめくられる */
+}
+
+.cssbk .page1 input + span {
+  background-image: url(/wp-content/themes/book-kotobuki/assets/images/mv-img01-right@2x.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 0% 0%;
+}
+@media screen and (min-width: 768px) {
+  .cssbk .page1 input + span {
+    background-position: 0 0;
+  }
+}
+
+.cssbk .page1 input + span + span {
+  background-image: url(/wp-content/themes/book-kotobuki/assets/images/mv-img02-left@2x.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 100% 36%;
+}
+@media screen and (min-width: 768px) {
+  .cssbk .page1 input + span + span {
+    background-position: 0 0;
+  }
+}
+
+.cssbk .page2 input + span {
+  background-image: url(/wp-content/themes/book-kotobuki/assets/images/mv-img02-right@2x.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 0% 0%;
+}
+@media screen and (min-width: 768px) {
+  .cssbk .page2 input + span {
+    background-position: 0 0;
+  }
+}
+
+.cssbk .page2 input + span + span {
+  background-image: url(/wp-content/themes/book-kotobuki/assets/images/mv-img03-left@2x.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 100% 0;
+}
+@media screen and (min-width: 768px) {
+  .cssbk .page2 input + span + span {
+    background-position: 0 50%;
+  }
+}
+
+.p-pc-nav {
+  display: none;
+}
+@media screen and (min-width: 768px) {
+  .p-pc-nav {
+    height: mymyrem(90);
+    height: inherit;
+  }
+}
+
+.p-pc-nav__items {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  height: inherit;
-}
-
-.pc-nav__item {
-  height: inherit;
-}
-
-.pc-nav__item-link {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  padding: 0 1.25rem;
   height: inherit;
 }
 
-.pc-nav__en-item {
-  display: inline-block;
-  color: #fff;
-  font-size: 1.125rem;
-  line-height: 1;
+.p-pc-nav__item {
+  height: inherit;
+  padding: 0 1.25rem;
+}
+
+.p-pc-nav__item-link {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: inherit;
   position: relative;
 }
 
-.pc-nav__en-item::first-letter {
-  text-transform: uppercase;
-}
-
-.pc-nav__ja-item {
-  display: inline-block;
-  margin-top: 0.25rem;
-  color: #fff;
-  font-size: 0.625rem;
-  line-height: 1.5;
-}
-
-.pc-nav__en-item::after {
-  content: "";
+.p-pc-nav__item-link::after {
   position: absolute;
-  left: 0%;
-  bottom: -160%;
+  bottom: 2.1875rem;
+  left: 0;
+  content: "";
   width: 100%;
   height: 0.125rem;
-  background: #fff;
-  -webkit-transition: all 0.3s;
-  transition: all 0.3s;
-  -webkit-transform: scale(0, 1);
-          transform: scale(0, 1);
-  -webkit-transform-origin: center top;
-          transform-origin: center top;
+  background-color: #fff;
+  opacity: 0;
+  visibility: hidden;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
 }
 
-.pc-nav__item-link:hover .pc-nav__en-item::after {
-  -webkit-transform: scale(1, 1);
-          transform: scale(1, 1);
+.p-pc-nav__item-link:hover::after {
+  content: "";
+  opacity: 0;
+  -webkit-animation-name: fadein-bottom;
+          animation-name: fadein-bottom;
+  -webkit-animation-duration: 0.8s;
+          animation-duration: 0.8s;
+  -webkit-animation-timing-function: ease-out;
+          animation-timing-function: ease-out;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  background-color: #fff;
+  bottom: 0.5625rem;
+  visibility: visible;
 }
 
+@-webkit-keyframes fadein-bottom {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(10px);
+            transform: translateY(10px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(-12px);
+            transform: translateY(-12px);
+  }
+}
+
+@keyframes fadein-bottom {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(10px);
+            transform: translateY(10px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(-12px);
+            transform: translateY(-12px);
+  }
+}
 .p-test {
   color: blue;
   font-size: 3.75rem;

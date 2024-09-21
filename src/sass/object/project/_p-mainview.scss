@@ -1,0 +1,107 @@
+@use "global" as *;
+
+.cssbk{
+  position:relative;
+  width:100%;
+  background-image: url(/wp-content/themes/book-kotobuki/assets/images/mv-img01-left@2x.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100vh;
+  background-position: 174% 0%;
+  @include mq(md) {
+    height: 100vh;
+    background-size: 50% 100%;
+    background-position: 0%  0%;
+  }
+}
+
+.cssbk .right {
+  position: absolute;
+  top: 0; /* 上に固定 */
+  right: 0; /* 右に固定 */
+  width: 50%; /* 画面の右半分を使用 */
+  height:  100vh; /* 高さを画面いっぱいにする */
+  background-image: url(/wp-content/themes/book-kotobuki/assets/images/mv-img03-right@2x.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 0 0;
+  @include mq(md) {
+    background-position: 0 50%;
+    height: 100vh;
+  }
+}
+
+.cssbk input{
+  display:none;
+}
+
+.cssbk input~span{
+transition:1.5s;
+-webkit-backface-visibility:hidden;
+backface-visibility:hidden;
+position:absolute;
+width:50%;
+height:100vh;
+background-color:#fffff8;
+@include mq(md) {
+  height:100vh;
+}
+}
+
+.cssbk input+span {
+  left: 50%; /* ページの左側を中央に寄せる */
+  transform-origin: left; /* ページを左側を基準にめくる */
+  transform: perspective(1500px) rotateY(0deg); /* ページを立体的に見せる */
+}
+
+.cssbk input+span+span {
+  right: 50%; /* ページの右側を中央に寄せる */
+  transform-origin: right; /* ページを右側を基準にめくる */
+  transform: perspective(1500px) rotateY(180deg); /* ページを最初は裏返しにしておく */
+}
+
+.cssbk input:checked+span {
+  transform: perspective(1500px) rotateY(-180deg); /* チェックされたら左側のページがめくられる */
+}
+
+.cssbk input:checked+span+span {
+  transform: perspective(1500px) rotateY(0deg); /* チェックされたら右側のページがめくられる */
+}
+
+// 見開き右側1ページ目
+.cssbk .page1 input+span {
+  background-image: url(/wp-content/themes/book-kotobuki/assets/images/mv-img01-right@2x.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 0% 0%;
+  @include mq(md) {
+   background-position: 0 0;
+  }
+} 
+.cssbk .page1 input+span+span{
+  background-image: url(/wp-content/themes/book-kotobuki/assets/images/mv-img02-left@2x.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 100% 36%;
+  @include mq(md) {
+   background-position: 0 0;
+  }
+}
+.cssbk .page2 input+span {
+  background-image: url(/wp-content/themes/book-kotobuki/assets/images/mv-img02-right@2x.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 0% 0%;
+  @include mq(md) {
+   background-position: 0 0;
+  }
+} 
+.cssbk .page2 input+span+span{
+  background-image: url(/wp-content/themes/book-kotobuki/assets/images/mv-img03-left@2x.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 100% 0;
+  @include mq(md) {
+   background-position: 0 50%;
+  }
+}

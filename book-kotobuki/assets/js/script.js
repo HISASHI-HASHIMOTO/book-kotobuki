@@ -44,3 +44,34 @@ $('.js-hamburger').on('click', function () {
     $('html').css('overflow','hidden') // 背景スクロールを固定にする
   }
 });
+
+
+  // スワイパー
+  var slide1 = new Swiper("#slide1", {
+    loop: true,
+    effect: "fade",
+    speed: 3000,
+    allowTouchMove: false,
+    autoplay: {
+      delay: 3000
+    }
+  });
+
+
+  // let currentPage = 0;
+  // const pages = document.querySelectorAll('.cssbk input');
+  
+  // function flipPage() {
+  //   // 現在のページをチェック
+  //   if (currentPage < pages.length) {
+  //     pages[currentPage].checked = true;
+  //     currentPage++;
+  //   } else {
+  //     // 最後のページに到達したら最初に戻る
+  //     currentPage = 0;
+  //     pages.forEach(page => page.checked = false);
+  //   }
+  // }
+
+  // // 3秒ごとにページを自動でめくる
+  // setInterval(flipPage, 5000);

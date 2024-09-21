@@ -1,10 +1,12 @@
 @use "global" as *;
 
 .p-header {
-  background-color: #000;
+  background-color: $brown4 .25;
   color: #fff;
   height: myrem(80);
   z-index: 9999;
+  position: fixed;
+  width: 100%;
   @include mq(md) {
    height: myrem(80);
   }
@@ -17,6 +19,7 @@
   align-items: center;
   padding-inline: calc((15/375) *100vw );
   height: inherit;
+  width: 100%;
   @include mq(md) {
     padding-inline: calc((50/1440) *100vw );
   }
@@ -24,9 +27,10 @@
 
 .p-header__title {
   height: inherit;
-  width: calc((123/375) *100vw );
+  width: myrem(132);
+  z-index: 9999;
   @include mq(md) {
-    width: calc((148/1440) *100vw );
+    width: myrem(148);
   }
   @media (min-width:1440px) {
     width: myrem(148);
@@ -43,4 +47,8 @@
 .p-header__title-link img {
   width: 100%;
   object-fit: contain;
+}
+
+.p-header__drawer-menu {
+  padding-top: myrem(80);
 }
