@@ -57,21 +57,30 @@ $('.js-hamburger').on('click', function () {
     }
   });
 
+  // // メインビュー 本がめくれるような動き
+  // let currentPage = 0;
+  // const pages = document.querySelectorAll('.p-mv input');
+  // function flipPage() {
+  //   // 現在のページをチェック
+  //   if (currentPage < pages.length) {
+  //     pages[currentPage].checked = true;
+  //     currentPage++;
+  //   } else {
+  //     // 最後のページに到達したら最初に戻る
+  //     currentPage = 0;
+  //     pages.forEach(page => page.checked = false);
+  //   }
+  // }
+  // // 3秒ごとにページを自動でめくる
+  // setInterval(flipPage, 5000);
 
-  let currentPage = 0;
-  const pages = document.querySelectorAll('.p-mv input');
-  
-  function flipPage() {
-    // 現在のページをチェック
-    if (currentPage < pages.length) {
-      pages[currentPage].checked = true;
-      currentPage++;
+
+    // mvより下にスクロールするとheederにbox-shadowが付与される
+    $(window).on('scroll', function () {
+      if ($('.p-mv').height() < $(this).scrollTop()) {
+          $('.p-header').addClass('change-color');
     } else {
-      // 最後のページに到達したら最初に戻る
-      currentPage = 0;
-      pages.forEach(page => page.checked = false);
+          $('.p-header').removeClass('change-color');
     }
-  }
-
-  // 3秒ごとにページを自動でめくる
-  setInterval(flipPage, 5000);
+  });
+  // console.log(window);

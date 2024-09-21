@@ -59,7 +59,7 @@
               </li>
               <li class="p-drawer-menu__item">
                 <a href="<?php echo esc_url(home_url("/information?id=tab3/")) ?>" id="tab2"
-                  class="p-drawer-menu__item-link">ブックサービス</a>
+                  class="p-drawer-menu__item-link">ブックメニュー</a>
               </li>
               <li class="p-drawer-menu__item">
                 <a href="<?php echo esc_url(home_url("/information?id=tab2/")) ?>" id="tab3"

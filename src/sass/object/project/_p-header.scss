@@ -1,7 +1,8 @@
 @use "global" as *;
 
 .p-header {
-  background-color: $brown4 .25;
+  // background-color: $brown4 .25;
+  background-color: transparent;
   color: #fff;
   height: myrem(80);
   z-index: 9999;
@@ -52,3 +53,8 @@
 .p-header__drawer-menu {
   padding-top: myrem(80);
 }
+
+.p-header.change-color {
+  background-color: $brown;
+}
+
