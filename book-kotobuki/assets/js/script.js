@@ -58,20 +58,20 @@ $('.js-hamburger').on('click', function () {
   });
 
 
-  // let currentPage = 0;
-  // const pages = document.querySelectorAll('.cssbk input');
+  let currentPage = 0;
+  const pages = document.querySelectorAll('.p-mv input');
   
-  // function flipPage() {
-  //   // 現在のページをチェック
-  //   if (currentPage < pages.length) {
-  //     pages[currentPage].checked = true;
-  //     currentPage++;
-  //   } else {
-  //     // 最後のページに到達したら最初に戻る
-  //     currentPage = 0;
-  //     pages.forEach(page => page.checked = false);
-  //   }
-  // }
+  function flipPage() {
+    // 現在のページをチェック
+    if (currentPage < pages.length) {
+      pages[currentPage].checked = true;
+      currentPage++;
+    } else {
+      // 最後のページに到達したら最初に戻る
+      currentPage = 0;
+      pages.forEach(page => page.checked = false);
+    }
+  }
 
-  // // 3秒ごとにページを自動でめくる
-  // setInterval(flipPage, 5000);
+  // 3秒ごとにページを自動でめくる
+  setInterval(flipPage, 5000);

@@ -25,6 +25,7 @@
   align-items: center;
   height: inherit;
   position: relative;
+  text-shadow: 4px 5px 0px rgba(117, 117, 116, 0.4);
 }
 
 
@@ -38,7 +39,8 @@
   background-color: $white;
   opacity: 0;
   visibility: hidden;
-  transition: all .5s;
+  transition:  .5s;
+  box-shadow: 4px 5px 0px rgba(117, 117, 116, 0.4);
 }
 
 .p-pc-nav__item-link:hover::after {

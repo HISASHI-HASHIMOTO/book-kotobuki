@@ -513,24 +513,168 @@ button {
   padding-top: 5rem;
 }
 
-.cssbk {
+.p-mv {
   position: relative;
   width: 100%;
+  height: 100vh;
+}
+
+.p-mv__left {
+  position: absolute;
+  top: 0; /* 上に固定 */
+  left: 0; /* 右に固定 */
+  width: 50%; /* 画面の右半分を使用 */
+  height: 100vh; /* 高さを画面いっぱいにする */
   background-image: url(/wp-content/themes/book-kotobuki/assets/images/mv-img01-left@2x.jpg);
   background-size: cover;
   background-repeat: no-repeat;
-  height: 100vh;
-  background-position: 174% 0%;
+  background-position: 100% 0;
 }
 @media screen and (min-width: 768px) {
-  .cssbk {
+  .p-mv__left {
     height: 100vh;
-    background-size: 50% 100%;
+    background-position: 0% 1%;
+  }
+}
+
+.p-mv__left-title {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  font-size: 2.5rem;
+  color: #fff;
+  font-family: "Noto Sans JP", sans-serif;
+  text-align: right;
+  text-indent: 1em;
+  white-space: nowrap;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  text-transform: uppercase;
+  text-shadow: 0 2px 2px #666;
+}
+@media screen and (min-width: 768px) {
+  .p-mv__left-title {
+    font-size: 5rem;
+    right: 20%;
+    text-align: center;
+    text-indent: none;
+  }
+}
+
+.p-mv__right-title {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  color: #fff;
+  font-size: 2.5rem;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  text-shadow: 0 2px 2px #666;
+}
+@media screen and (min-width: 768px) {
+  .p-mv__right-title {
+    font-size: 5rem;
+  }
+}
+
+.p-mv input {
+  display: none;
+}
+
+.p-mv input ~ .p-mv__box {
+  -webkit-transition: 1.5s;
+  transition: 1.5s;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  position: absolute;
+  width: 50%;
+  height: 100vh;
+  background-color: #fffff8;
+}
+@media screen and (min-width: 768px) {
+  .p-mv input ~ .p-mv__box {
+    height: 100vh;
+  }
+}
+
+.p-mv input + .p-mv__box {
+  left: 50%; /* ページの左側を中央に寄せる */
+  -webkit-transform-origin: left;
+          transform-origin: left; /* ページを左側を基準にめくる */
+  -webkit-transform: perspective(1500px) rotateY(0deg);
+          transform: perspective(1500px) rotateY(0deg); /* ページを立体的に見せる */
+}
+
+.p-mv input + .p-mv__box + .p-mv__box {
+  right: 50%; /* ページの右側を中央に寄せる */
+  -webkit-transform-origin: right;
+          transform-origin: right; /* ページを右側を基準にめくる */
+  -webkit-transform: perspective(1500px) rotateY(180deg);
+          transform: perspective(1500px) rotateY(180deg); /* ページを最初は裏返しにしておく */
+}
+
+.p-mv input:checked + .p-mv__box {
+  -webkit-transform: perspective(1500px) rotateY(-180deg);
+          transform: perspective(1500px) rotateY(-180deg); /* チェックされたら左側のページがめくられる */
+}
+
+.p-mv input:checked + .p-mv__box + .p-mv__box {
+  -webkit-transform: perspective(1500px) rotateY(0deg);
+          transform: perspective(1500px) rotateY(0deg); /* チェックされたら右側のページがめくられる */
+}
+
+.p-mv__page1 input + .p-mv__box {
+  background-image: url(/wp-content/themes/book-kotobuki/assets/images/mv-img01-right@2x.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 0% 0%;
+  z-index: 99;
+}
+@media screen and (min-width: 768px) {
+  .p-mv__page1 input + .p-mv__box {
+    background-position: 0% 0.5%;
+  }
+}
+
+.p-mv__page1 input + .p-mv__box + .p-mv__box {
+  background-image: url(/wp-content/themes/book-kotobuki/assets/images/mv-img02-left1@2x.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 100% 36%;
+}
+@media screen and (min-width: 768px) {
+  .p-mv__page1 input + .p-mv__box + .p-mv__box {
     background-position: 0% 0%;
   }
 }
 
-.cssbk .right {
+.p-mv__page2 input + .p-mv__box {
+  background-image: url(/wp-content/themes/book-kotobuki/assets/images/mv-img02-right1@2x.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 0% 0%;
+  z-index: 98;
+}
+@media screen and (min-width: 768px) {
+  .p-mv__page2 input + .p-mv__box {
+    background-position: 0% 0%;
+    height: 100%;
+  }
+}
+
+.p-mv__page2 input + .p-mv__box + .p-mv__box {
+  background-image: url(/wp-content/themes/book-kotobuki/assets/images/mv-img03-left@2x.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 100% 0;
+}
+@media screen and (min-width: 768px) {
+  .p-mv__page2 input + .p-mv__box + .p-mv__box {
+    background-position: 0 50%;
+  }
+}
+
+.p-mv__right {
   position: absolute;
   top: 0; /* 上に固定 */
   right: 0; /* 右に固定 */
@@ -542,102 +686,7 @@ button {
   background-position: 0 0;
 }
 @media screen and (min-width: 768px) {
-  .cssbk .right {
-    background-position: 0 50%;
-    height: 100vh;
-  }
-}
-
-.cssbk input {
-  display: none;
-}
-
-.cssbk input ~ span {
-  -webkit-transition: 1.5s;
-  transition: 1.5s;
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
-  position: absolute;
-  width: 50%;
-  height: 100vh;
-  background-color: #fffff8;
-}
-@media screen and (min-width: 768px) {
-  .cssbk input ~ span {
-    height: 100vh;
-  }
-}
-
-.cssbk input + span {
-  left: 50%; /* ページの左側を中央に寄せる */
-  -webkit-transform-origin: left;
-          transform-origin: left; /* ページを左側を基準にめくる */
-  -webkit-transform: perspective(1500px) rotateY(0deg);
-          transform: perspective(1500px) rotateY(0deg); /* ページを立体的に見せる */
-}
-
-.cssbk input + span + span {
-  right: 50%; /* ページの右側を中央に寄せる */
-  -webkit-transform-origin: right;
-          transform-origin: right; /* ページを右側を基準にめくる */
-  -webkit-transform: perspective(1500px) rotateY(180deg);
-          transform: perspective(1500px) rotateY(180deg); /* ページを最初は裏返しにしておく */
-}
-
-.cssbk input:checked + span {
-  -webkit-transform: perspective(1500px) rotateY(-180deg);
-          transform: perspective(1500px) rotateY(-180deg); /* チェックされたら左側のページがめくられる */
-}
-
-.cssbk input:checked + span + span {
-  -webkit-transform: perspective(1500px) rotateY(0deg);
-          transform: perspective(1500px) rotateY(0deg); /* チェックされたら右側のページがめくられる */
-}
-
-.cssbk .page1 input + span {
-  background-image: url(/wp-content/themes/book-kotobuki/assets/images/mv-img01-right@2x.jpg);
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: 0% 0%;
-}
-@media screen and (min-width: 768px) {
-  .cssbk .page1 input + span {
-    background-position: 0 0;
-  }
-}
-
-.cssbk .page1 input + span + span {
-  background-image: url(/wp-content/themes/book-kotobuki/assets/images/mv-img02-left@2x.jpg);
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: 100% 36%;
-}
-@media screen and (min-width: 768px) {
-  .cssbk .page1 input + span + span {
-    background-position: 0 0;
-  }
-}
-
-.cssbk .page2 input + span {
-  background-image: url(/wp-content/themes/book-kotobuki/assets/images/mv-img02-right@2x.jpg);
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: 0% 0%;
-}
-@media screen and (min-width: 768px) {
-  .cssbk .page2 input + span {
-    background-position: 0 0;
-  }
-}
-
-.cssbk .page2 input + span + span {
-  background-image: url(/wp-content/themes/book-kotobuki/assets/images/mv-img03-left@2x.jpg);
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: 100% 0;
-}
-@media screen and (min-width: 768px) {
-  .cssbk .page2 input + span + span {
+  .p-mv__right {
     background-position: 0 50%;
   }
 }
@@ -676,6 +725,7 @@ button {
           align-items: center;
   height: inherit;
   position: relative;
+  text-shadow: 4px 5px 0px rgba(117, 117, 116, .4);
 }
 
 .p-pc-nav__item-link::after {
@@ -688,8 +738,10 @@ button {
   background-color: #fff;
   opacity: 0;
   visibility: hidden;
-  -webkit-transition: all 0.5s;
-  transition: all 0.5s;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  -webkit-box-shadow: 4px 5px 0px rgba(117, 117, 116, .4);
+          box-shadow: 4px 5px 0px rgba(117, 117, 116, .4);
 }
 
 .p-pc-nav__item-link:hover::after {
