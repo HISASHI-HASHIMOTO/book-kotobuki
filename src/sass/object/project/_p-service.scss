@@ -1,10 +1,17 @@
 @use "global" as *;
 
-.p-feature {
+.p-service {
   position: relative;
+  padding-top: myrem(100);
+  padding-bottom: myrem(100);
+  background-color: $black2;
+  @include mq(md) {
+   padding-top: myrem(120);
+   padding-bottom: myrem(120);
+  }
 }
 
-.p-feature::after {
+.p-service::after {
   position: absolute;
   content: "";
   width: 100%;
@@ -16,13 +23,17 @@
   z-index: -1;
 }
 
-.p-feature__inner {
+.p-service__inner {
   @include mq(md) {
     margin-inline: auto;
   }
 }
 
-.p-feature__container {
+.p-service__title {
+  text-align: center;
+}
+
+.p-service__container {
   margin-top: myrem(30);
   @include mq(md) {
     margin-top: 0;
@@ -31,118 +42,91 @@
   }
 }
 
-.p-feature__content {
-  width: 100%;
+.p-service__content {
   margin-top: myrem(20);
+  width: 100%;
   @include mq(md) {
-   width: myrem(1200);
-   margin-top: myrem(56);
+    margin-top: myrem(56);
+    max-width: myrem(1200);
+   width: 100%;
    display: flex;
    align-items: center;
-   margin-left: myrem(25);
+   gap: myrem(30);
+   margin-inline: auto;
   }
 }
 
-
-.p-feature__body {
-  width: 100%;
-  background-color: $white;
-  box-shadow: 0px 10px 20px rgba(210, 233, 145, 0.1);
-  border-radius: 16px;
-  z-index: 2;
-  padding: myrem(20);
-  margin-top: myrem(40);
+.p-service__content:nth-child(even) {
   @include mq(md) {
-    background-color: $white;
-    width: myrem(509);
-    min-height: myrem(269);
-    padding:  myrem(57.6) myrem(56) myrem(56) myrem(56);
-    margin-top: myrem(1.6);
-    margin-right: myrem(-312);
-    margin-left: myrem(55.2);
+   flex-direction: row-reverse;
   }
 }
 
-.p-feature__content-title {
+.p-service__body {
+  width: 100%;
+  // background-color: $white;
+  // box-shadow: 0px 10px 20px rgba(210, 233, 145, 0.1);
+  // border-radius: myrem(16);
+  padding: myrem(20);
+  // border: 2px solid $brown;
+  @include mq(md) {
+    // background-color: $white;
+    width: 100%;
+    max-width: myrem(600);
+    padding:  myrem(60);
+  }
+}
+
+.p-service__content-title {
   font-size: myrem(20);
   line-height: calc(29.6/20);
-  color: $black;
+  color: $white;
   font-weight: 400;
   border-radius: 2px;
+  border-bottom: 2px solid $white;
+  padding-bottom: myrem(10);
 }
 
-.p-feature__content-title span {
-  background:linear-gradient(transparent 75%, #E8F3C7 60%);
+.p-service__content-title span {
   border-radius: 2px;
   height: myrem(7);
   width: 100%;
   border-top-left-radius: 10px;
 }
 
-.p-feature__content-text {
+.p-service__content-text {
   margin-top: myrem(16);
   font-size: myrem(15);
   line-height: calc(27/15);
-  color: $black;
+  color: $white;
 }
 
-.p-feature__content-img {
+.p-service__content-img {
   width: 100%;
   margin-top: myrem(10);
   @include mq(md) {
     margin-top: 0;
-    // width: myrem(950);
-    width: myrem(950);
-    height: myrem(395);
+    width: 100%;
+    height: 100%;
     border-radius: myrem(16);
-    margin-right: myrem(-56);
     margin-left: auto;
+    border-radius: myrem(16)
   }
 }
 
-.p-feature__content-img img {
+.p-service__content-img img {
   width: 100%;
+  height: 100%;
   object-fit: cover;
-  object-position: 100% 47%;
-  aspect-ratio: 950 / 395;
+  aspect-ratio: 300/200;
   border-radius: myrem(16);
 }
 
-.p-feature__content:nth-of-type(even) {
-  @include mq(md) {
-   flex-direction: row-reverse;
-   margin-top: myrem(81);
-  }
-}
 
-.p-feature__content:nth-of-type(even) .p-feature__body {
-  @include mq(md) {
-    padding-top:  myrem(56);
-    margin-left: myrem(-248.8);
-    margin-right: myrem(24);
-  }
-}
-
-
-.p-feature__content:nth-of-type(even)  .p-feature__content-text {
-  @include mq(md) {
-    margin-top: myrem(16.8);
-  }
-}
-
-.p-feature__content:nth-of-type(even) .p-feature__content-img {
-  @include mq(md) {
-    margin-right: myrem(-9.6);
-    margin-left: myrem(-73.6);
-  }
-}
-
-.p-feature__content:nth-of-type(even)  img {
-  object-position: 100%  65%;
-}
-
-
-.p-feature__btn {
+.p-service__button {
+  margin-top: myrem(50);
   text-align: center;
-  margin-top: myrem(64);
+  @include mq(md) {
+    margin-top: myrem(80);
+  }
 }

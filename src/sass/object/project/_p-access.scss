@@ -1,0 +1,121 @@
+@use "global" as *;
+
+.p-access {
+  background-image: url(../../../images/background-img01.jpg);
+  background-repeat: repeat-x;
+  background-size: cover;
+} 
+
+.p-access__inner {
+  width: 100%;
+  overflow: hidden;
+  @include mq(md) {
+   max-width: myrem(1200);
+   margin-inline: auto;
+   padding-top: myrem(20);
+  }
+}
+
+.p-access__title-area {
+  display: flex;
+  flex-direction: column;
+  @include mq(md) {
+   align-items: flex-start;
+   flex-direction: row;
+   justify-content: space-between;
+   padding-inline: myrem(40);
+  }
+}
+
+.p-access__title  {
+  width: myrem(157);
+}
+
+.p-access__title-box {
+  @include mq(md) {
+   margin-top: myrem(7.36);
+  }
+}
+
+.p-access__title-link {
+  display: flex;
+}
+
+.p-access__title-link img  {
+  width: 100%;
+}
+
+.p-access__address-area  {
+  margin-top: myrem(16);
+  font-style: normal;
+}
+
+.p-access__tel  {
+  font-size: myrem(32);
+  line-height: calc(32/32);
+  letter-spacing: 0.03em;
+  color: $black;
+  text-transform: capitalize;
+}
+
+.p-access__tel-link {
+  display: inline-block;
+  letter-spacing: 0.03em;
+  color: $black;
+  margin-left: myrem(8);
+  font-size: myrem(46);
+  line-height: calc(46/46);
+  @include mq(md) {
+    pointer-events: none;
+    font-size: myrem(58);
+    line-height: calc(58/58);
+  }
+}
+
+.p-access__address  {
+  margin-top: myrem(8);
+  font-size: myrem(16);
+  line-height: calc(29/16);
+  letter-spacing: 0.04em;
+  color: $black;
+}
+
+.p-access__table-area  {
+  margin-top: myrem(20);
+  max-width: myrem(460);
+  margin-inline: auto;
+  @include mq(md) {
+    margin-top: myrem(1);
+    min-width: myem(460);
+    margin-inline: 0;
+  }
+}
+
+.p-access__map-area  {
+  margin-top: myrem(32);
+  width: 100%;
+  @include mq(md) {
+  //  max-width: myrem(1040);
+  }
+}
+
+.p-access__map-area iframe  {
+  width: 100%;
+}
+
+.p-access__btn-area  {
+  display: flex;
+  flex-direction: column;
+  @include mq(md) {
+    margin-top: myrem(27);
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+.p-access__contact-btn  {
+    margin-top: myrem(20);
+    @include mq(md) {
+    margin-top: 0;
+    }
+}
+

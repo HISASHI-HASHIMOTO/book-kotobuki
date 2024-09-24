@@ -1,24 +1,34 @@
 @use "global" as *;
 
-.heading-25 {
-  position: relative;
-  padding-top: .75em;
-  color: #333333;
+.c-section-title {
+
 }
 
-.heading-25::before {
-  position: absolute;
-  bottom: .5em;
-  left: 0;
-  z-index: -1;
-  color: #d9f4ff;
-  font-size: 1.5em;
-  line-height: 1;
-  content: attr(data-word);
-  pointer-events: none;
+.c-section-title__en {
+  font-size: myrem(30);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-weight: 500;
+  @include mq(md) {
+  font-size: myrem(40);
+  }
 }
 
-[data-word="HEADING"] {
-  text-transform: uppercase; /* すべて大文字にする */
-  font-size: myrem(50); /* フォントサイズを24pxにする */
+.c-section-title__ja.c-section-title__ja--white,
+.c-section-title__en.c-section-title__en--white{
+  color: $white;
 }
+
+.c-section-title__ja {
+  display: block;
+  font-size: myrem(18);
+  margin-top: calc((8/375) *100vw );
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: $brown;
+  @include mq(md) {
+  font-size: myrem(20);
+  margin-top: calc((12/1440) *100vw );
+  }
+}
+
