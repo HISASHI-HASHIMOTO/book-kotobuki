@@ -1,77 +1,39 @@
 @use "global" as *;
 
 
-// .c-button {
-//   display: inline-block;
-//   background-color: $brown;
-//   padding: myrem(14) myrem(40);
-//   color: $white;
-//   line-height: calc(23/16);
-//   text-align: center;
-//   min-width: myrem(240);
-//   position: relative;
-//   border: 1px solid $brown;
-// }
-
-// .c-button:hover {
-//   background-color: $white;
-//   color: $brown;
-// }
-
-// .c-button::after {
-//   position: absolute;
-//   content: "";
-//   top: 45%;
-//   right: myrem(25);
-//   width: myrem(8);
-//   height: myrem(8);
-//   border-top: 1px solid $white;
-//   border-right: 1px solid $white;
-//   transform: rotate(45deg);
-//   border-radius: 1px;
-//   transition: .3s;
-// } 
-
-// .c-button:hover::after {
-//   right: myrem(13);
-//   border-top: 1px solid $brown;
-//   border-right: 1px solid $brown;
-//   color: $brown;
-// }
-
-.c-button::first-letter {
-  text-transform: capitalize;
-}
-
-// html,body{
-//   height:100%;
-// }
-// body{
-//   text-align:center;
-// }
-// body:before{
-//   content:'';
-//   height:100%;
-//   display:inline-block;
-//   vertical-align:middle;
-// }
-
 .c-button{
-  background:$brown;
-  color:#fff;
+  display: inline-block;
+  background:$black;
+  color:$white;
   border:none;
   position:relative;
-  padding: myrem(14) myrem(40);
+  padding: myrem(16) myrem(40);
   min-width: myrem(240);
   font-size: myrem(16);
   cursor:pointer;
   transition:800ms ease all;
   outline:none;
 }
-.c-button:hover{
-  background:#fff;
-  color: $brown;
+
+.c-button::first-letter {
+  text-transform: capitalize;
 }
+
+.c-button.c-button--white {
+  background:$white;
+  color: $black;
+}
+
+.c-button:hover{
+  background: $white;
+  color: $black;
+}
+
+.c-button.c-button--white:hover {
+  color: $white;
+  background: $black;
+}
+
 .c-button:before,
 .c-button:after{
   content:'';
@@ -80,9 +42,15 @@
   right:0;
   height:2px;
   width:0;
-  background: $brown;
+  background: $black;
   transition:400ms ease all;
 }
+
+.c-button.c-button--white:before,
+.c-button.c-button--white:after {
+  background: $white;
+}
+
 .c-button:after{
   right:inherit;
   top:inherit;

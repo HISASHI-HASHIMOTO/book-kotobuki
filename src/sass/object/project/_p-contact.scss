@@ -18,16 +18,6 @@
   }
 }
 
-.p-contact::before {
-  content: "";
-  display: block;
-  width: 100%;
-  height: 100%;
-  background-color: rgba($white, 0.03);
-  position: absolute;
-  top: 0;
-  left: 0;
-}
 
 .p-contact__text {
   margin-top: myrem(20);
@@ -36,7 +26,6 @@
   white-space: nowrap;
   font-size: myrem(20);
   letter-spacing: 0.05em;
-  // font-weight: normal;
   @include mq(md) {
     font-size: myrem(30);
   }
@@ -47,16 +36,27 @@
   max-width: myrem(600);
   margin-inline: auto;
   margin-top: myrem(20);
-  // padding: myrem(10) myrem(30);
   border: 2px solid $white;
   @include mq(md) {
     margin-top: myrem(40);
     max-width: myrem(800);
-    // padding: myrem(30) myrem(130);
   }
 }
 
-.p-contact__button-link {
+.p-contact__button {
+  background-color: $white;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  width: 100%; 
+  height: auto;
+  padding: myrem(10) myrem(30);
+  @include mq(md) {
+    padding: myrem(30) myrem(130);
+  }
+}
+
+.p-contact__btn {
   background-color: $white;
   width: 100%;
   display: flex;
@@ -64,12 +64,13 @@
   height: inherit;
   width: inherit;
   padding: myrem(10) myrem(30);
+  color: $black;
   @include mq(md) {
     padding: myrem(30) myrem(130);
   }
 }
 
-.p-contact__button-link:hover {
+.p-contact__button:hover {
   background-color: $black;
   color: $white;
   cursor: pointer;
@@ -92,6 +93,3 @@
   }
 }
 
-.p-contact__btn {
-  color: $white;
-}

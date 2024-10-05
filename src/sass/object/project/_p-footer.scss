@@ -1,6 +1,6 @@
 @use "global" as *;
 
-.footer {
+.p-footer {
   background-color: black;
   padding-top: myrem(48);
   padding-bottom: myrem(56);
@@ -10,12 +10,7 @@
   } 
 }
 
-.footer__inner {
-  max-width: myrem(600);
-  width: 100%;
-}
-
-.footer__title-box {
+.p-footer__title-box {
   display: flex;
   flex-direction: column;
   @include mq(md) {
@@ -25,23 +20,23 @@
   }
 }
 
-.footer__title {
+.p-footer__title {
   width: myrem(120);
   @include mq(md) {
     width: myrem(200);
   }
 }
 
-.footer__title__link {
+.p-footer__title__link {
   display: inline-block;
 }
 
-.footer__title img {
+.p-footer__title img {
   width: 100%;
   object-fit: cover;
 }
 
-.footer__sns-list {
+.p-footer__sns-list {
   margin-top: myrem(17);
   display: flex;
   align-items: center;
@@ -51,74 +46,62 @@
   }
 }
 
-.footer__sns-icon {
+.p-footer__sns-icon {
   width: myrem(24);
   @include mq(md) {
    width: myrem(32);
   }
 }
 
-.footer__sns-link {
+.p-footer__sns-link {
   display: inline-block;
 }
 
-.footer__sns-link:hover {
+.p-footer__sns-link:hover {
   @include mq(md) {
    opacity: 0.7;
   }
 }
 
-.footer__sns-icon img {
+.p-footer__sns-icon img {
   width: 100%;
   object-fit: cover;
 }
 
-
-.footer__nav-list:not(:first-of-type) {
-  margin-top: myrem(16);
-}
-
-.footer__list-contents {
+.p-footer__list-contents {
   display: flex;
-  margin-top: myrem(6.4);
-  gap: myrem(12.8);
+  margin-top: myrem(30);
   max-width: myrem(600);
   margin-inline: auto;
   @include mq(md) {
-   gap: myrem(56);
+  //  gap: myrem(56);
    max-width: 100%;
    width: 100%;
+   justify-content: center;
   }
 }
 
-.footer__column-list {
+.p-footer__column-list {
   display: flex;
   flex-direction: column;
   text-align: left;
   width: 50%;
   @include mq(md) {
-    flex-direction: row;
     width: 100%;
     max-width: myrem(500);
-    gap: myrem(120);
+    gap: myrem(40);
+    width: 50%;
   }
 }
 
-.footer__list-contents .footer__column-list:nth-child(2) {
+.p-footer__list-contents .p-footer__column-list:nth-child(2) {
   padding-left: myrem(6.4);
   @include mq(md) {
     padding-left: 0;
   }
 }  
 
-.footer__nav-list {
-  margin-top: myrem(16);
-  @include mq(md) {
-   
-  }
-}
-
-.footer__copy {
+.p-footer__copy {
   margin-top: myrem(21);
   text-align: center;
   @include mq(md) {
@@ -126,7 +109,7 @@
   }
 }
 
-.footer__copy-text {
+.p-footer__copy-text {
   font-size: myrem(12);
   line-height: calc(18/12);
   color: $white;
@@ -135,3 +118,4 @@
     letter-spacing: 0.12em;
   }
 }
+

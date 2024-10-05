@@ -1,0 +1,60 @@
+@use "global" as *;
+
+.p-about {
+  padding-block: myrem(100);
+  @include mq(md) {
+   padding-block: myrem(120);
+  }
+}
+
+.p-about__title,
+.p-about__button {
+  text-align: center;
+}
+
+.p-about__content {
+  margin-top: myrem(40);
+  @include mq(md) {
+   margin-top: myrem(30);
+   display: flex;
+   flex-direction: row-reverse;
+  }
+}
+
+.p-about__box {
+  padding-top: myrem(20);
+  @include mq(md) {
+   padding-top: myrem(30);
+  //  position: relative;
+  }
+}
+
+.p-about__sub-title {
+  font-size: myrem(16);
+  @include mq(md) {
+   position: absolute;
+   font-size: myrem(24);
+  }
+}
+
+.p-about__text {
+  font-size: myrem(15);
+  letter-spacing: 0.05em;
+  @include mq(md) {
+   font-size: myrem(16);
+  }
+}
+
+.p-about__text:not(:first-of-type) {
+  margin-top: myrem(20);
+  @include mq(md) {
+   margin-top: myrem(30);
+  }
+}
+
+.p-about__button  {
+  margin-top: myrem(32);
+  @include mq(md) {
+   margin-top: myrem(72);
+  }
+}

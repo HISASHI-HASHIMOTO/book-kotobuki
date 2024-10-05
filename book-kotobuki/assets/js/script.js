@@ -46,16 +46,24 @@ $('.js-hamburger').on('click', function () {
 });
 
 
-  // スワイパー
+  // // スワイパー
   var slide1 = new Swiper("#slide1", {
-    loop: true,
-    effect: "fade",
-    speed: 3000,
-    allowTouchMove: false,
-    autoplay: {
-      delay: 3000
-    }
+    centeredSlides: true, // 1枚目のスライドを中央にする
+    loop: true, // ループさせる
+    speed: 1000, // 少しゆっくり(デフォルトは300)
+    slidesPerView: 1, // スライドの表示枚数
+    spaceBetween: 20, 
+    autoplay: { // 自動再生
+      delay: 3000, // 3秒後に次のスライド
+      disableOnInteraction: false, // 矢印をクリックしても自動再生を止めない
+    },
+    breakpoints: { 
+      768: { // 画面幅が768px以上の場合 (スマホやタブレット)
+        slidesPerView: 6, // 1枚だけ表示
+        spaceBetween: 10, // スライド間のスペースを狭く
+      }},
   });
+
 
   // メインビュー 本がめくれるような動き
   let currentPage = 0;

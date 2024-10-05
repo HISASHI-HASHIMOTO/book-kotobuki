@@ -1,19 +1,19 @@
 @use "global" as *;
 
-.blog-card {
+.c-blog-card {
   display: flex;
   flex-direction: column;
   box-shadow: 2px 4px 9px -5px rgba(0, 0, 0, 1);
   transition: .3s;
   height: 100%;
-  padding: myrem(30) myrem(20);
+  padding: myrem(20) myrem(15);
 }
 
-.blog-card__img {
+.c-blog-card__img {
   width: 100%;
 }
 
-.blog-card__img img {
+.c-blog-card__img img {
   width: 100%;
   aspect-ratio: 280/188;
   object-fit: cover;
@@ -24,7 +24,7 @@
   }
 }
 
-.blog-card__body {  
+.c-blog-card__body {  
   padding-top: myrem(20);
   display: flex;
   flex-direction: column;
@@ -34,35 +34,46 @@
   }
 }
 
-.blog-card__metabox {
-  border-bottom: 1px solid $brown;
-  padding-bottom: myrem(8);
+.c-blog-card__metabox {
+  // border-bottom: 1px solid $brown;
+  // padding-bottom: myrem(8);
   flex-grow: 1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-.blog-card__meta {
+.c-blog-card__meta {
   font-size: myrem(12);
   padding:  myrem(4) myrem(11);
-  border: 1px solid #000;
-  color: #000;
+  border: 1px solid $brown;
+  background-color: $brown;
   display: inline-block;
+  color: $white;
   @include mq(md) {
     padding:  myrem(6) myrem(16);
   }
 }
 
-.blog-card__title {
-  margin-top: myrem(4);
-  line-height: calc(24/16);
+.c-blog-card__time {
+  color: $black;
+  display: inline-block;
 }
 
-.blog-card__title.blog-card__title--large {
+.c-blog-card__title {
+  margin-top: myrem(10);
+  // line-height: calc(24/16);
+  font-weight: 500;
+  font-size: myrem(22);
+}
+
+.c-blog-card__title.c-blog-card__title--large {
   @include mq(md) {
    font-size: myrem(24);
   }
 }
 
-.blog-card__box {
+.c-blog-card__box {
   margin-top: myrem(9.6);
   max-width: myrem(272);
   margin-inline: auto;
@@ -72,88 +83,14 @@
   }
 }
 
-.blog-card__menu {
-  text-align: center;
-  line-height: calc(24/16);
-  font-size: myrem(14);
-  @include mq(md) {
-    margin-left: myrem(-17.6);
-    font-size: myrem(16);
-  }
-}
-
-.blog-card__price {
-  margin-top: myrem(8);
-  display: flex;
-  gap: myrem(16);
-  align-items: flex-end;
-  justify-content: center;
-  @include mq(md) {
-    gap: myrem(21);
-
-  }
-}
-
-.blog-card__original-price {
-  font-size: myrem(20);
-  line-height: 1;
-  font-weight: bold;
-  position: relative;
-
-  @include mq(md) {
-    font-size: myrem(24);
-  }
-}
-
-.blog-card__original-price::after {
-  content: "";
-  display: inline-block;
-  width: 100%;
-  height: myrem(3);
-  background-color: red;
-  position: absolute;
-  top: 50%;
-  right: 0;
-}
-
-.blog-card__discounted-rate {
-  font-size: myrem(32);
-  line-height: 1;
-  color: $brown;
-  font-weight: bold;
-  @include mq(md) {
-   font-size: myrem(40);
-  }
-}
-
-.blog-card:hover {
+.c-blog-card:hover {
   @include mq(md) {
    opacity: 0.7;
   }
 }
 
-.blog-card__text {
+.c-blog-card__text {
   margin-top: myrem(24);
   line-height: calc(24/16);
 
-}
-
-.blog-card__time {
-  line-height: calc(18/16);
-  color: $brown;
-  text-align: center;
-  margin-top: myrem(32);
-}
-
-.blog-card__contact-text {
-  font-size: myrem(14);
-  line-height: calc(18/14);
-  text-align: center;
-  margin-top: myrem(7);
-  color: $brown;
-}
-
-.blog-card__btn {
-  margin-top: myrem(14);
-  text-align: center;
 }

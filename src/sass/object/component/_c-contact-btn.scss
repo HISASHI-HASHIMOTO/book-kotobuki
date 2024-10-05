@@ -1,0 +1,11 @@
+@use "global" as *;
+
+.c-contact-btn {
+  display: flex;
+  flex-direction: column;
+  background-color: $white;
+}
+
+.c-contact-btn__en-text {
+  color: $black;
+}

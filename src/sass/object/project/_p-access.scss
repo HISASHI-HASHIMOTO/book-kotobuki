@@ -1,9 +1,11 @@
 @use "global" as *;
 
 .p-access {
-  background-image: url(../../../images/background-img01.jpg);
-  background-repeat: repeat-x;
-  background-size: cover;
+  padding-block: myrem(100);
+  background-color: $brown6;
+  @include mq(md) {
+   padding-block: myrem(120);
+  }
 } 
 
 .p-access__inner {
@@ -16,9 +18,14 @@
   }
 }
 
-.p-access__title-area {
+.p-access__title {
+  text-align: center;
+}
+
+.p-access__information {
   display: flex;
   flex-direction: column;
+  margin-top: myrem(32);
   @include mq(md) {
    align-items: flex-start;
    flex-direction: row;
@@ -27,32 +34,26 @@
   }
 }
 
-.p-access__title  {
+.p-access__logo  {
   width: myrem(157);
 }
 
-.p-access__title-box {
-  @include mq(md) {
-   margin-top: myrem(7.36);
-  }
-}
-
-.p-access__title-link {
+.p-access__logo-link {
   display: flex;
+  align-items: center;
 }
 
-.p-access__title-link img  {
+.p-access__logo-link img  {
   width: 100%;
 }
 
-.p-access__address-area  {
-  margin-top: myrem(16);
+.p-access__address-box  {
+  margin-top: myrem(8);
   font-style: normal;
 }
 
 .p-access__tel  {
   font-size: myrem(32);
-  line-height: calc(32/32);
   letter-spacing: 0.03em;
   color: $black;
   text-transform: capitalize;
@@ -84,14 +85,16 @@
   margin-top: myrem(20);
   max-width: myrem(460);
   margin-inline: auto;
+
   @include mq(md) {
     margin-top: myrem(1);
     min-width: myem(460);
     margin-inline: 0;
+    height: 100%;
   }
 }
 
-.p-access__map-area  {
+.p-access__map  {
   margin-top: myrem(32);
   width: 100%;
   @include mq(md) {
@@ -99,7 +102,7 @@
   }
 }
 
-.p-access__map-area iframe  {
+.p-access__map iframe  {
   width: 100%;
 }
 

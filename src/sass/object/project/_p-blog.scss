@@ -1,23 +1,23 @@
 @use "global" as *;
+.p-blog {
 
-.blog {
-  overflow: hidden;
 }
 
-.blog__inner {
+.p-blog__inner {
   position: relative;
 }
 
-.blog__title {
+.p-blog__title {
   width: 100%;
   display: inline-block;
+  text-align: center;
 }
 
-.blog__content {
+.p-blog__content {
   overflow: visible;
 }
 
-.blog__button-box {
+.p-blog__button-box {
   @include mq(md) {
     position: absolute;
     display: flex;
@@ -27,8 +27,8 @@
   }
 }
 
-.blog__button-prev,
-.blog__button-next {
+.p-blog__button-prev,
+.p-blog__button-next {
   display: none;
   @include mq(md) {
     display: block;
@@ -37,8 +37,8 @@
     z-index: 9999;
   }
 }
-.blog__button-prev:hover,
-.blog__button-next:hover {
+.p-blog__button-prev:hover,
+.p-blog__button-next:hover {
 
   @include mq(md) {
     cursor : pointer;
@@ -46,22 +46,22 @@
   }
 }
 
-.blog__button-prev {
+.p-blog__button-prev {
   @include mq(md) {
     right: 23.8%;
     top: myrem(-67.2);
   }
 }
 
-.blog__button-next {
+.p-blog__button-next {
   @include mq(md) {
     right: 12.6%;
     top: myrem(-69);
  }
 }
 
-.blog__button-prev::before,
-.blog__button-next::before {
+.p-blog__button-prev::before,
+.p-blog__button-next::before {
   content: "";
   display: inline-block;
   width: 100%;
@@ -70,20 +70,20 @@
   background-size: contain;
 }
 
-.blog__button-prev:before {
+.p-blog__button-prev:before {
   background-image: url(/wp-content/themes/WordPressTheme/assets/images/common/dummy.jpg);
 }
 
-.blog__button-next:before {
+.p-blog__button-next:before {
   background-image: url(/wp-content/themes/WordPressTheme/assets/images/common/dummy.jpg);
 }
 
-.blog__button-prev:after,
-.blog__button-next:after {
+.p-blog__button-prev:after,
+.p-blog__button-next:after {
   display: none;
 }
 
-.blog__swiper {
+.p-blog__swiper {
   margin-top: myrem(24);
   max-width: 100%;
   padding-bottom: myrem(10);
@@ -93,7 +93,7 @@
   }  
 }
 
-.blog__swiper-slide {
+.p-blog__swiper-slide {
   max-width: myrem(280);
   @include mq(md) {
     max-width: myrem(333);
@@ -102,7 +102,7 @@
   }
 }
 
-.blog__slide-card {
+.p-blog__slide-card {
   max-width: myrem(280);
   @include mq(md) {
     max-width: myrem(333);
@@ -110,11 +110,44 @@
   }
 }
 
-.blog__btn {
+.p-blog__btn {
   text-align: center;
   margin-top: myrem(32);
   padding-bottom: myrem(5);
   @include mq(md) {
     margin-top: myrem(70);
+  }
+}
+
+
+.swiper-slide {
+  opacity: .3; /* 左右のスライドを薄くする */
+  transform: scale(.8); /* 左右のスライドを小さくする */
+  transition: .7s; /* ゆっくり小さくさせる */
+  flex-shrink: 0; /* スライドの幅が自動で縮まないようにする */
+  width: 100%;   
+}
+.swiper-slide img {
+  height: auto;
+  width: 100%;
+}
+.swiper-slide-active {
+  opacity: 1; /* 中央のスライドは薄くしない */
+  transform: scale(1); /* 中央のスライドは小さくしない */
+  z-index: 1; /* 中央のスライドを一番上にする */
+}
+
+/* 前後のスライド */
+.swiper-slide-prev,
+.swiper-slide-next {
+  opacity: 0.3; /* 前後のスライドは透明度を30%に */
+  transform: scale(0.8); /* 前後のスライドは縮小 */
+}
+
+
+.p-blog__swiper-slide {
+  // min-width: myrem(280);
+  @include mq(md) {
+   min-width: myrem(300);
   }
 }

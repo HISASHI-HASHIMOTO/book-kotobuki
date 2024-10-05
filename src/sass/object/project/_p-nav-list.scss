@@ -1,43 +1,108 @@
 @use "global" as *;
 
+.p-nav-list {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  @include mq(md) {
+   text-align: left;
+  }
+}
 
+.p-nav-list__heading-link {
+  display: block;
+  font-weight: 600;
+  color: $white;
+  font-size: myrem(18);
+  padding-top: myrem(12);
+  padding-bottom: myrem(12);
+  line-height: calc(18/16);
+  text-align: left;
+  position: relative;
+  width: 100%;
+  padding-left: myrem(22);
+  @include mq(md) {
+    text-align: left;
+  }
+}
 
-// .p-nav-list {
-//   display: flex;
-//   flex-direction: column;
-//   align-items: center;
-// }
+.p-nav-list__link-text {
+  position: relative;
+  @include mq(md) {
+   
+  }
+}
 
-// .p-nav-list__heading-link {
-//   display: block;
-//   font-weight: bold;
-//   color: $white;
-//   font-size: myrem(16);
-//   padding-top: myrem(12);
-//   padding-bottom: myrem(12);
-//   line-height: calc(18/16);
-//   text-align: left;
-//   position: relative;
-//   width: 100%;
-//   padding-left: myrem(22);
-// }
+.p-nav-list__heading-link::before {
+  content: "";
+  position: absolute;
+  background-image: url(/wp-content/themes/book-kotobuki/assets/images/book-icon-white@2x.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: inline-block;
+  width: myrem(16);
+  height: myrem(16);
+  top: 56%;
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+  left: 0%;
+}
 
+.p-nav-list__item-link {
+  display: block;
+  width: 100%;
+  padding-top: myrem(10);
+  padding-bottom: myrem(10);
+  padding-left: myrem(38);
+  color: $white;
+  text-align: left;
+  font-size: myrem(16);
+  line-height: calc(18/16);
+  @include mq(md) {
+    text-align: left;
+    padding-top: myrem(12);
+    padding-bottom: myrem(12);
+  }
+}
 
-// .p-nav-list__item-link {
-//   display: block;
-//   width: 100%;
-//   padding-top: myrem(12);
-//   padding-bottom: myrem(12);
-//   padding-left: myrem(22);
-//   color: $white;
-//   text-align: left;
-//   font-size: myrem(16);
-//   line-height: calc(18/16);
-// }
+.p-nav-list__text-move{
+  position: relative;
+}
 
-// .p-nav-list__heading-link:hover,
-// .p-nav-list__item-link:hover {
-//   @include mq(md) {
-//    opacity: 0.7;
-//   }
-// }
+.p-nav-list__text-move::after {
+  position: absolute; 
+  bottom: myrem(35); 
+  left: 0;
+  content: "";
+  width: 100%;
+  height: myrem(2);
+  background-color: $white;
+  opacity: 0;
+  visibility: hidden;
+  transition:  .5s;
+  box-shadow: 0 2px 2px #666;
+}
+
+.p-nav-list__heading-link:hover .p-nav-list__text-move:hover::after,
+.p-nav-list__item-link:hover .p-nav-list__text-move:hover::after { 
+  content: "";
+  opacity: 0;
+  animation-name: fadein-bottom;
+  animation-duration: .8s;
+  animation-timing-function: ease-out; 
+  animation-fill-mode: forwards;
+  background-color: $white;
+  bottom: myrem(-18); 
+  visibility: visible; 
+}
+
+@keyframes fadein-bottom {
+  0%{ 
+  opacity: 0;
+  transform: translateY(10px); 
+  }
+  100%{ 
+  opacity: 1; 
+  transform: translateY(-12px);
+  }
+}

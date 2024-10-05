@@ -3,15 +3,15 @@
 .p-table  {
   max-width: myrem(380);
   width: 100%;
-  border-radius: myrem(4.5);
+  border-radius: myrem(5);
   border: 1px solid $brown;
-  padding: myrem(14.24) myrem(0) myrem(17.6) myrem(20);
+  padding: myrem(14) myrem(0) myrem(25) myrem(10);
   background-color: $white;
   overflow-x: scroll;
   @include mq(md) {
     -ms-overflow-style: none;
     min-width: myrem(460);
-    padding: myrem(14.24) myrem(25) myrem(17.6) myrem(25);
+    padding: myrem(16) myrem(20) myrem(16) myrem(20);
   }
 }
 
@@ -45,10 +45,8 @@
 
 .p-table__row {
   border-bottom: 1px solid #E6E6E6;
-  min-height: myrem(42.4);
+  min-height: myrem(42);
   display: block;
-  text-align: center;
-  max-width: myrem(420);
   @include mq(md) {
    width: 100%;
   }
@@ -61,12 +59,12 @@
 
 .p-table__title {
   letter-spacing: 0.04em;
-  padding: myrem(8) myrem(9.28) myrem(9) myrem(16);
+  padding: myrem(8) myrem(9) myrem(9) myrem(16);
 }
 
 .p-table__title,
 .p-table__time {
-  min-width: myrem(107);
+  min-width: myrem(128);
 }
 
 .p-table__day,
@@ -74,36 +72,12 @@
   min-width: myrem(40);
 }
 
+.p-table__day {
+  white-space: nowrap;
+}
+
 .p-table__sun {
   min-width: myrem(60);
-}
-
-.p-table__day {
-  padding: myrem(0) myrem(0) myrem(0) myrem(6.4);
-}
-
-.p-table__day.p-table__day--tue {
-  padding: myrem(0) myrem(0) myrem(0) myrem(6.4);
-}
-
-.p-table__day.p-table__day--wed {
-  padding: myrem(0) myrem(0) myrem(0) myrem(6.4);
-}
-
-.p-table__day.p-table__day--thu {
-  padding: myrem(0) myrem(0) myrem(0) myrem(6.4);
-}
-
-.p-table__day.p-table__day--fri {
-  padding: myrem(0) myrem(0) myrem(0) myrem(6.4);
-}
-
-.p-table__day.p-table__day--sat {
-  padding: myrem(0) myrem(0) myrem(0) myrem(6.4);
-}
-
-.p-table__day.p-table__day--sun {
-  padding: myrem(0) myrem(0) myrem(0) myrem(1.6);
 }
 
 .p-table td  {
@@ -114,46 +88,11 @@
 }
 
 .p-table__time {
-  padding: myrem(4.8) myrem(14.4) myrem(9.6);
+  padding: myrem(5) myrem(14) myrem(10);
 }
 
 .p-table__row:nth-child(2) .p-table__time {
-  padding: myrem(8.8) myrem(13.6) myrem(6.4);
-}
-.p-table__row:nth-child(3) .p-table__time {
-  padding: myrem(8) myrem(14.4) myrem(6.4);
-}
-
-.p-table__mark {
-  padding: myrem(3.2) myrem(6.4) myrem(0) myrem(0);
-}
-
-.p-table__mark.p-table__mark--tue {
-  padding: myrem(3.2) myrem(6.4) myrem(0) myrem(0);
-}
-
-.p-table__mark.p-table__mark--wed {
-  padding: myrem(3.2) myrem(6.4) myrem(0) myrem(0);
-}
-
-.p-table__mark.p-table__mark--thu {
-  padding: myrem(3.2) myrem(6.4) myrem(0) myrem(0);
-}
-
-.p-table__mark.p-table__mark--fri {
-  padding: myrem(3.2) myrem(6.4) myrem(0) myrem(0);
-}
-
-.p-table__mark.p-table__mark--sat {
-  padding: myrem(3.2) myrem(6.4) myrem(0) myrem(0);
-}
-
-.p-table__mark.p-table__mark--sun {
-  padding: myrem(3.2) myrem(13.92) myrem(0) myrem(1.6);
-}
-
-.p-table__row:nth-child(3) .p-table__mark.p-table__mark--sat {
-  padding: myrem(3.2) myrem(6.4) myrem(0) myrem(0);
+  padding: myrem(9) myrem(14) myrem(6);
 }
 
 
@@ -162,19 +101,13 @@
   display: inline-block;
   margin: auto;
 }
-.p-table__in-mark-black {
-  color: $black;
-  display: inline-block;
-  margin: auto;
-}
 
 .p-table__text {
-  font-size: myrem(8);
-  line-height: calc(14/14);
+  font-size: myrem(14);
   letter-spacing: 0.04em;
   margin-left: myrem(7);
-  margin-top: myrem(8.96);
+  margin-top: myrem(10);
   @include mq(md) {
-    font-size: myrem(10);
+    font-size: myrem(16);
   }
 }
