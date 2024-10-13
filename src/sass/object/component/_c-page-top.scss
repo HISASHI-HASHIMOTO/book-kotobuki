@@ -1,0 +1,18 @@
+@use "global" as *;
+
+.c-page-top {
+  position: fixed;
+  z-index: 9000;
+  right: myrem(14);
+  bottom: myrem(16);
+  width: myrem(48);
+  height: myrem(48);
+  cursor: pointer;
+  @include mq(md) {
+    width: myrem(90);
+    height: myrem(90);
+    right: myrem(36);
+    // bottom: myrem(36);
+    bottom: auto;
+  }
+}

@@ -1,0 +1,8 @@
+@use 'global' as *;
+
+.l-sub-page {
+  margin-top: myrem(50);
+  @include mq(md) {
+   margin-top: myrem(150);
+  }
+}

@@ -43,7 +43,7 @@
           <div class="p-drawer-menu__content">
             <ul class="p-drawer-menu__nav-items">
               <li class="p-drawer-menu__item">
-                <a href="<?php echo esc_url(home_url("/campaign/")) ?>" class="p-drawer-menu__item-link">お知らせ</a>
+                <a href="<?php echo esc_url(home_url("/news/")) ?>" class="p-drawer-menu__item-link">おすすめの本</a>
               </li>
             </ul>
             <ul class="p-drawer-menu__nav-items">
@@ -70,7 +70,7 @@
             </ul>
             <ul class="p-drawer-menu__nav-items">
               <li class="p-drawer-menu__item">
-                <a href="<?php echo esc_url(home_url("/blog/")) ?>" class="p-drawer-menu__item-link">本の紹介</a>
+                <a href="<?php echo esc_url(home_url("/blog/")) ?>" class="p-drawer-menu__item-link">ブログ</a>
               </li>
             </ul>
             <ul class="p-drawer-menu__nav-items">
@@ -90,7 +90,7 @@
       <nav class="p-header__pc-nav p-pc-nav u-desktop">
         <ul class="p-pc-nav__items">
           <li class="p-pc-nav__item">
-            <a href="<?php echo esc_url(home_url("/campaign/")) ?>" class="p-pc-nav__item-link">お知らせ</a>
+            <a href="<?php echo esc_url(home_url("/news/")) ?>" class="p-pc-nav__item-link">おすすめの本</a>
           </li>
           <li class="p-pc-nav__item">
             <a href="<?php echo esc_url(home_url("/about/")) ?>" class="p-pc-nav__item-link">当店について</a>
@@ -99,7 +99,7 @@
             <a href="<?php echo esc_url(home_url("/information/")) ?>" class="p-pc-nav__item-link">メニュー</a>
           </li>
           <li class="p-pc-nav__item">
-            <a href="<?php echo esc_url(home_url("/blog/")) ?>" class="p-pc-nav__item-link"> おすすめの本</a>
+            <a href="<?php echo esc_url(home_url("/blog/")) ?>" class="p-pc-nav__item-link"> ブログ</a>
           </li>
           <li class="p-pc-nav__item">
             <a href="<?php echo esc_url(home_url("/faq/")) ?>" class="p-pc-nav__item-link">よくある質問</a>

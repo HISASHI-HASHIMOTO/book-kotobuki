@@ -1,0 +1,9 @@
+@use 'global' as *;
+
+.l-breadcrumb {
+  max-width: myrem(600);
+  margin-inline: auto;
+  @include mq(md) {
+   max-width: myrem(1230);
+  }
+}

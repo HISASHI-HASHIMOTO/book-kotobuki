@@ -135,7 +135,7 @@ background-color:#fffff8;
 
 // 3ページ目左側
 .p-mv__page2 input+.p-mv__box+.p-mv__box{
-  background-image: url(/wp-content/themes/book-kotobuki/assets/images/mv-img03-left@2x.jpg);
+  background-image: url(/wp-content/themes/book-kotobuki/assets/images/mv-img03_left.png);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: 100% 0;
@@ -150,7 +150,7 @@ background-color:#fffff8;
   right: 0; /* 右に固定 */
   width: 50%; /* 画面の右半分を使用 */
   height:  100vh; /* 高さを画面いっぱいにする */
-  background-image: url(/wp-content/themes/book-kotobuki/assets/images/mv-img03-right@2x.jpg);
+  background-image: url(/wp-content/themes/book-kotobuki/assets/images/mv-img03_right.png);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: 0 0;

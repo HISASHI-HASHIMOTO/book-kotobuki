@@ -1,4 +1,5 @@
 @use "global" as *;
+
 .p-blog {
 
 }
@@ -89,7 +90,6 @@
   padding-bottom: myrem(10);
   @include mq(md) {
    margin-top: myrem(40);
-   padding-bottom: myrem(10);
   }  
 }
 
@@ -97,6 +97,7 @@
   max-width: myrem(280);
   @include mq(md) {
     max-width: myrem(333);
+    min-width: myrem(333);
     width: 100%;
     height: auto;
   }
@@ -104,11 +105,19 @@
 
 .p-blog__slide-card {
   max-width: myrem(280);
+  height: auto;
+  width: 100%;
   @include mq(md) {
-    max-width: myrem(333);
-    width: 100%;
+    max-width: 100%;
+    // width: 100%;
+    // width: myrem(333);
   }
 }
+
+.swiper-slide {
+  height: auto;
+  width: myrem(333);
+} 
 
 .p-blog__btn {
   text-align: center;
@@ -120,34 +129,34 @@
 }
 
 
-.swiper-slide {
-  opacity: .3; /* 左右のスライドを薄くする */
-  transform: scale(.8); /* 左右のスライドを小さくする */
-  transition: .7s; /* ゆっくり小さくさせる */
-  flex-shrink: 0; /* スライドの幅が自動で縮まないようにする */
-  width: 100%;   
-}
-.swiper-slide img {
-  height: auto;
-  width: 100%;
-}
-.swiper-slide-active {
-  opacity: 1; /* 中央のスライドは薄くしない */
-  transform: scale(1); /* 中央のスライドは小さくしない */
-  z-index: 1; /* 中央のスライドを一番上にする */
-}
+// .swiper-slide {
+//   opacity: .3; /* 左右のスライドを薄くする */
+//   transform: scale(.8); /* 左右のスライドを小さくする */
+//   transition: .7s; /* ゆっくり小さくさせる */
+//   flex-shrink: 0; /* スライドの幅が自動で縮まないようにする */
+//   width: 100%;   
+// }
+// .swiper-slide img {
+//   height: auto;
+//   width: 100%;
+// }
+// .swiper-slide-active {
+//   opacity: 1; /* 中央のスライドは薄くしない */
+//   transform: scale(1); /* 中央のスライドは小さくしない */
+//   z-index: 1; /* 中央のスライドを一番上にする */
+// }
 
-/* 前後のスライド */
-.swiper-slide-prev,
-.swiper-slide-next {
-  opacity: 0.3; /* 前後のスライドは透明度を30%に */
-  transform: scale(0.8); /* 前後のスライドは縮小 */
-}
+// /* 前後のスライド */
+// .swiper-slide-prev,
+// .swiper-slide-next {
+//   opacity: 0.3; /* 前後のスライドは透明度を30%に */
+//   transform: scale(0.8); /* 前後のスライドは縮小 */
+// }
 
 
-.p-blog__swiper-slide {
-  // min-width: myrem(280);
-  @include mq(md) {
-   min-width: myrem(300);
-  }
-}
+// .p-blog__swiper-slide {
+//   // min-width: myrem(280);
+//   @include mq(md) {
+//    min-width: myrem(300);
+//   }
+// }

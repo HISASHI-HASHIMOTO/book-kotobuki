@@ -1,0 +1,83 @@
+@use "global" as *;
+
+.c-news-card {
+  background-color: $white;
+  box-shadow: 0px 0px 15px -2px #777777;
+  z-index: 1;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  color: $black;
+}
+
+.c-news-card:hover {
+  box-shadow: 10px 10px 15px -5px #777777;
+}
+
+.c-news-card__img {
+
+}
+
+.c-news-card__img img {
+  display: block;
+  aspect-ratio: 300/225;
+  width: 100%;
+  object-fit: cover;
+}
+
+.c-news-card__title {
+  font-size: myrem(18);
+
+  @include mq(md) {
+   font-size: myrem(20);
+  }
+}
+
+.c-news-card__box {
+  padding: myrem(10);
+  flex-grow: 1;
+}
+
+.c-news-card__meta-box {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  // padding-block: myrem(10);
+}
+
+.c-news-card__meta {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  background-color: $brown;
+  color: $white;
+  padding: myrem(5) myrem(10);
+  // margin-top: myrem(30);
+}
+
+.c-news-card__meta-time {
+  font-size: myrem(18);
+}
+
+.c-news-card__title {
+  margin-top: myrem(24);
+  font-size: myrem(24);
+  font-weight: 500;
+
+}
+
+.c-news-card__drink {
+  margin-top: myrem(30);
+  font-size: myrem(18);
+  display: flex;
+  gap: myrem(20);
+}
+
+.c-news-card__drink-title {
+  color: $brown;
+}
+
+.c-news-card__drink-text {
+  color: $brown;
+  text-decoration: 1px solid $brown;
+}

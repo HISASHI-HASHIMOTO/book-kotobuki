@@ -1,0 +1,41 @@
+@use "global" as *;
+
+
+.contents-button-list {
+  display: grid;
+  gap: myrem(16) myrem(20);
+  grid-template-columns: repeat(2,0fr);
+  max-width: myrem(600);
+  margin-inline: auto;
+  @include mq(md) {
+    grid-template-columns: repeat(auto-fit, minmax(162px , 0fr));
+    gap: myrem(32);
+    max-width: 100%;
+    width: 100%;
+  }
+}
+
+.contents-button-list__button {
+  display: inline-block;
+  text-transform: uppercase;
+  text-align: center;
+  padding-top: myrem(6);
+  padding-bottom: myrem(6); 
+  width: myrem(162);
+  border: 1px solid $brown;
+  color: $brown;
+  background-color: $white;
+  line-height: calc(22/14);
+  font-size: myrem(14);
+  transition: .3s;
+}
+
+.contents-button-list__button.is-active {
+  background-color: $brown;
+  color: $white;
+}
+
+.contents-button-list__button:hover {
+  background-color: $brown;
+  color: $white;
+} 
