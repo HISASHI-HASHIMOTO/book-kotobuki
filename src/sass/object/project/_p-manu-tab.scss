@@ -1,0 +1,129 @@
+@use "global" as *;
+
+.p-menu-tab__button-list {
+  display: flex;
+  gap: myrem(20);
+  justify-content: space-between;
+  @include mq(md) {
+    gap: myrem(90);
+  }
+}
+
+.p-menu-tab__button {
+  color: $brown;
+  background-color: $brown3;
+  padding: myrem(10) myrem(16);
+  font-size: myrem(14);
+  box-shadow: 2px 4px 9px -5px rgba(0, 0, 0, 1);
+  min-width: myrem(102);
+  position: relative;
+  transition: all 0.3s;
+  @include mq(md) {
+    padding: myrem(13) myrem(18);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: none;
+    font-size: myrem(24);
+    min-width: myrem(300);
+  }
+}
+
+.p-menu-tab__button:hover {
+  box-shadow: 2px 4px 9px -5px rgba(0, 0, 0, 1);
+  
+}
+
+.p-menu-tab__button.is-active {
+  box-shadow: 2px 4px 9px -5px rgba(0, 0, 0, 1);
+}
+
+.p-menu-tab__img {
+  position: relative;
+  width: myrem(64);
+  height: myrem(64);
+  display: inline-block;
+}
+
+.p-menu-tab__img img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  display: inline-block;
+}
+
+.p-menu-tab__button.is-active,
+.p-menu-tab__button:hover {
+  color: $white;
+  background-color: $brown;
+}
+
+.p-menu-tab__text {
+  @include mq(md) {
+    padding-left: myrem(72);
+    width: 100%;
+    white-space: nowrap;
+    position: relative;
+    padding-block: myrem(15);
+  }
+}
+
+.p-menu-tab__text::before {
+  @include mq(md) {
+    content: "";
+    // mask-image: url(/assets/images/common/shark-icon-white.svg);
+    mask-repeat: no-repeat; 
+    background-color: $brown;
+    width: myrem(64);
+    height: myrem(64);
+    position: absolute;
+    top: 0;
+    left: 5%;
+  }
+}
+
+.p-menu-tab__button:first-of-type .p-menu-tab__text::before {
+  @include mq(md) {
+    mask-image: url(/wp-content/themes/book-kotobuki/assets/images/book-icon-white@2x.png);
+    mask-size: 100%;
+  }
+}
+
+.p-menu-tab__button:nth-child(2) .p-menu-tab__text::before {
+  @include mq(md) {
+    mask-image: url(/wp-content/themes/book-kotobuki/assets/images/book-icon-white@2x.png);
+    left: 0%;
+    mask-size: 100%;
+  }
+}
+
+.p-menu-tab__button:nth-child(3) .p-menu-tab__text::before {
+  @include mq(md) {
+    mask-image: url(/wp-content/themes/book-kotobuki/assets/images/book-icon-white@2x.png);
+    mask-size: 100%;
+  }
+}
+
+.p-menu-tab__button:hover .p-menu-tab__text::before,
+.p-menu-tab__button.is-active .p-menu-tab__text::before {
+  background-color: $white;
+}
+
+
+.p-menu-tab__items {
+  margin-top: myrem(16);
+  @include mq(md) {
+    margin-top: myrem(24);
+  }
+}
+
+.p-menu-tab__item {
+  display: none;
+}
+
+.p-menu-tab__item.is-active,
+.p-menu-tab__item:hover {
+  display: block;
+}

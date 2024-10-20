@@ -1,0 +1,8 @@
+@use "global" as *;
+
+.p-faq-page__inner {
+
+  @include mq(md) {
+   max-width: myrem(1000);
+  }
+}

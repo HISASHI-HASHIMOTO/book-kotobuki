@@ -1,8 +1,8 @@
 @use 'global' as *;
 
-// .l-service {
-//   margin-top: myrem(100);
-//   @include mq(md) {
-//    margin-top: myrem(120);
-//   }
-// }
+.l-service {
+  margin-top: myrem(100);
+  @include mq(md) {
+   margin-top: myrem(120);
+  }
+}

@@ -64,13 +64,8 @@
 
 .p-service__body {
   width: 100%;
-  // background-color: $white;
-  // box-shadow: 0px 10px 20px rgba(210, 233, 145, 0.1);
-  // border-radius: myrem(16);
   padding: myrem(20);
-  // border: 2px solid $brown;
   @include mq(md) {
-    // background-color: $white;
     width: 100%;
     max-width: myrem(600);
     padding:  myrem(60);

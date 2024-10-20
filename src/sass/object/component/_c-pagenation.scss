@@ -1,0 +1,100 @@
+@use "global" as *;
+
+
+.c-pagenation__contents {
+  display: flex;
+  justify-content: center;
+}
+
+.c-pagenation__link-pre,
+.c-pagenation__link-page,
+.c-pagenation__link-post {
+  display: grid;
+  place-items: center;
+  font-size: myrem(16);
+  border: 1px solid $brown;
+  padding: 0 myrem(5);
+  color: $brown;
+  cursor: pointer;
+  font-weight: bold;
+  min-width: myrem(38);
+  height: myrem(38);
+  transition: .3s ;
+}
+
+.c-pagenation__link-page:nth-child(n + 6)  {
+  display: none;
+  @include mq(md) {
+   display: grid;
+  }
+}
+
+.c-pagenation__link-page + .c-pagenation__link-page {
+  margin-left: myrem(12); 
+}
+
+.c-pagenation__link-page.is-active {
+  background-color: $brown;
+  color: $white;
+}
+
+.c-pagenation__link-pre:hover,
+.c-pagenation__link-page:hover,
+.c-pagenation__link-post:hover
+ {
+  background-color: $brown;
+  color: $white;
+  transition: .3s ;
+} 
+
+.c-pagenation__link-pre {
+  margin-right: myrem(40);
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.c-pagenation__link-pre::before {
+  content: '';
+  position: absolute;
+  width: myrem(11);
+  height: myrem(11);
+  border-top: 1px solid $brown;
+  border-right: 1px solid $brown;
+  transform: rotate(-135deg);
+  left: 43%;
+  top: 36%;
+  transition: .3s border;
+}
+
+.c-pagenation__link-pre:hover::before  {
+  background-color: transparent;
+  border-top: 1px solid $white;
+  border-right: 1px solid $white;
+  transition: .3s ;
+}
+
+.c-pagenation__link-post {
+  margin-left: myrem(40);
+  position: relative;
+} 
+
+.c-pagenation__link-post::before {
+  content: '';
+  position: absolute;
+  width: myrem(11);
+  height: myrem(11);
+  border-top: 1px solid $brown;
+  border-right: 1px solid $brown;
+  transform: rotate(45deg);
+  right: 42%;
+  top: 34%;
+  transition: .3s border;
+}
+
+.c-pagenation__link-post:hover::before  {
+  background-color: transparent;
+  border-top: 1px solid $white;
+  border-right: 1px solid $white;
+  transition: .3s ;
+}

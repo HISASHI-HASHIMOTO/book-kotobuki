@@ -1,0 +1,8 @@
+@use "global" as *;
+
+
+.p-contact-page__inner {
+  @include mq(md) {
+   max-width: myrem(750);
+  }
+}

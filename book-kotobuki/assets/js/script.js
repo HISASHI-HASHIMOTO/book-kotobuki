@@ -159,3 +159,51 @@ $('.js-hamburger').on('click', function () {
   $(document).ready(function () {
     PageTopAnime();
   });
+
+
+    // タブ
+    $(function () {
+      var tabButton = $(".js-tab-button"),
+        tabContent = $(".js-tab-content");
+      tabButton.on("click", function () {
+        var index = tabButton.index(this);
+        tabButton.removeClass("is-active");
+        $(this).addClass("is-active");
+        tabContent.removeClass("is-active");
+        tabContent.eq(index).addClass("is-active");
+      });
+    });
+
+
+  // 他のページから選択タブへページ遷移
+  $(window).on('load', function () {
+    // URLパラメータから値を取得
+    var urlParams = new URLSearchParams(window.location.search);
+    var tabParam = urlParams.get('id'); // ここでtabParamを定義
+    var initialTab = "tab1"; // デフォルトのタブはtab1
+
+    if (tabParam && $('#' + tabParam).length) {
+      initialTab = tabParam; // URLのidに該当するタブが存在すればそのタブに設定
+    }
+
+    // 全てのタブを非アクティブ化
+    $('.p-menu-tab__item').removeClass("is-active");
+    $('.p-menu-tab__button').removeClass('is-active');
+
+    // タブ番号を取得
+    var tabno = $('.p-menu-tab__button#' + initialTab).index();
+
+    // 対応するタブとボタンをアクティブ化
+    $('.p-menu-tab__item').eq(tabno).addClass('is-active');
+    $('.p-menu-tab__button').eq(tabno).addClass('is-active');
+  });
+
+    // // アコーディオン
+    $(function () {
+      // アコーディオンのタイトルがクリックされたときの動作
+      $(".js-accordion-title").on("click", function () {
+        // クリックされたアコーディオンが開いている場合は閉じ、閉じている場合は開く
+        $(this).toggleClass("is-open");
+        $(this).next().slideToggle(300);
+      });
+    });

@@ -96,7 +96,7 @@
             <a href="<?php echo esc_url(home_url("/about/")) ?>" class="p-pc-nav__item-link">当店について</a>
           </li>
           <li class="p-pc-nav__item">
-            <a href="<?php echo esc_url(home_url("/information/")) ?>" class="p-pc-nav__item-link">メニュー</a>
+            <a href="<?php echo esc_url(home_url("/menu/")) ?>" class="p-pc-nav__item-link">メニュー</a>
           </li>
           <li class="p-pc-nav__item">
             <a href="<?php echo esc_url(home_url("/blog/")) ?>" class="p-pc-nav__item-link"> ブログ</a>

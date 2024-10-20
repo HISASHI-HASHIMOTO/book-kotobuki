@@ -1,0 +1,68 @@
+@use "global" as *;
+
+.c-menu-card {
+  border: 1px solid $brown;
+  padding: myrem(24);
+  @include mq(md) {
+   display: flex;
+   align-items: center;
+   gap: myrem(48);
+   padding: myrem(17) myrem(24);
+  }
+}
+
+.c-menu-card--reverse {
+  @include mq(md) {
+   flex-direction: row-reverse;
+  }
+}
+
+.c-menu-card__body {
+  max-width: myrem(600);
+  width: 100%;
+  @include mq(md) {
+   max-width: myrem(492);
+   width: 100%;
+  }
+}
+
+.c-menu-card__title {
+  font-size: myrem(24);
+  font-weight: bold;
+  line-height: 1;
+  padding-bottom: myrem(8);
+  border-bottom: 1px solid $brown;
+}
+
+.c-menu-card__title::before {
+  content: "";
+  display: inline-block;
+  background-image: url(/wp-content/themes/book-kotobuki/assets/images/coffee-icon01@2x.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: bottom;
+  width: myrem(32);
+  height: myrem(25);
+  margin-right: myrem(10);
+}
+
+.c-menu-card__text {
+  margin-top: myrem(8);
+  font-size: myrem(16);
+  line-height: calc(24/16);
+}
+
+.c-menu-card__img {
+  margin-top: myrem(8);
+  width: 100%;
+}
+
+.c-menu-card__img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  aspect-ratio: 297/189;
+  @include mq(md) {
+    aspect-ratio: 492/313;
+  }
+}

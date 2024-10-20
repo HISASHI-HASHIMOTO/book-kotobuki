@@ -11,11 +11,11 @@
 }
 
 .c-news-card:hover {
-  box-shadow: 10px 10px 15px -5px #777777;
+  box-shadow: 10px 10px 15px -5px #333;
 }
 
 .c-news-card__img {
-
+ max-height: myrem(350);
 }
 
 .c-news-card__img img {
@@ -23,6 +23,7 @@
   aspect-ratio: 300/225;
   width: 100%;
   object-fit: cover;
+  max-height: inherit;
 }
 
 .c-news-card__title {
@@ -36,6 +37,9 @@
 .c-news-card__box {
   padding: myrem(10);
   flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  row-gap: myrem(16);
 }
 
 .c-news-card__meta-box {
@@ -67,7 +71,7 @@
 }
 
 .c-news-card__drink {
-  margin-top: myrem(30);
+  margin-top: auto;
   font-size: myrem(18);
   display: flex;
   gap: myrem(20);

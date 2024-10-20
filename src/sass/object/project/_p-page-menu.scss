@@ -1,0 +1,24 @@
+@use "global" as *;
+
+
+.p-page-menu__items {
+  margin-top: myrem(30);
+  @include mq(md) {
+   
+  }
+}
+
+.p-page-menu__item {
+  width: 100%;
+  max-width: myrem(600);
+  margin-inline: auto;
+  @include mq(md) {
+   width: 100%;
+   max-width: myrem(1280);
+  }
+
+}
+
+.p-page-menu__card:not(:first-of-type) {
+  margin-top: myrem(30);
+}

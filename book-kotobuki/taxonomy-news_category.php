@@ -11,208 +11,148 @@
   <h2 class="c-sub-mv__title">news</h2>
 </div>
 
-<div class="inner">
-  <div class="breadcrumb layout-breadcrumb">
-    <div class="breadcrumbs" typeof="BreadcrumbList" vocab="https://schema.org/">
-      <?php if(function_exists('bcn_display'))
+<!-- <div class="l-inner"> -->
+<div class="breadcrumb l-breadcrumb">
+  <div class="breadcrumbs" typeof="BreadcrumbList" vocab="https://schema.org/">
+    <?php if(function_exists('bcn_display'))
     {
         bcn_display();
     }?>
-    </div>
   </div>
 </div>
+<!-- </div> -->
 
 <!-- campaign-page -->
-<div class="campaign-page layout-sub-page fish-icon">
-  <div class="campaign-page__inner inner">
-    <div class="campaign-page__button-list contents-button-list">
-      <a href="" class="contents-button-list__button is-active">all</a>
-      <a href="" class="contents-button-list__button">ライセンス講習</a>
-      <a href="" class="contents-button-list__button">ファンダイビング</a>
-      <a href="" class="contents-button-list__button">体験ダイビング</a>
+<div class="p-page-news l-sub-page fish-icon">
+  <div class="p-page-news__inner l-inner">
+    <div class="p-page-news__button-list contents-button-list">
+      <?php
+        $term = get_queried_object();
+        $term_slug = $term->slug;
+        $term_name = $term->name;
+        ?>
+
+      <a href="<?php echo esc_url(home_url('/news/')); ?>" class="contents-button-list__button">all</a>
+      <?php
+    $terms = get_terms('news_category');
+    foreach ($terms as $term) :
+    ?>
+      <a href="<?php echo esc_url(get_term_link($term->term_id)); ?>" class="contents-button-list__button
+        <?php if ($term_slug === $term->slug) {
+          echo 'is-active';
+        } ?>"><?php echo $term->name; ?></a>
+      <?php endforeach; ?>
     </div>
-    <div class="campaign-page__contents">
-      <div class="campaign-page__content">
-        <ul class="campaign-page__items two-column-cards">
-          <li class="campaign-page__item campaign-page__item--small">
-            <a href="" class="campaign-page-card">
-              <figure class="campaign-page-card__img">
-                <img src="./assets/images/common/campaign1.jpg" alt="海水の中で煌びやかに光る魚群" />
+    <div class="p-page-news__contents">
+      <div class="p-page-news__content">
+        <ul class="p-page-news__items c-cards">
+          <?php if (have_posts()) : ?>
+          <?php while (have_posts()) : the_post(); ?>
+          <li class="p-page-news__item">
+            <a href="" class="c-news-card">
+              <figure class="c-news-card__img">
+                <?php if (has_post_thumbnail()) : ?>
+                <?php the_post_thumbnail('full'); ?>
+                <?php else : ?>
+                <img src=" <?php echo get_theme_file_uri(); ?>/assets/images/common/no-image.jpg" alt="no-image画像" />
+                <?php endif; ?>
               </figure>
-              <div class="campaign-page-card__body">
-                <div class="campaign-page-card__campaign-pagebox ">
-                  <div class="campaign-page-card__meta">
-                    ライセンス講習
-                  </div>
-                  <p class="campaign-page-card__title">ライセンス取得</p>
+              <div class="c-news-card__box">
+                <div class="c-news-card__meta-box">
+                  <div class="c-news-card__meta">
+                    <?php
+                    $taxonomy_terms = get_the_terms(get_the_ID(), 'news_category');
+                    if (!empty($taxonomy_terms)) {
+                      foreach ($taxonomy_terms as $taxonomy_term) {
+                        echo '<span>' . esc_html($taxonomy_term->name) . '</span>';
+                      }
+                    }
+                    ?></div>
+                  <time class="c-news-card__meta-time"
+                    datetime="<?php the_time('Y-m-d'); ?>"><?php the_time('Y.m/d'); ?></time>
                 </div>
-                <div class="campaign-page-card__box">
-                  <div class="campaign-page-card__menu">
-                    全部コミコミ(お一人様)
+
+                <p class="c-news-card__title">
+                  <?php the_title(); ?> /
+                  <!-- 著者情報の取得と出力 -->
+                  <?php 
+                    // 著者フィールドを取得
+                    $news_card_author = get_field('news-card__author'); 
+                    // 値が存在する場合に表示
+                    if (!empty($news_card_author)) : 
+                      echo esc_html($news_card_author); 
+                    endif; 
+                  ?>
+                </p>
+
+                <p class="c-news-card__text">
+                  <?php the_content(); ?>
+                </p>
+
+                <!-- 本に合う一杯の表示 -->
+                <div class="c-news-card__drink">
+                  <div class="c-news-card__drink-title">この本に合う一杯</div>
+                  <!-- ドリンク情報の取得と出力 -->
+                  <?php 
+                    // ドリンクフィールドを取得
+                    $news_drink = get_field('news-card__drink'); 
+                    // 値が存在する場合に表示
+                    if (!empty($news_drink)) : 
+                  ?>
+                  <div class="c-news-card__drink-text">
+                    <?php echo esc_html($news_drink); ?>
                   </div>
-                  <div class="campaign-page-card__price">
-                    <div class="campaign-page-card__original-price">
-                      ¥56,000
-                    </div>
-                    <div class="campaign-page-card__discounted-rate">
-                      ¥46,000
-                    </div>
-                  </div>
-                  <p class="campaign-page-card__text u-desktop">
-                    ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。<br />ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキスト
-                  </p>
-                  <time class="campaign-page-card__time u-desktop" datetime="2023-06-01-09-30">2023/6/1-9/30</time>
-                  <p class="campaign-page-card__contact-text u-desktop">
-                    ご予約・お問い合わせはコチラ
-                  </p>
-                  <div class="campaign-page-card__btn u-desktop">
-                    <div class="btn">
-                      <span class="btn__text">contact&nbsp;us</span>
-                      <div class="btn__arrow"></div>
-                    </div>
-                  </div>
+                  <?php endif; ?>
                 </div>
+
+
+                <!-- <p class="c-news-card__title">
+                  <?php the_title(); ?>/<?php $news_card = get_field('news-card__author'); ?>
+                  <?php if (!empty($news_card['news-card__author'])) : ?>
+                  <?php echo $news_card['news-card__author']; ?>
+                </p>
+                <?php endif; ?>
+                <?php  $news_text = get_field('news-card__text'); ?>
+                <?php if (!empty($news_text['news-card'])) : ?>
+                <p class="c-news-card__text">
+                  <?php echo esc_html($news_card);?>
+                </p>
+                <?php endif; ?>
+                <div class="c-news-card__drink">
+                  <div class="c-news-card__drink-title">この本に合う一杯</div>
+                  <?php $news_drink = the_field('news-card__drink'); ?>
+                  <?php if (!empty($news_drink['news-card__drink'])) : ?>
+                  <div class="c-news-card__drink-text"><?php echo $news_drink['news-card__drink']; ?></div>
+                  <?php endif; ?>
+                </div> -->
+
               </div>
             </a>
           </li>
-          <li class="campaign-page__item campaign-page__item--small">
-            <a href="" class="campaign-page-card">
-              <figure class="campaign-page-card__img">
-                <img src="./assets/images/common/campaign2.jpg" alt="エメラルドグリーンの海岸に停泊する船" />
-              </figure>
-              <div class="campaign-page-card__body">
-                <div class="campaign-page-card__campaign-pagebox ">
-                  <div class="campaign-page-card__meta">
-                    体験ダイビング
-                  </div>
-                  <p class="campaign-page-card__title">貸切体験ダイビング</p>
-                </div>
-                <div class="campaign-page-card__box">
-                  <div class="campaign-page-card__menu">
-                    全部コミコミ(お一人様)
-                  </div>
-                  <div class="campaign-page-card__price">
-                    <div class="campaign-page-card__original-price">
-                      ¥56,000
-                    </div>
-                    <div class="campaign-page-card__discounted-rate">
-                      ¥46,000
-                    </div>
-                  </div>
-                  <p class="campaign-page-card__text u-desktop">
-                    ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。<br />ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキスト
-                  </p>
-                  <time class="campaign-page-card__time u-desktop" datetime="2023-06-01-09-30">2023/6/1-9/30</time>
-                  <p class="campaign-page-card__contact-text u-desktop">
-                    ご予約・お問い合わせはコチラ
-                  </p>
-                  <div class="campaign-page-card__btn u-desktop">
-                    <div class="btn">
-                      <span class="btn__text">contact&nbsp;us</span>
-                      <div class="btn__arrow"></div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </a>
-          </li>
-          <li class="campaign-page__item campaign-page__item--small">
-            <a href="" class="campaign-page-card">
-              <figure class="campaign-page-card__img">
-                <img src="./assets/images/common/campaign3.jpg" alt="海水の中で煌びやかに光る魚群" />
-              </figure>
-              <div class="campaign-page-card__body">
-                <div class="campaign-page-card__campaign-pagebox ">
-                  <div class="campaign-page-card__meta">
-                    体験ダイビング
-                  </div>
-                  <p class="campaign-page-card__title">ナイトダイビング</p>
-                </div>
-                <div class="campaign-page-card__box">
-                  <div class="campaign-page-card__menu">
-                    全部コミコミ(お一人様)
-                  </div>
-                  <div class="campaign-page-card__price">
-                    <div class="campaign-page-card__original-price">
-                      ¥56,000
-                    </div>
-                    <div class="campaign-page-card__discounted-rate">
-                      ¥46,000
-                    </div>
-                  </div>
-                  <p class="campaign-page-card__text u-desktop">
-                    ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。<br />ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキスト
-                  </p>
-                  <time class="campaign-page-card__time u-desktop" datetime="2023-06-01-09-30">2023/6/1-9/30</time>
-                  <p class="campaign-page-card__contact-text u-desktop">
-                    ご予約・お問い合わせはコチラ
-                  </p>
-                  <div class="campaign-page-card__btn u-desktop">
-                    <div class="btn">
-                      <span class="btn__text">contact&nbsp;us</span>
-                      <div class="btn__arrow"></div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </a>
-          </li>
-          <li class="campaign-page__item campaign-page__item--small">
-            <a href="" class="campaign-page-card">
-              <figure class="campaign-page-card__img">
-                <img src="./assets/images/common/campaign1.jpg" alt="海水の中で煌びやかに光る魚群" />
-              </figure>
-              <div class="campaign-page-card__body">
-                <div class="campaign-page-card__campaign-pagebox">
-                  <div class="campaign-page-card__meta">
-                    ファンダイビング
-                  </div>
-                  <p class="campaign-page-card__title">貸切ファンダイビング</p>
-                </div>
-                <div class="campaign-page-card__box">
-                  <div class="campaign-page-card__menu">
-                    全部コミコミ(お一人様)
-                  </div>
-                  <div class="campaign-page-card__price">
-                    <div class="campaign-page-card__original-price">
-                      ¥56,000
-                    </div>
-                    <div class="campaign-page-card__discounted-rate">
-                      ¥46,000
-                    </div>
-                  </div>
-                  <p class="campaign-page-card__text u-desktop">
-                    ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。<br />ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキスト
-                  </p>
-                  <time class="campaign-page-card__time u-desktop" datetime="2023-06-01-09-30">2023/6/1-9/30</time>
-                  <p class="campaign-page-card__contact-text u-desktop">
-                    ご予約・お問い合わせはコチラ
-                  </p>
-                  <div class="campaign-page-card__btn u-desktop">
-                    <div class="btn">
-                      <span class="btn__text">contact&nbsp;us</span>
-                      <div class="btn__arrow"></div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </a>
-          </li>
+          <? endwhile; endif;?>
         </ul>
       </div>
     </div>
+
     <!-- ページネーション -->
-    <div class="campaign-page__pagenation pagenation">
-      <div class="pagenation__inner">
-        <div class="pagenation__contents">
-          <a class="pagenation__link-pre">&nbsp;&nbsp;</a>
-          <a class="pagenation__link-page is-active">1</a>
-          <a class="pagenation__link-page">2</a>
-          <a class="pagenation__link-page">3</a>
-          <a class="pagenation__link-page">4</a>
-          <a class="pagenation__link-page">5</a>
-          <a class="pagenation__link-page">6</a>
-          <a class="pagenation__link-post">&nbsp;&nbsp;</a>
+    <div class="campaign-page__pagenation c-pagenation">
+      <div class="c-pagenation__inner">
+        <div class="c-pagenation__contents">
+          <?php wp_pagenavi(); 
+          function custom_posts_per_page($query) {
+            if (!is_admin() && $query->is_main_query()) {
+                if (wp_is_mobile()) {
+                    // SP表示件数
+                    $query->set('.c-wp-pagenavi .page', 4); 
+                } else {
+                    // PC表示件数
+                    $query->set('.c-wp-pagenavi .page', 6); 
+                }
+            }
+        }
+        add_action('pre_get_posts', 'custom_posts_per_page');
+        
+          ?>
         </div>
       </div>
     </div>

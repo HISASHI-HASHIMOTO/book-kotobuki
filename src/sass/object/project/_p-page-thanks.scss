@@ -1,0 +1,21 @@
+@use "global" as *;
+
+.p-page-thanks {
+  text-align: center; 
+}
+
+.p-page-thanks__text {
+  font-size: myrem(16);
+  line-height: calc(18/16);  
+}
+
+.p-page-thanks__text:not(:first-of-type) {
+  margin-top: myrem(40);
+}
+
+.p-page-thanks__button-box {
+  margin-top: myrem(20);
+  @include mq(md) {
+   margin-top: myrem(30);
+  }
+}

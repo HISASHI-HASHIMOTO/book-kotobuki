@@ -156,4 +156,20 @@ add_filter( 'get_the_archive_title', 'my_archive_title' );
 // 	$labels->not_found_in_trash = 'ゴミ箱に記事は見つかりませんでした';
 // }
 // add_action('init', 'change_post_object_label');
-// add_action('admin_menu', 'change_post_menu_label');
+// add_action('admin_menu', 'change_post_menu_label');SCF::add_options_page(
+	SCF::add_options_page(
+		'よくある質問',
+		'よくある質問',
+		'manage_options',
+		'faq-option',
+		'dashicons-format-status',
+		10
+	);
+
+	// Contact Form 7で自動挿入されるPタグ、brタグを削除
+add_filter('wpcf7_autop_or_not', 'wpcf7_autop_return_false');
+function wpcf7_autop_return_false() {
+  return false;
+} 
+
+?>

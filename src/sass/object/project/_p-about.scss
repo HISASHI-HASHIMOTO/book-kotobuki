@@ -1,10 +1,10 @@
 @use "global" as *;
 
 .p-about {
-  padding-block: myrem(100);
-  @include mq(md) {
-   padding-block: myrem(120);
-  }
+  // padding-block: myrem(100);
+  // @include mq(md) {
+  //  padding-block: myrem(120);
+  // }
 }
 
 .p-about__title,
@@ -15,7 +15,7 @@
 .p-about__content {
   margin-top: myrem(40);
   @include mq(md) {
-   margin-top: myrem(30);
+   margin-top: myrem(52);
    display: flex;
    flex-direction: row-reverse;
    gap: myrem(30);

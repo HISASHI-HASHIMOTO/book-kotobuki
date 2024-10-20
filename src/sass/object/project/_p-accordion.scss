@@ -1,0 +1,77 @@
+@use "global" as *;
+
+.p-accordion {
+  width: 100%;
+}
+
+.p-accordion__item:not(:first-of-type) {
+  margin-top: myrem(36);
+  @include mq(md) {
+   margin-top: myrem(40);
+  }
+} 
+
+.p-accordion__title {
+  position: relative;
+  background-color: $brown;
+  color: $white;
+  padding: myrem(16);
+  font-size: myrem(16);
+  font-weight: normal;
+  @include mq(md) {
+    padding: myrem(25) myrem(40);
+    font-size: myrem(20);
+    cursor: pointer;
+  }
+}
+
+.p-accordion__title::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: myrem(16);
+  display: block;
+  width: myrem(28);
+  background-color: $white;
+  height: myrem(1);
+  @include mq(md) {
+    right: myrem(40);
+  }
+}
+
+.p-accordion__title.is-open::before {
+  opacity: 1;
+}
+
+.p-accordion__title::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%) rotate(0deg);
+  right: myrem(16);
+  display: block;
+  width: myrem(28);
+  background-color: $white;
+  height: myrem(1);
+  transition: transform 0.3s ease-in-out, top 0.3s ease-in-out;
+  opacity: 0;
+  @include mq(md) {
+    right: myrem(40);
+  }
+}
+
+.p-accordion__title.is-open::after {
+  transform: translateY(-50%) rotate(90deg);
+  opacity: 1;
+}
+
+.p-accordion__content {
+  display: block;
+  padding: myrem(24) myrem(16); 
+  border: 1px solid $brown;
+  @include mq(md) {
+   padding: myrem(40);
+   margin-top: myrem(16);
+  }
+}
