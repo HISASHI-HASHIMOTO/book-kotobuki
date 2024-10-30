@@ -1,5 +1,14 @@
 <?php get_header(); ?>
 
+<!-- 
+ ローディング -->
+<!-- <div id="loading" class="loading">
+  <div class="loading__contents">
+    <p class="loading__text">ローディング中...</p>
+  </div>
+</div> -->
+
+
 <main>
 
   <!-- メインビュー -->
@@ -35,78 +44,88 @@
 
   <!-- news -->
   <section class="p-news l-news">
-    <div class="p-news__inner l-inner">
+    <div class="p-news__inner l-inner p-scroll">
       <div class="p-news__title">
         <span class="c-section-title__en">news</span>
         <h2 class="c-section-title__ja">おすすめの本</h2>
       </div>
+
       <ul class="p-news__items">
+        <?php
+            $args = array(
+                "post_type" => "news", // カスタム投稿のスラッグ名
+                "posts_per_page" => 3, // 表示する件数
+                'orderby' => 'date',
+                'order' => 'DESC'  
+            ); $the_query = new WP_Query($args);?>
+        <?php if ($the_query->have_posts()) : ?>
+        <?php while ($the_query->have_posts()) : $the_query->the_post(); ?>
         <li class="p-news__item">
-          <a href="" class="c-news-card">
+          <a href="<?php echo esc_url(home_url("/news")) ?>" class="c-news-card">
             <figure class="c-news-card__img">
-              <img src="<?php echo get_theme_file_uri(); ?>/assets/images/dummy.jpg" alt="そして誰もいなくなった">
+              <?php if (has_post_thumbnail()) : ?>
+              <?php the_post_thumbnail('full'); ?>
+              <?php else : ?>
+              <img src=" <?php echo get_theme_file_uri(); ?>/assets/images/common/no-image.jpg" alt="no-image画像" />
+              <?php endif; ?>
             </figure>
             <div class="c-news-card__box">
               <div class="c-news-card__meta-box">
-                <div class="c-news-card__meta">ミステリー</div>
-                <time class="c-news-card__meta-time" datetime="2024-10-06">2024.10.6</time>
+                <div class="c-news-card__meta">
+                  <?php
+                    $taxonomy_terms = get_the_terms(get_the_ID(), 'news_category');
+                    if (!empty($taxonomy_terms)) {
+                      foreach ($taxonomy_terms as $taxonomy_term) {
+                        echo '<span>' . esc_html($taxonomy_term->name) . '</span>';
+                      }
+                    }
+                    ?></div>
+                <time class="c-news-card__meta-time"
+                  datetime="<?php the_time('Y-m-d'); ?>"><?php the_time('Y/m/d'); ?></time>
               </div>
-              <p class="c-news-card__title">そして誰もいなくなった/アガサクリスティ</p>
+              <p class="c-news-card__title">
+                <?php the_title(); ?> /
+                <!-- 著者情報の取得と出力 -->
+                <?php 
+                    // 著者フィールドを取得
+                    $news_card_author = get_field('news-card__author'); 
+                    // 値が存在する場合に表示
+                    if (!empty($news_card_author)) : 
+                      echo esc_html($news_card_author); 
+                    endif; 
+                  ?>
+              </p>
               <div class="c-news-card__drink">
                 <div class="c-news-card__drink-title">この本に合う一杯</div>
-                <div class="c-news-card__drink-text">ブラックコーヒー</div>
+                <?php 
+                    // ドリンクフィールドを取得
+                    $news_drink = get_field('news-card__drink'); 
+                    // 値が存在する場合に表示
+                    if (!empty($news_drink)) : 
+                  ?>
+                <div class="c-news-card__drink-text"> <?php echo esc_html($news_drink); ?></div>
+                <?php endif; ?>
               </div>
             </div>
           </a>
         </li>
-        <li class="p-news__item">
-          <a href="" class="c-news-card">
-            <figure class="c-news-card__img">
-              <img src="<?php echo get_theme_file_uri(); ?>/assets/images/dummy.jpg" alt="そして誰もいなくなった">
-            </figure>
-            <div class="c-news-card__box">
-              <div class="c-news-card__meta-box">
-                <div class="c-news-card__meta">ミステリー</div>
-                <time class="c-news-card__meta-time" datetime="2024-10-06">2024.10.6</time>
-              </div>
-              <p class="c-news-card__title">そして誰もいなくなった/アガサクリスティ</p>
-              <div class="c-news-card__drink">
-                <div class="c-news-card__drink-title">この本に合う一杯</div>
-                <div class="c-news-card__drink-text">ブラックコーヒー</div>
-              </div>
-            </div>
-          </a>
-        </li>
-        <li class="p-news__item">
-          <a href="" class="c-news-card">
-            <figure class="c-news-card__img">
-              <img src="<?php echo get_theme_file_uri(); ?>/assets/images/dummy.jpg" alt="そして誰もいなくなった">
-            </figure>
-            <div class="c-news-card__box">
-              <div class="c-news-card__meta-box">
-                <div class="c-news-card__meta">ミステリー</div>
-                <time class="c-news-card__meta-time" datetime="2024-10-06">2024.10.6</time>
-              </div>
-              <p class="c-news-card__title">そして誰もいなくなった/アガサクリスティ</p>
-              <div class="c-news-card__drink">
-                <div class="c-news-card__drink-title">この本に合う一杯</div>
-                <div class="c-news-card__drink-text">ブラックコーヒー</div>
-              </div>
-            </div>
-          </a>
-        </li>
-
-
+        <?php endwhile; ?>
+        <!-- サブループ終了 -->
+        <?php wp_reset_postdata(); ?>
       </ul>
+      <?php else : ?>
+      <p class="campaign__message">記事が投稿されていません</p>
+      <?php endif; ?>
       <div class="p-news__button">
-        <a href="#" class=" c-button"><span class="c-button-text">view&nbsp;more</span></a>
+        <a href="<?php echo esc_url(home_url("/news")) ?>" class=" c-button"><span
+            class="c-button-text">view&nbsp;more</span></a>
       </div>
     </div>
   </section>
 
   <!-- about -->
   <section class="p-about l-about">
-    <div class="p-about__inner l-inner">
+    <div class="p-about__inner l-inner p-scroll">
       <div class="p-about__title">
         <span class="c-section-title__en">about</span>
         <h2 class="c-section-title__ja">当店について</h2>
@@ -131,7 +150,7 @@
         </div>
       </div>
       <div class="p-about__button">
-        <a href="#" class="c-button">
+        <a href="<?php echo esc_url(home_url("/about")) ?>" class="c-button">
           <span class="c-button-text">view&nbsp;more</span>
         </a>
       </div>
@@ -139,7 +158,7 @@
   </section>
 
   <!-- services -->
-  <section id="service" class="p-service l-service">
+  <section class="p-service l-service">
     <div class="p-service__inner l-inner p-scroll">
       <div class="p-service__title">
         <span class="c-section-title__en c-section-title__en--white">menu</span>
@@ -148,35 +167,38 @@
       <ul class="p-service__container">
         <li class="p-service__content p-scroll">
           <div class="p-service__body">
-            <h2 class="p-service__content-title">カフェメニュー</h2>
+            <h2 class="p-service__content-title">ドリンクメニュー</h2>
             <p class="p-service__content-text">
-              当店は、エスプレッソやカフェラテなどの多彩なコーヒーはもちろん、紅茶や抹茶ラテなどのドリンクも充実。さらに、クロワッサンやサンドイッチといった軽食や、チーズケーキ、ブラウニーなどのデザートもご用意しています。
+              書をより楽しめるよう工夫されたバラエティ豊かなラインナップが魅力です。<br>コーヒーや紅茶はもちろん、季節限定の特製ドリンクやハーブティー、リラックス効果のあるラテなど、お好みに合わせてお選びいただけます。<br>
+              本のジャンルや気分に合わせたペアリングも提案し、より充実した読書体験を提供します。心地よい空間で、お好きなドリンクを片手にゆったりとしたひとときをお過ごしください。
             </p>
           </div>
           <div class="p-service__content-img">
-            <img src="<?php echo get_theme_file_uri(); ?>/assets/images/dummy.jpg" alt="寝転んでいる乳児が頭を撫でられている画像">
+            <img src="<?php echo get_theme_file_uri(); ?>/assets/images/menu-img01@2x.jpg" alt="ドリンクメニュー">
           </div>
         </li>
         <li class="p-service__content p-scroll">
           <div class="p-service__body">
-            <h2 class="p-service__content-title">ブックメニュー</h2>
+            <h2 class="p-service__content-title">本とドリンクのペアリング</h2>
             <p class="p-service__content-text">
-              当店では、小説やエッセイ、ビジネス書など多彩なジャンルの本を揃えています。リラックスしながら、カフェドリンクと共にお好きな本をゆったりとお楽しみください。</p>
+              「本とドリンクのペアリング」は、選んだ本のテーマや雰囲気にぴったりのドリンクをお勧めするサービスです。例えば、リラックスしたい時にはハーブティーと自己啓発書、ミステリー小説には濃いめのエスプレッソなど、読書体験をさらに豊かにするドリンクの組み合わせを提案します。特別な一冊を味わいながら、心地よい時間を過ごすためのユニークなサービスです。
+            </p>
           </div>
           <div class="p-service__content-img">
-            <img src="<?php echo get_theme_file_uri(); ?>/assets/images/dummy.jpg" alt="院内の待合室の画像">
+            <img src="<?php echo get_theme_file_uri(); ?>/assets/images/menu-img03@2x.jpg" alt="本とドリンクのペアリング">
           </div>
         </li>
       </ul>
       <div class="p-service__button">
-        <a href="#" class="c-button c-button--white"><span class="c-button-text">view&nbsp;more</span></a>
+        <a href="<?php echo esc_url(home_url("/menu")) ?>" class="c-button c-button--white"><span
+            class="c-button-text">view&nbsp;more</span></a>
       </div>
     </div>
   </section>
 
   <!-- blogセクション -->
   <section class="p-blog l-blog">
-    <div class="p-blog__inner inner">
+    <div class="p-blog__inner  p-scroll">
       <div class="p-blog__wrapper">
         <div class="p-blog__title section-header">
           <span class="c-section-title__en">blog</span>
@@ -192,137 +214,59 @@
             <!-- swiper-wrapper -->
             <div class="p-blog__swiper-wrapper swiper-wrapper">
               <!-- スライド -->
+              <?php
+              $args = array(
+                "post_type" => "post",
+                "posts_per_page" => 10,
+                'orderby' => 'rand'
+              );
+              $the_query = new WP_Query($args);
+              if ($the_query->have_posts()) :
+                while ($the_query->have_posts()) : $the_query->the_post();
+              ?>
               <div class="p-blog__swiper-slide swiper-slide">
-                <a href="" class="p-blog__slide-card c-blog-card">
+                <a href="<?php the_permalink(); ?>" class="p-blog__slide-card c-blog-card">
                   <figure class="c-blog-card__img">
-                    <img src="<?php echo get_theme_file_uri(); ?>/assets/images/dummy.jpg" alt="海水の中で煌びやかに光る魚群" />
+                    <?php if ( has_post_thumbnail() ) : ?>
+                    <?php the_post_thumbnail(); ?>
+                    <?php else: ?>
+                    <img src=" <?php echo get_theme_file_uri(); ?>/assets/images/common/campaign1.jpg"
+                      alt="<?php the_title(); ?>のアイキャッチ画像" />
+                    <img src="">
+                    <?php endif; ?>
                   </figure>
                   <div class="c-blog-card__body">
                     <div class="c-blog-card__metabox">
-                      <span class="c-blog-card__meta">イベント</span>
+                      <span class="c-blog-card__meta">
+                        <?php 
+                      $categories = get_the_category();
+                      if ( ! empty( $categories ) ) {
+                        echo esc_html( $categories[0]->name ); // 最初のカテゴリー名を取得して表示
+                      }
+                    ?></span>
                       <time class="c-blog-card__time"
                         datetime="2023-11-10<?php the_time('Y-m-d'); ?>"><?php the_time('Y/m/d'); ?></time>
                     </div>
                     <div class="c-blog-card__box">
-                      <p class="c-blog-card__title">読書会を行いました</p>
+                      <p class="c-blog-card__title"><?php the_title(); ?></p>
                       <p class="c-blog-card__text">
-                        20名以上の方にご参加いただき、大盛況に終えることができました。
-                        皆様の推し本を紹介し合い本好きな方もそうでない方も素敵な時間になりました。
+                        <?php echo wp_trim_words(get_the_content(), 80, '…'); ?>
                       </p>
                     </div>
                   </div>
                 </a>
               </div>
-              <div class="p-blog__swiper-slide swiper-slide">
-                <a href="" class="p-blog__slide-card c-blog-card">
-                  <figure class="c-blog-card__img">
-                    <img src="<?php echo get_theme_file_uri(); ?>/assets/images/dummy.jpg" alt="海水の中で煌びやかに光る魚群" />
-                  </figure>
-                  <div class="c-blog-card__body">
-                    <div class="c-blog-card__metabox">
-                      <span class="c-blog-card__meta">イベント</span>
-                      <time class="c-blog-card__time"
-                        datetime="2023-11-10<?php the_time('Y-m-d'); ?>"><?php the_time('Y/m/d'); ?></time>
-                    </div>
-                    <div class="c-blog-card__box">
-                      <p class="c-blog-card__title">読書会を行いました</p>
-                      <p class="c-blog-card__text">
-                        20名以上の方にご参加いただき、大盛況に終えることができました。
-                        皆様の推し本を紹介し合い本好きな方もそうでない方も素敵な時間になりました。
-                      </p>
-                    </div>
-                  </div>
-                </a>
-              </div>
-              <div class="p-blog__swiper-slide swiper-slide">
-                <a href="" class="p-blog__slide-card c-blog-card">
-                  <figure class="c-blog-card__img">
-                    <img src="<?php echo get_theme_file_uri(); ?>/assets/images/dummy.jpg" alt="海水の中で煌びやかに光る魚群" />
-                  </figure>
-                  <div class="c-blog-card__body">
-                    <div class="c-blog-card__metabox">
-                      <span class="c-blog-card__meta">イベント</span>
-                      <time class="c-blog-card__time"
-                        datetime="2023-11-10<?php the_time('Y-m-d'); ?>"><?php the_time('Y/m/d'); ?></time>
-                    </div>
-                    <div class="c-blog-card__box">
-                      <p class="c-blog-card__title">読書会を行いました</p>
-                      <p class="c-blog-card__text">
-                        20名以上の方にご参加いただき、大盛況に終えることができました。
-                        皆様の推し本を紹介し合い本好きな方もそうでない方も素敵な時間になりました。
-                      </p>
-                    </div>
-                  </div>
-                </a>
-              </div>
-              <div class="p-blog__swiper-slide swiper-slide">
-                <a href="" class="p-blog__slide-card c-blog-card">
-                  <figure class="c-blog-card__img">
-                    <img src="<?php echo get_theme_file_uri(); ?>/assets/images/dummy.jpg" alt="海水の中で煌びやかに光る魚群" />
-                  </figure>
-                  <div class="c-blog-card__body">
-                    <div class="c-blog-card__metabox">
-                      <span class="c-blog-card__meta">イベント</span>
-                      <time class="c-blog-card__time"
-                        datetime="2023-11-10<?php the_time('Y-m-d'); ?>"><?php the_time('Y/m/d'); ?></time>
-                    </div>
-                    <div class="c-blog-card__box">
-                      <p class="c-blog-card__title">読書会を行いました</p>
-                      <p class="c-blog-card__text">
-                        20名以上の方にご参加いただき、大盛況に終えることができました。
-                        皆様の推し本を紹介し合い本好きな方もそうでない方も素敵な時間になりました。
-                      </p>
-                    </div>
-                  </div>
-                </a>
-              </div>
-              <div class="p-blog__swiper-slide swiper-slide">
-                <a href="" class="p-blog__slide-card c-blog-card">
-                  <figure class="c-blog-card__img">
-                    <img src="<?php echo get_theme_file_uri(); ?>/assets/images/dummy.jpg" alt="海水の中で煌びやかに光る魚群" />
-                  </figure>
-                  <div class="c-blog-card__body">
-                    <div class="c-blog-card__metabox">
-                      <span class="c-blog-card__meta">イベント</span>
-                      <time class="c-blog-card__time"
-                        datetime="2023-11-10<?php the_time('Y-m-d'); ?>"><?php the_time('Y/m/d'); ?></time>
-                    </div>
-                    <div class="c-blog-card__box">
-                      <p class="c-blog-card__title">読書会を行いました</p>
-                      <p class="c-blog-card__text">
-                        20名以上の方にご参加いただき、大盛況に終えることができました。
-                        皆様の推し本を紹介し合い本好きな方もそうでない方も素敵な時間になりました。
-                      </p>
-                    </div>
-                  </div>
-                </a>
-              </div>
-              <div class="p-blog__swiper-slide swiper-slide">
-                <a href="" class="p-blog__slide-card c-blog-card">
-                  <figure class="c-blog-card__img">
-                    <img src="<?php echo get_theme_file_uri(); ?>/assets/images/dummy.jpg" alt="海水の中で煌びやかに光る魚群" />
-                  </figure>
-                  <div class="c-blog-card__body">
-                    <div class="c-blog-card__metabox">
-                      <span class="c-blog-card__meta">イベント</span>
-                      <time class="c-blog-card__time"
-                        datetime="2023-11-10<?php the_time('Y-m-d'); ?>"><?php the_time('Y/m/d'); ?></time>
-                    </div>
-                    <div class="c-blog-card__box">
-                      <p class="c-blog-card__title">読書会を行いました</p>
-                      <p class="c-blog-card__text">
-                        20名以上の方にご参加いただき、大盛況に終えることができました。
-                        皆様の推し本を紹介し合い本好きな方もそうでない方も素敵な時間になりました。
-                      </p>
-                    </div>
-                  </div>
-                </a>
-              </div>
+              <?php endwhile; ?>
+              <?php wp_reset_postdata(); ?>
+              <?php else: ?>
+              <p class="voice__message">記事が投稿されていません</p>
+              <?php endif; ?>
             </div>
           </div>
         </div>
         <div class="p-blog__btn">
-          <a href="#" class=" c-button"><span class="c-button-text">view&nbsp;more</span></a>
+          <a href="<?php echo esc_url(home_url("/blog")) ?>" class=" c-button"><span
+              class="c-button-text">view&nbsp;more</span></a>
         </div>
       </div>
     </div>

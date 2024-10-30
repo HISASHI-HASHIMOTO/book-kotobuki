@@ -8,6 +8,7 @@
   height: 100%;
   padding: myrem(20) myrem(15);
   width: 100%;
+  
 }
 
 .c-blog-card__img {
@@ -18,10 +19,9 @@
   width: 100%;
   aspect-ratio: 280/188;
   object-fit: cover;
-  max-height: myrem(188);
+  height: fit-content;
   @include mq(md) {
     aspect-ratio: 333/223;
-    max-height: myrem(347);
   }
 }
 
@@ -38,7 +38,7 @@
 .c-blog-card__metabox {
   // border-bottom: 1px solid $brown;
   // padding-bottom: myrem(8);
-  flex-grow: 1;
+  // flex-grow: 1;
   display: flex;
   justify-content: space-between;
   align-items: center;

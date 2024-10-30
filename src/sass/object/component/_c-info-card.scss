@@ -1,0 +1,29 @@
+@use "global" as *;
+
+.c-info-card {
+  display: block;
+  padding: myrem(16);
+  box-shadow: 2px 4px 9px -5px rgba(0, 0, 0, 1);
+  display: flex;
+  gap: myrem(16);
+}
+
+.c-info-card__img {
+  max-width: myrem(121);
+  width: 100%;
+}
+
+.c-info-card__img {
+  aspect-ratio: 121/90;
+  object-fit: cover;
+  width: 100%;
+}
+
+.c-info-card__date {
+  font-size: myrem(12);
+  line-height: calc(18/12);
+}
+
+.c-info-card__title {
+  margin-top: myrem(4);
+}

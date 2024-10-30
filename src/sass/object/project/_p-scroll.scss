@@ -1,0 +1,12 @@
+@use "global" as *;
+
+.p-scroll {
+  transition: 0.8s ease-in-out;
+  transform: translateY(30px);
+  opacity: 0;
+}
+
+.p-scroll.on {
+  transform: translateY(0);
+  opacity: 1.0;
+}

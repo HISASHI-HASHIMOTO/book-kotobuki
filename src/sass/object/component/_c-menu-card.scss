@@ -37,13 +37,24 @@
 .c-menu-card__title::before {
   content: "";
   display: inline-block;
-  background-image: url(/wp-content/themes/book-kotobuki/assets/images/coffee-icon01@2x.png);
   background-size: contain;
   background-repeat: no-repeat;
   background-position: bottom;
   width: myrem(32);
   height: myrem(25);
   margin-right: myrem(10);
+}
+
+.c-menu-card__title.c-menu-card__title--cafe::before {
+  background-image: url(/wp-content/themes/book-kotobuki/assets/images/cafe-icon01@2x.png);
+}
+
+.c-menu-card__title.c-menu-card__title--book::before {
+  background-image: url(/wp-content/themes/book-kotobuki/assets/images/book-icon-category@2x.png);
+}
+
+.c-menu-card__title.c-menu-card__title--book-club::before {
+  background-image: url(/wp-content/themes/book-kotobuki/assets/images/book-club-icon@2x.png);
 }
 
 .c-menu-card__text {

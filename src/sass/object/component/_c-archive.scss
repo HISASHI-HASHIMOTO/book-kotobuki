@@ -1,0 +1,71 @@
+@use "global" as *;
+
+.c-archive {
+  cursor: pointer;
+}
+
+.c-archive__list-title {
+  color: $brown;
+  font-size: myrem(24);
+  padding-left: myrem(37);
+  position: relative;
+}
+
+.c-archive__list-title::before {
+  border-bottom: myrem(11) solid transparent;
+  border-left: myrem(17) solid $brown;
+  border-top: myrem(11) solid transparent;
+  bottom: 0;
+  content: "";
+  height: 0;
+  left: myrem(10);
+  position: absolute;
+  top: myrem(7);
+  transform: rotate(90deg);
+  transition: transform 0.3s;
+  width: 0;
+}
+
+.c-archive__list-title.open::before {
+  transform: rotate(0deg);
+}
+
+.c-archive__list-items {
+  font-size: myrem(24);
+}
+
+.c-archive__list-item {
+  padding-left: myrem(27);
+  position: relative;
+}
+
+.c-archive__list-item::before {
+  border-bottom: myrem(11) solid transparent;
+  border-left: myrem(17) solid $brown;
+  border-top: myrem(11) solid transparent;
+  bottom: 0;
+  content: "";
+  height: 0;
+  left: 0;
+  position: absolute;
+  top: myrem(5);
+  width: 0;
+}
+
+.cat-item {
+  font-size: myrem(24);
+  position: relative; 
+  color: $brown;
+}
+.cat-item::before {
+  border-bottom: myrem(11) solid transparent;
+  border-left: myrem(17) solid $brown;
+  border-top: myrem(11) solid transparent;
+  bottom: 0;
+  content: "";
+  height: 0;
+  left: 0;
+  position: absolute;
+  top: myrem(5);
+  width: 0;
+}

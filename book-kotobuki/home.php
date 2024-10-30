@@ -3,8 +3,9 @@
 <div class="p-page-blog__mv c-sub-mv">
   <div class="c-sub-mv__img">
     <picture>
-      <source srcset="<?php echo get_theme_file_uri(); ?>/assets/images/dummy.jpg" media="(min-width: 768px)" />
-      <img src="<?php echo get_theme_file_uri(); ?>/assets/images/dummy.jpg" alt="夫婦のように向かい合う2匹のチョウチョウウオ" />
+      <source srcset="<?php echo get_theme_file_uri(); ?>/assets/images/mv-sub-img01@2x.jpg"
+        media="(min-width: 768px)" />
+      <img src="<?php echo get_theme_file_uri(); ?>/assets/images/mv-sub-img01@2x.jpg" alt="ブログページ" />
     </picture>
   </div>
   <h2 class="c-sub-mv__title">ブログ</h2>
@@ -22,33 +23,41 @@
 <!-- </div> -->
 
 <!-- コンテナーセクション -->
-<section class="container layout-sub-page fish-icon">
-  <div class="container__inner inner">
-    <div class="container__wrapper">
-      <div class="container__blog-page blog-single-page">
-        <ul class="blog-page__cards blog-cards blog-cards--two-column">
+<section class="p-container l-sub-page fish-icon">
+  <div class="p-container__inner l-inner">
+    <div class="p-container__wrapper">
+      <div class="p-container__blog-page p-blog-page">
+        <ul class="p-blog-page__cards c-blog-cards c-blog-cards--two-column">
           <?php if (have_posts()) : ?>
           <?php while (have_posts()) : the_post(); ?>
-          <li class="blog-cards__item">
-            <a href="<?php the_permalink(); ?>" class="blog-cards__item blog-card">
-              <figure class="blog-card__img">
+          <li class="c-blog-cards__item">
+            <a href="<?php the_permalink(); ?>" class="p-blog__slide-card c-blog-card">
+              <figure class="c-blog-card__img">
                 <?php if ( has_post_thumbnail() ) : ?>
                 <?php the_post_thumbnail(); ?>
                 <?php else: ?>
-                <img src=" <?php echo get_theme_file_uri(); ?>/assets/images/common/campaign1.jpg"
+                <img src=" <?php echo get_theme_file_uri(); ?>/assets/images/book-icon02@2x.png"
                   alt="<?php the_title(); ?>のアイキャッチ画像" />
-                <img src="">
                 <?php endif; ?>
               </figure>
-              <div class="blog-card__body">
-                <div class="blog-card__metabox">
-                  <time class="blog-card__date"
-                    datetime="<?php the_time('Y-m-d'); ?>"><?php the_time('Y.m/d'); ?></time>
-                  <p class="blog-card__title"><?php the_title(); ?></p>
+              <div class="c-blog-card__body">
+                <div class="c-blog-card__metabox">
+                  <span class="c-blog-card__meta">
+                    <?php 
+                      $categories = get_the_category();
+                      if ( ! empty( $categories ) ) {
+                        echo esc_html( $categories[0]->name ); // 最初のカテゴリー名を取得して表示
+                      }
+                    ?></span>
+                  <time class="c-blog-card__time"
+                    datetime="<?php the_time('Y-m-d'); ?>"><?php the_time('Y/m/d'); ?></time>
                 </div>
-                <p class="blog-card__text">
-                  <?php echo wp_trim_words(get_the_content(), 80, '…'); ?>
-                </p>
+                <div class="c-blog-card__box">
+                  <p class="c-blog-card__title"><?php the_title(); ?></p>
+                  <p class="c-blog-card__text">
+                    <?php echo wp_trim_words(get_the_content(), 80,); ?>
+                  </p>
+                </div>
               </div>
             </a>
           </li>
@@ -56,9 +65,9 @@
           <?php endif; ?>
         </ul>
         <!-- ページネーション -->
-        <div class="campaign-page__pagenation pagenation">
-          <div class="pagenation__inner">
-            <div class="pagenation__contents">
+        <div class="p-container__pagenation c-pagenation">
+          <div class="c-pagenation__inner">
+            <div class="c-pagenation__contents">
               <?php wp_pagenavi(); 
           function custom_posts_per_page($query) {
             if (!is_admin() && $query->is_main_query()) {
@@ -79,7 +88,7 @@
         </div>
       </div>
 
-      <aside class="container__aside aside">
+      <aside class="p-container__aside p-aside">
         <?php get_sidebar(); ?>
       </aside>
     </div>

@@ -1,0 +1,40 @@
+@use "global" as *;
+
+.p-aside__archive {
+  margin-top: myrem(24);
+  color: $brown;
+  @include mq(md) {
+   margin-top: myrem(32);
+  }
+}
+
+.p-aside__archive-link {
+  display: flex;
+  align-items: center;
+  font-size: myrem(24);
+}
+
+.p-aside__archive-img {
+  width: myrem(24);
+  height: myrem(24);  
+}
+
+.p-aside__archive-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.p-aside__archive-text {
+  margin-left: myrem(11);
+}
+
+
+.p-aside__archive-list {
+  margin-top: myrem(24);
+}
+
+
+.p-aside__archive-link.p-aside__archive-link--month {
+  margin-left: myrem(24);
+}

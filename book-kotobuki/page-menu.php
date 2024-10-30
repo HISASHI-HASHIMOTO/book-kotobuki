@@ -4,11 +4,12 @@
 <div class="p-page-news__mv c-sub-mv">
   <div class="c-sub-mv__img">
     <picture>
-      <source srcset="<?php echo get_theme_file_uri(); ?>/assets/images/dummy.jpg" media="(min-width: 768px)" />
-      <img src="<?php echo get_theme_file_uri(); ?>/assets/images/dummy.jpg" alt="夫婦のように向かい合う2匹のチョウチョウウオ" />
+      <source srcset="<?php echo get_theme_file_uri(); ?>/assets/images/mv-sub-img02@2x.jpg"
+        media="(min-width: 768px)" />
+      <img src="<?php echo get_theme_file_uri(); ?>/assets/images/mv-sub-img02@2x.jpg" alt="メニューページ" />
     </picture>
   </div>
-  <h2 class="c-sub-mv__title">menu</h2>
+  <h2 class="c-sub-mv__title">メニュー</h2>
 </div>
 
 <!-- <div class="l-inner"> -->
@@ -50,72 +51,79 @@
         <li class="p-menu-tab__item js-tab-content is-active">
           <div class="p-page-menu__card c-menu-card">
             <div class="c-menu-card__body">
-              <h2 class="c-menu-card__title">カフェメニュー</h2>
+              <h2 class="c-menu-card__title c-menu-card__title--cafe">ドリンクメニュー</h2>
               <p class="c-menu-card__text">
-                泳げない人も、ちょっと水が苦手な人も、ダイビングを「安全に」楽しんでいただけるよう、スタッフがサポートいたします！スキューバダイビングを楽しむためには最低限の知識とスキルが要求されます。知識やスキルと言ってもそんなに難しい事ではなく、安全に楽しむ事を目的としたものです。プロダイバーの指導のもと知識とスキルを習得しCカードを取得して、ダイバーになろう！
+                書をより楽しめるよう工夫されたバラエティ豊かなラインナップが魅力です。<br>コーヒーや紅茶はもちろん、季節限定の特製ドリンクやハーブティー、リラックス効果のあるラテなど、お好みに合わせてお選びいただけます。<br>
+                本のジャンルや気分に合わせたペアリングも提案し、より充実した読書体験を提供します。心地よい空間で、お好きなドリンクを片手にゆったりとしたひとときをお過ごしください。
               </p>
             </div>
             <div class="c-menu-card__img">
-              <img src="<?php echo get_theme_file_uri(); ?>/assets/images/dummy.jpg" alt="海辺に浮かぶ複数のダイバー" />
+              <img src="<?php echo get_theme_file_uri(); ?>/assets/images/menu-img01@2x.jpg" alt="ドリンクメニュー" />
             </div>
           </div>
           <div class="p-page-menu__card c-menu-card c-menu-card--reverse">
             <div class="c-menu-card__body">
-              <h2 class="c-menu-card__title">カフェメニュー</h2>
+              <h2 class="c-menu-card__title c-menu-card__title--cafe">食事メニュー</h2>
               <p class="c-menu-card__text">
-                泳げない人も、ちょっと水が苦手な人も、ダイビングを「安全に」楽しんでいただけるよう、スタッフがサポートいたします！スキューバダイビングを楽しむためには最低限の知識とスキルが要求されます。知識やスキルと言ってもそんなに難しい事ではなく、安全に楽しむ事を目的としたものです。プロダイバーの指導のもと知識とスキルを習得しCカードを取得して、ダイバーになろう！
+                読書を楽しみながら手軽に食べられる軽食から、しっかり満足できる食事まで豊富に揃えています。<br>
+                サンドイッチやパニーニ、サラダなどの軽食はもちろん、スープやパスタなど季節に応じたメニューもご用意。読書の合間にリラックスできるデザートや焼き菓子も充実しています。<br>
+                全てのメニューは、新鮮な食材を使用し、心地よいカフェタイムを提供します。本と一緒に美味しい食事をお楽しみください。
               </p>
             </div>
             <div class="c-menu-card__img">
-              <img src="<?php echo get_theme_file_uri(); ?>/assets/images/dummy.jpg" alt="海辺に浮かぶ複数のダイバー" />
+              <img src="<?php echo get_theme_file_uri(); ?>/assets/images/menu-img02@2x.jpg" alt="食事メニュー" />
             </div>
           </div>
         </li>
         <li class="p-menu-tab__item js-tab-content">
           <div class="p-page-menu__card c-menu-card">
             <div class="c-menu-card__body">
-              <h2 class="c-menu-card__title">ブックメニュー</h2>
+              <h2 class="c-menu-card__title c-menu-card__title--book">本とドリンクのペアリング</h2>
               <p class="c-menu-card__text">
-                ブランクダイバー、ライセンスを取り立ての方も安心！沖縄本島を代表する「青の洞窟」（真栄田岬）やケラマ諸島などメジャーなポイントはモチロンのこと、最北端「辺戸岬」や最南端の「大渡海岸」等もご用意！
+                「本とドリンクのペアリング」は、選んだ本のテーマや雰囲気にぴったりのドリンクをお勧めするサービスです。例えば、リラックスしたい時にはハーブティーと自己啓発書、ミステリー小説には濃いめのエスプレッソなど、読書体験をさらに豊かにするドリンクの組み合わせを提案します。特別な一冊を味わいながら、心地よい時間を過ごすためのユニークなサービスです。
               </p>
             </div>
             <div class="c-menu-card__img">
-              <img src="<?php echo get_theme_file_uri(); ?>/assets/images/dummy.jpg" alt="海中を小魚の大群が泳いでいる" />
+              <img src="<?php echo get_theme_file_uri(); ?>/assets/images/menu-img03@2x.jpg" alt="本とドリンクのペアリング" />
             </div>
           </div>
           <div class="p-page-menu__card c-menu-card c-menu-card--reverse">
             <div class="c-menu-card__body">
-              <h2 class="c-menu-card__title">ブックメニュー</h2>
+              <h2 class="c-menu-card__title c-menu-card__title--book">おすすめ本の選書サービス</h2>
               <p class="c-menu-card__text">
-                ブランクダイバー、ライセンスを取り立ての方も安心！沖縄本島を代表する「青の洞窟」（真栄田岬）やケラマ諸島などメジャーなポイントはモチロンのこと、最北端「辺戸岬」や最南端の「大渡海岸」等もご用意！
+                「おすすめ本の選書サービス」は、お客様の好みやその日の気分に合わせて、スタッフが最適な本を選んでご紹介するサービスです。ジャンルやテーマ、読書経験に基づいて、本のプロがパーソナライズされた選書を行い、新しい本との出会いをサポートします。新しいジャンルを開拓したい方や、次に読む本に迷っている方に最適なサービスで、読書体験をより充実させます。
               </p>
             </div>
             <div class="c-menu-card__img">
-              <img src="<?php echo get_theme_file_uri(); ?>/assets/images/dummy.jpg" alt="海中を小魚の大群が泳いでいる" />
+              <img src="<?php echo get_theme_file_uri(); ?>/assets/images/menu-img04@2x.jpg" alt="おすすめ選書サービス" />
             </div>
           </div>
           <div class="p-page-menu__card c-menu-card">
             <div class="c-menu-card__body">
-              <h2 class="c-menu-card__title">ブックメニュー</h2>
+              <h2 class="c-menu-card__title c-menu-card__title--book">古本の販売＆寄付</h2>
+
               <p class="c-menu-card__text">
-                ブランクダイバー、ライセンスを取り立ての方も安心！沖縄本島を代表する「青の洞窟」（真栄田岬）やケラマ諸島などメジャーなポイントはモチロンのこと、最北端「辺戸岬」や最南端の「大渡海岸」等もご用意！
+                ブックカフェでは、読み終えた本を寄付できる「古本寄付」サービスを提供しています。
+                <br>お客様から寄付された本は、カフェ内でリーズナブルな価格で販売され、その収益の一部を慈善活動に寄付します。不要になった本を寄付することで、本が新しい読者に渡り、持続可能な読書文化の推進に貢献できます。<br>お客様同士のつながりを感じられるサービスで、気軽に読書を楽しむきっかけとなる素敵な仕組みです。
               </p>
             </div>
             <div class="c-menu-card__img">
-              <img src="<?php echo get_theme_file_uri(); ?>/assets/images/dummy.jpg" alt="海中を小魚の大群が泳いでいる" />
+              <img src="<?php echo get_theme_file_uri(); ?>/assets/images/menu-img05@2x.jpg" alt="古本の販売・寄付" />
             </div>
           </div>
         </li>
         <li class="p-menu-tab__item js-tab-content">
           <div class="p-page-menu__card c-menu-card">
             <div class="c-menu-card__body">
-              <h2 class="c-menu-card__title">ブッククラブ</h2>
+              <h2 class="c-menu-card__title c-menu-card__title--book-club">ブッククラブ</h2>
               <p class="c-menu-card__text">
-                ブランクダイバー、ライセンスを取り立ての方も安心！沖縄本島を代表する「青の洞窟」（真栄田岬）やケラマ諸島などメジャーなポイントはモチロンのこと、最北端「辺戸岬」や最南端の「大渡海岸」等もご用意！
+                月額または1日料金を支払うことで、カフェ内のすべての本を自由に読むことができるサービスです。<br>
+                購入の必要がなく、さまざまなジャンルの本を好きなだけ楽しめます。ドリンクを片手に、落ち着いた空間で読書に没頭できるため、リラックスした時間を過ごせます。<br>
+                新しい本も定期的に追加されるので、常に新しい発見があります。忙しい日常の中でゆっくりと読書を楽しみたい方にぴったりです。
               </p>
             </div>
             <div class="c-menu-card__img">
-              <img src="<?php echo get_theme_file_uri(); ?>/assets/images/dummy.jpg" alt="海中を二匹のチョウチョウウオが並んで泳いでいる" />
+              <img src="<?php echo get_theme_file_uri(); ?>/assets/images/menu-img06@2x.jpg" alt="ブッククラブ" />
             </div>
           </div>
         </li>

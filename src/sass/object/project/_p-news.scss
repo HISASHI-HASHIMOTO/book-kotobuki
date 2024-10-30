@@ -31,6 +31,9 @@
 
 .p-news__item {
   border-bottom: 1px solid $black;
+  @include mq(md) {
+   width: myrem(370);
+  }
 }
 
 // .p-news__items {
@@ -50,6 +53,7 @@
     flex-direction: row;
     gap: myrem(20);
    margin-top: myrem(50);
+   justify-content: center;
   }
 }
 

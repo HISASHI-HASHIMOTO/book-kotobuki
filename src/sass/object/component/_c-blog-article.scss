@@ -1,0 +1,75 @@
+@use "global" as *;
+
+.blog-article time {
+  font-size: (14);
+  line-height: calc(18/14);
+}
+
+
+.blog-article h2 {
+  margin-top: myrem(8);
+  font-size: myrem(24);
+  line-height: 1;
+  padding-bottom: myrem(4);
+  border-bottom: 1px solid $brown;
+  @include mq(md) {
+   padding-bottom: myrem(8);
+   font-size: myrem(32);
+   letter-spacing: 0.05em;
+  }
+}
+
+.blog-article figure {
+  width: 100%; 
+  margin-top: myrem(24);
+  max-width: 100%;
+  @include mq(md) {
+    margin-top: myrem(40);
+    max-width: myrem(700);
+    width: 100%;
+  }
+}
+
+.blog-article figure img {
+  width: 100%;
+  object-fit: cover;
+  aspect-ratio: 345/231;
+  @include mq(md) {
+    aspect-ratio: 700/488;
+  }
+}
+
+.blog-article p {
+  margin-top: myrem(24);
+  font-size: myrem(16);
+  line-height: calc(24/16);
+  @include mq(md) {
+   margin-top: myrem(40);
+  }
+}
+
+.blog-article ul {
+  margin-top: myrem(24);
+  @include mq(md) {
+   margin-top: myrem(40);
+  }
+}
+
+.blog-article li {
+  font-size: myrem(16);
+  line-height: calc(24/16);
+  display: flex;
+  align-items: center;
+}
+
+.blog-article li::before {
+  content: "";
+  background-image: url(/wp-content/themes/book-kotobuki/assets/images/coffee-icon01@2x.png);
+  display: inline-block;
+  width: myrem(20);
+  height: myrem(20);
+  background-size: cover;
+  top: 50%;
+  margin-right: myrem(10);
+}
+

@@ -22,9 +22,10 @@
   @include mq(md) {
     position: absolute;
     display: flex;
-    gap: myrem(80);
-    top: 0;
-    right: 12.5%;
+    gap: myrem(64);
+    top: 4%;
+    right: 25.5%;
+    z-index: 1;
   }
 }
 
@@ -40,48 +41,77 @@
 }
 .p-blog__button-prev:hover,
 .p-blog__button-next:hover {
-
   @include mq(md) {
     cursor : pointer;
     opacity: 0.7;
   }
 }
 
+
 .p-blog__button-prev {
-  @include mq(md) {
-    right: 23.8%;
-    top: myrem(-67.2);
-  }
+  display: inline-block;
+  vertical-align: middle;
+  color: $brown;
+  line-height: 1;
+  position: relative;
+  width: myrem(50);
+  height: myrem(50);
+  border: 1px solid currentColor;
+  background: currentColor;
+  border-radius: 100vmax;
+  box-sizing: content-box;
 }
 
 .p-blog__button-next {
-  @include mq(md) {
-    right: 12.6%;
-    top: myrem(-69);
- }
-}
-
-.p-blog__button-prev::before,
-.p-blog__button-next::before {
-  content: "";
   display: inline-block;
-  width: 100%;
-  height: 100%;
-  background-repeat: no-repeat;
-  background-size: contain;
+  vertical-align: middle;
+  color: $brown;
+  line-height: 1;
+  position: relative;
+  width: myrem(50);
+  height: myrem(50);
+  border: 1px solid currentColor;
+  background: currentColor;
+  border-radius: 100vmax;
+  box-sizing: content-box;
 }
 
 .p-blog__button-prev:before {
-  background-image: url(/wp-content/themes/WordPressTheme/assets/images/common/dummy.jpg);
+  content: '';
+  color: $white;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-color: transparent;
+  border-width: myrem(10) myrem(15);
+  border-right-color: currentColor;
+  border-left: 0;
+  transform: translateX(-15%);
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
 }
 
 .p-blog__button-next:before {
-  background-image: url(/wp-content/themes/WordPressTheme/assets/images/common/dummy.jpg);
-}
-
-.p-blog__button-prev:after,
-.p-blog__button-next:after {
-  display: none;
+  content: '';
+  color: $white;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-color: transparent;
+  border-width: myrem(10) myrem(15);
+  border-left-color: currentColor;
+  border-right: 0;
+  transform: translateX(15%);
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
 }
 
 .p-blog__swiper {
@@ -107,6 +137,7 @@
   max-width: myrem(280);
   height: auto;
   width: 100%;
+  height: 100%;
   @include mq(md) {
     max-width: 100%;
     // width: 100%;

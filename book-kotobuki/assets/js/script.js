@@ -63,6 +63,23 @@ $('.js-hamburger').on('click', function () {
       }
   });
 
+    // // スワイパー
+    var slide1 = new Swiper("#slide2", {
+  
+      loop: true, // ループ有効
+      speed: 6000, // ループの時間
+      slidesPerView: "auto",
+      spaceBetween: 30,
+      autoplay: {
+        delay: 0, // 途切れなくループ
+      },
+      // ナビボタンが必要なら追加
+      navigation: {
+        nextEl: ".p-blog__button-next",
+        prevEl: ".p-blog__button-prev"
+      }
+  });
+
   // メインビュー 本がめくれるような動き
   let currentPage = 0;
   const pages = document.querySelectorAll('.p-mv input');
@@ -138,7 +155,7 @@ $('.js-hamburger').on('click', function () {
     } else {
       $('.c-page-top').css({
         position: 'fixed',
-        bottom: '30px',
+        bottom: '40px',
         top: 'auto' // topの指定を無効にする
       });
     }
@@ -149,7 +166,7 @@ $('.js-hamburger').on('click', function () {
   });
   $('.c-page-top').click(function () {
     $('body,html').animate({
-      scrollTop: 0
+      scrollTop: 60
     }, 500);
     return false;
   });
@@ -207,3 +224,54 @@ $('.js-hamburger').on('click', function () {
         $(this).next().slideToggle(300);
       });
     });
+
+    // トグル実装
+  // アーカイブアコーディオン
+  $(".c-archive__list-title.js-title").on("click", function () {
+    // クリックされた年に関連する月のリストを探し、スライドトグルで表示・非表示を切り替える
+    $(this).find(".js-items").slideToggle(200);
+    $(this).toggleClass("open");
+  });
+
+    //scroll_effect
+    $(window).scroll(function () {
+      var scrollAnimationElm = document.querySelectorAll('.p-scroll');
+      var scrollAnimationFunc = function () {
+        for (var i = 0; i < scrollAnimationElm.length; i++) {
+          var triggerMargin = 100;
+          if (window.innerHeight > scrollAnimationElm[i].getBoundingClientRect().top + triggerMargin) {
+            scrollAnimationElm[i].classList.add('on');
+          }
+        }
+      }
+      window.addEventListener('load', scrollAnimationFunc);
+      window.addEventListener('scroll', scrollAnimationFunc);
+
+    });
+
+//ローディング画面の処理
+window.addEventListener('DOMContentLoaded', function() {
+  const loadingElement = document.getElementById('loading');
+
+  // ローディング画面を非表示にする関数
+  function hideLoading() {
+    loadingElement.style.transition = 'opacity .6s ease, visibility .6s ease';
+    loadingElement.style.opacity = 0;
+    loadingElement.style.visibility = 'hidden';
+  }
+
+  // ページが初回訪問かどうかをセッションストレージで確認
+  if (!sessionStorage.getItem('firstVisit')) {
+    // 初回訪問の場合、セッションストレージにフラグをセット
+    sessionStorage.setItem('firstVisit', 'true');
+
+    // ローディング画面を表示し、4秒後に非表示にする
+    setTimeout(function() {
+      hideLoading();
+    }, 4000);
+
+  } else {
+    // 初回訪問ではない場合、ローディング画面を非表示にする
+    loadingElement.style.display = 'none';
+  }
+});

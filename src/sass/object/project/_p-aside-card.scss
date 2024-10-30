@@ -1,0 +1,86 @@
+@use "global" as *;
+
+.p-aside-card__img {
+  width: 100%;
+  max-width: myrem(294);
+}
+
+.p-aside-card__img img {
+  width: 100%;
+  object-fit: cover;
+  aspect-ratio: 294/218;
+}
+
+.p-aside-card__meta {
+  margin-top: myrem(16);
+  font-size: myrem(12);
+  line-height: calc(18/12);
+  display: block;
+}
+
+.p-aside-card__title {
+  margin-top: myrem(8);
+  font-size: myrem(24);
+  font-weight: normal;
+}
+
+.p-aside-card__btn {
+  text-align: center;
+  margin-top: myrem(40);
+  @include mq(md) {
+   margin-top: myrem(41.6);
+  }
+}
+
+.p-aside__box {
+  max-width: calc(294/345 * 100vw);
+  width: 100%;
+  margin-inline: auto;
+  @include mq(md) {
+   max-width: myrem(294);
+   width: 100%;
+  }
+}
+
+.p-aside__cards-item {
+  margin-top: myrem(24);
+}
+
+.p-aside__cards-item:hover {
+  @include mq(md) {
+   opacity: 0.7;
+  }
+}
+
+ .p-aside__cards-item .wp-post-image {
+  max-height: myrem(90);
+}
+
+.p-aside__box:not(:first-of-type) {
+  margin-top: myrem(83.2);
+}
+
+
+.p-aside__card-item {
+  margin-top: myrem(24);
+}
+
+.p-aside__card-item figure img {
+  min-height: myrem(218);
+  object-fit: cover;
+}
+
+.p-aside__campaign-card {
+  max-width: myrem(294);
+}
+
+.p-aside__campaign-card:first-of-type {
+  margin-top: myrem(26);
+}
+
+.p-aside__campaign-card:not(:first-of-type) {
+  margin-top: myrem(24);
+  @include mq(md) {
+   margin-top: myrem(40);
+  }
+}

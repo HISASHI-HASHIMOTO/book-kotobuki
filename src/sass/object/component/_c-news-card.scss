@@ -22,20 +22,19 @@
   display: block;
   aspect-ratio: 300/225;
   width: 100%;
-  object-fit: cover;
-  max-height: inherit;
+  object-fit: contain;
+  max-height: myrem(265);
 }
 
 .c-news-card__title {
   font-size: myrem(18);
-
   @include mq(md) {
    font-size: myrem(20);
   }
 }
 
 .c-news-card__box {
-  padding: myrem(10);
+  padding: myrem(16);
   flex-grow: 1;
   display: flex;
   flex-direction: column;
@@ -75,6 +74,10 @@
   font-size: myrem(18);
   display: flex;
   gap: myrem(20);
+  justify-content: space-between;
+  @include mq(md) {
+    justify-content: flex-start;
+  }
 }
 
 .c-news-card__drink-title {

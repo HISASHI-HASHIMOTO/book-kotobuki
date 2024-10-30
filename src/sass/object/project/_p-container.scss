@@ -1,0 +1,38 @@
+@use "global" as *;
+
+.p-container__wrapper {
+  @include mq(md) {
+    display: flex;
+    gap: myrem(80);
+    justify-content: center;
+  }
+}
+
+.p-container__blog-page {
+  width: 100%;
+  @include mq(md) {
+   max-width: myrem(706);
+   width: 100%;
+  }
+}
+
+.p-container__blog-article {
+  @include mq(md) {
+    max-width: myrem(706);
+    width: 100%;
+  }
+}
+
+.p-container__aside {
+  width: 100%;
+  margin-top: myrem(80);
+  @include mq(md) {
+  margin-top: 0;
+   max-width: myrem(294);
+   width: 100%;
+  }
+}
+
+.p-container__pagenation {
+  margin-top: myrem(50);
+}

@@ -12,6 +12,42 @@
   text-align: center;
 }
 
+.p-about__title {
+  font-size: myrem(50);
+  @include mq(md) {
+   font-size: myrem(80);
+   
+  }
+}
+
+.p-about__title-area {
+  display: flex;
+  flex-direction: column;
+  @include mq(md) {
+   flex-direction: row;
+   justify-content: center;
+
+  }
+}
+
+.p-about__title-text {
+  font-size: myrem(20);
+  padding-block: myrem(20);
+  @include mq(md) {  
+    padding: myrem(40);
+    line-height: 2;
+    -ms-writing-mode: tb-rl;
+    writing-mode: vertical-rl;
+  }
+}
+
+.p-about__swiper {
+  margin: myrem(50) calc(50% - 50vw);
+  @include mq(md) {
+    margin: myrem(80) calc(50% - 50vw);
+  }
+}
+
 .p-about__content {
   margin-top: myrem(40);
   @include mq(md) {

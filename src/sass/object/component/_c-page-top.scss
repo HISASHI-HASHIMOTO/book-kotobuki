@@ -8,6 +8,8 @@
   width: myrem(48);
   height: myrem(48);
   cursor: pointer;
+  border-radius: 100vmax;
+  transition: .3s;
   @include mq(md) {
     width: myrem(90);
     height: myrem(90);
@@ -15,4 +17,12 @@
     // bottom: myrem(36);
     bottom: auto;
   }
+}
+
+.c-page-top img {
+  border-radius: 100vmax;
+}
+
+.c-page-top:hover {
+  box-shadow: 0px 0px 10px 10px #cdcbcb;;
 }

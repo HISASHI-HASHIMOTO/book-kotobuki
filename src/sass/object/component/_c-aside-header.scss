@@ -1,0 +1,26 @@
+@use "global" as *;
+
+.c-aside-header {
+  border-left: 8px solid $brown;
+  display: flex;
+  align-items: center;
+}
+
+.c-aside-header__img {
+  margin-left: myrem(16);
+  width: myrem(50);
+  height: myrem(50);
+  
+}
+.c-aside-header__img img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  aspect-ratio: 50/50;
+}
+
+.c-aside-header__title {
+  margin-left: myrem(8);
+  font-size: myrem(24);
+  font-weight: normal;
+}

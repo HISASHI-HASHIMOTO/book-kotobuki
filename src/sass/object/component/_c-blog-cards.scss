@@ -1,0 +1,22 @@
+@use "global" as *;
+
+
+.c-blog-cards {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: myrem(34) myrem(40);
+  @include mq(md) {
+    grid-template-columns: repeat(3, 1fr);
+    gap: myrem(80) myrem(40);
+  }
+}
+
+.c-blog-cards.c-blog-cards--two-column {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: myrem(40);
+  @include mq(md) {
+    grid-template-columns: repeat(2, 1fr);
+    gap: myrem(80) myrem(40);
+  }
+}
