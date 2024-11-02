@@ -6,11 +6,11 @@
     <picture>
       <source srcset="<?php echo get_theme_file_uri(); ?>/assets/images/mv-sub-img05@2x.jpg"
         media="(min-width: 768px)" />
-      <img src="<?php echo get_theme_file_uri(); ?>/assets/images/mv-sub-img05@2x.jpg" alt="お問い合わせページ" width="960"
+      <img src="<?php echo get_theme_file_uri(); ?>/assets/images/mv-sub-img05@2x.jpg" alt="お問い合わせ完了ページ" width="960"
         height="640" />
     </picture>
   </div>
-  <h2 class="c-sub-mv__title">about</h2>
+  <h2 class="c-sub-mv__title">お問い合わせ送信完了</h2>
 </div>
 
 <!-- <div class="l-inner"> -->
@@ -36,7 +36,7 @@
       自動返信の確認メールをお送りしております。</p>
 
     <div class="p-page-thanks__button-box">
-      <a href="#" class="c-button">
+      <a href="<?php echo esc_url(home_url("/")) ?>" class="c-button">
         <span class="c-button-text">TOPページへ戻る</span>
       </a>
     </div>

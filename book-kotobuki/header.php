@@ -22,13 +22,7 @@
 
 <body <?php body_class(); ?>>
   <?php wp_body_open(); ?>
-  <!-- 
- ローディング -->
-  <!-- <div id="loading" class="loading">
-  <div class="loading__contents">
-    <p class="loading__text">ローディング中...</p>
-  </div>
-</div> -->
+
   <header class="p-header l-header">
     <div class="p-header__inner i-inner">
       <h1 class="p-header__title">
