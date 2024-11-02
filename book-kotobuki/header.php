@@ -15,8 +15,6 @@
     rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;500;600;700;800&display=swap"
     rel="stylesheet">
-  <!-- jQuery -->
-  <link rel="stylesheet" type="text/css" href="css/4-1-4.css">
   <!-- スワイパー -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
   <?php wp_head(); ?>
@@ -24,6 +22,13 @@
 
 <body <?php body_class(); ?>>
   <?php wp_body_open(); ?>
+  <!-- 
+ ローディング -->
+  <!-- <div id="loading" class="loading">
+  <div class="loading__contents">
+    <p class="loading__text">ローディング中...</p>
+  </div>
+</div> -->
   <header class="p-header l-header">
     <div class="p-header__inner i-inner">
       <h1 class="p-header__title">

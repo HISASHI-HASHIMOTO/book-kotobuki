@@ -47,24 +47,40 @@ $('.js-hamburger').on('click', function () {
 
 
   // // スワイパー
-  var slide1 = new Swiper("#slide1", {
+  // var slide1 = new Swiper("#slide1", {
   
-      loop: true, // ループ有効
-      speed: 6000, // ループの時間
+  //     loop: true, // ループ有効
+  //     speed: 6000, // ループの時間
+  //     slidesPerView: "auto",
+  //     spaceBetween: 30,
+  //     autoplay: {
+  //       delay: 0, // 途切れなくループ
+  //     },
+  //     // ナビボタンが必要なら追加
+  //     navigation: {
+  //       nextEl: ".p-blog__button-next",
+  //       prevEl: ".p-blog__button-prev"
+  //     }
+  // });
+  document.addEventListener("DOMContentLoaded", function() {
+    var slide1 = new Swiper("#slide1", {
+      loop: true,
+      speed: 6000,
       slidesPerView: "auto",
       spaceBetween: 30,
       autoplay: {
-        delay: 0, // 途切れなくループ
+        delay: 0,
       },
-      // ナビボタンが必要なら追加
       navigation: {
         nextEl: ".p-blog__button-next",
         prevEl: ".p-blog__button-prev"
       }
+    });
   });
+  
 
     // // スワイパー
-    var slide1 = new Swiper("#slide2", {
+    var slide2 = new Swiper("#slide2", {
   
       loop: true, // ループ有効
       speed: 6000, // ループの時間
@@ -73,11 +89,6 @@ $('.js-hamburger').on('click', function () {
       autoplay: {
         delay: 0, // 途切れなくループ
       },
-      // ナビボタンが必要なら追加
-      navigation: {
-        nextEl: ".p-blog__button-next",
-        prevEl: ".p-blog__button-prev"
-      }
   });
 
   // メインビュー 本がめくれるような動き
@@ -159,7 +170,6 @@ $('.js-hamburger').on('click', function () {
         top: 'auto' // topの指定を無効にする
       });
     }
-    console.log('フッターの高さ: ', $('#footer').outerHeight());
 }
   $(window).scroll(function () {
     PageTopAnime();
@@ -248,30 +258,3 @@ $('.js-hamburger').on('click', function () {
       window.addEventListener('scroll', scrollAnimationFunc);
 
     });
-
-//ローディング画面の処理
-window.addEventListener('DOMContentLoaded', function() {
-  const loadingElement = document.getElementById('loading');
-
-  // ローディング画面を非表示にする関数
-  function hideLoading() {
-    loadingElement.style.transition = 'opacity .6s ease, visibility .6s ease';
-    loadingElement.style.opacity = 0;
-    loadingElement.style.visibility = 'hidden';
-  }
-
-  // ページが初回訪問かどうかをセッションストレージで確認
-  if (!sessionStorage.getItem('firstVisit')) {
-    // 初回訪問の場合、セッションストレージにフラグをセット
-    sessionStorage.setItem('firstVisit', 'true');
-
-    // ローディング画面を表示し、4秒後に非表示にする
-    setTimeout(function() {
-      hideLoading();
-    }, 4000);
-
-  } else {
-    // 初回訪問ではない場合、ローディング画面を非表示にする
-    loadingElement.style.display = 'none';
-  }
-});

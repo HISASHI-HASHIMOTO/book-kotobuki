@@ -3,9 +3,9 @@
 <div class="p-page-blog__mv c-sub-mv">
   <div class="c-sub-mv__img">
     <picture>
-      <source srcset="<?php echo get_theme_file_uri(); ?>/assets/images/mv-sub-img01@2x.jpg"
+      <source srcset="<?php echo get_theme_file_uri(); ?>/assets/images/mv-sub-img01@2x.webp"
         media="(min-width: 768px)" />
-      <img src="<?php echo get_theme_file_uri(); ?>/assets/images/mv-sub-img01@2x.jpg" alt="ブログカテゴリーページ" />
+      <img src="<?php echo get_theme_file_uri(); ?>/assets/images/mv-sub-img01@2x.webp" alt="ブログカテゴリーページ" />
     </picture>
   </div>
   <h2 class="c-sub-mv__title">ブログ</h2>

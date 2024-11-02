@@ -152,9 +152,8 @@ if ( !is_page( $exclude_pages ) && !is_404() ) {
 
 </div>
 <?php wp_footer(); ?>
-<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXv
-ZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-<script src="js/4-1-4.js"></script>
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"
+  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
 </body>
 
 </html>

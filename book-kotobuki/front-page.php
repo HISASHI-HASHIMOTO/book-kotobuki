@@ -1,13 +1,5 @@
 <?php get_header(); ?>
 
-<!-- 
- ローディング -->
-<!-- <div id="loading" class="loading">
-  <div class="loading__contents">
-    <p class="loading__text">ローディング中...</p>
-  </div>
-</div> -->
-
 
 <main>
 
@@ -132,7 +124,11 @@
       </div>
       <div class="p-about__content">
         <figure class="p-about__img">
-          <img src="<?php echo get_theme_file_uri(); ?>/assets/images/about-img01@2x.png" alt="院内の待合室の画像">
+          <source srcset="<?php echo get_theme_file_uri(); ?>/assets/images/about-img01@2x.png"
+            media="(min-width: 768px)" alt="店内画像" width="960" height="640" />
+          <img src="<?php echo get_theme_file_uri(); ?>/assets/images/about-img01@2x.png" alt="店内画像" width="960"
+            height="640" />
+          </picture>
         </figure>
         <div class="p-about__box">
           <p class="p-about__sub-title">物語の中に没入しながら、一杯のコーヒーを<br>ゆったりと味わう至福のひとときを提供します</p>
@@ -174,7 +170,8 @@
             </p>
           </div>
           <div class="p-service__content-img">
-            <img src="<?php echo get_theme_file_uri(); ?>/assets/images/menu-img01@2x.jpg" alt="ドリンクメニュー">
+            <img src="<?php echo get_theme_file_uri(); ?>/assets/images/menu-img01@2x.jpg" alt="ドリンクメニュー" width="640"
+              height="426">
           </div>
         </li>
         <li class="p-service__content p-scroll">
@@ -185,7 +182,8 @@
             </p>
           </div>
           <div class="p-service__content-img">
-            <img src="<?php echo get_theme_file_uri(); ?>/assets/images/menu-img03@2x.jpg" alt="本とドリンクのペアリング">
+            <img src="<?php echo get_theme_file_uri(); ?>/assets/images/menu-img03@2x.jpg" alt="本とドリンクのペアリング"
+              width="960" height="641">
           </div>
         </li>
       </ul>
@@ -230,8 +228,8 @@
                     <?php if ( has_post_thumbnail() ) : ?>
                     <?php the_post_thumbnail(); ?>
                     <?php else: ?>
-                    <img src=" <?php echo get_theme_file_uri(); ?>/assets/images/common/campaign1.jpg"
-                      alt="<?php the_title(); ?>のアイキャッチ画像" />
+                    <img src="<?php echo get_theme_file_uri(); ?>/assets/images/no-image@2x.jpg"
+                      alt="<?php the_title(); ?>のアイキャッチ画像" width="375" height="375" />
                     <img src="">
                     <?php endif; ?>
                   </figure>

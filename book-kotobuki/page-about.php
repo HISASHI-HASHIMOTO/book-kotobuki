@@ -4,9 +4,10 @@
 <div class="p-page-news__mv c-sub-mv">
   <div class="c-sub-mv__img">
     <picture>
-      <source srcset="<?php echo get_theme_file_uri(); ?>/assets/images/mv-sub-img08@2x.jpg"
+      <source srcset="<?php echo get_theme_file_uri(); ?>/assets/images/mv-sub-img08@2x.webp"
         media="(min-width: 768px)" />
-      <img src="<?php echo get_theme_file_uri(); ?>/assets/images/mv-sub-img08@2x.jpg" alt="当店説明ページ" />
+      <img src="<?php echo get_theme_file_uri(); ?>/assets/images/mv-sub-img08@2x.webp" alt="当店説明ページ" width="720"
+        height="960" />
     </picture>
   </div>
   <h2 class="c-sub-mv__title">当店について</h2>

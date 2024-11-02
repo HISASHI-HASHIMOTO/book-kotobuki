@@ -4,9 +4,10 @@
 <div class="p-page-news__mv c-sub-mv">
   <div class="c-sub-mv__img">
     <picture>
-      <source srcset="<?php echo get_theme_file_uri(); ?>/assets/images/mv-sub-img06@2x.jpg"
+      <source srcset="<?php echo get_theme_file_uri(); ?>/assets/images/mv-sub-img06@2x.webp"
         media="(min-width: 768px)" />
-      <img src="<?php echo get_theme_file_uri(); ?>/assets/images/mv-sub-img06@2x.jpg" alt="よくある質問ページ" />
+      <img src="<?php echo get_theme_file_uri(); ?>/assets/images/mv-sub-img06@2x.webp" alt="よくある質問ページ" width="960"
+        height="640" />
     </picture>
   </div>
   <h2 class="c-sub-mv__title">よくある質問</h2>

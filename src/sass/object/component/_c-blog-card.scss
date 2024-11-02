@@ -3,12 +3,15 @@
 .c-blog-card {
   display: flex;
   flex-direction: column;
-  box-shadow: 2px 4px 9px -5px rgba(0, 0, 0, 1);
+  box-shadow: 0px 0px 15px -2px #777777;
   transition: .3s;
   height: 100%;
   padding: myrem(20) myrem(15);
   width: 100%;
-  
+}
+
+.c-blog-card:hover {
+  box-shadow: 10px 10px 15px -5px #333;
 }
 
 .c-blog-card__img {
@@ -36,9 +39,6 @@
 }
 
 .c-blog-card__metabox {
-  // border-bottom: 1px solid $brown;
-  // padding-bottom: myrem(8);
-  // flex-grow: 1;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -81,12 +81,6 @@
   @include mq(md) {
     margin-top: myrem(16);
     max-width: 100%;
-  }
-}
-
-.c-blog-card:hover {
-  @include mq(md) {
-   opacity: 0.7;
   }
 }
 

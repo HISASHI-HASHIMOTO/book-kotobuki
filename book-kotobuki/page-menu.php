@@ -4,9 +4,10 @@
 <div class="p-page-news__mv c-sub-mv">
   <div class="c-sub-mv__img">
     <picture>
-      <source srcset="<?php echo get_theme_file_uri(); ?>/assets/images/mv-sub-img02@2x.jpg"
+      <source srcset="<?php echo get_theme_file_uri(); ?>/assets/images/mv-sub-img02@2x.webp"
         media="(min-width: 768px)" />
-      <img src="<?php echo get_theme_file_uri(); ?>/assets/images/mv-sub-img02@2x.jpg" alt="メニューページ" />
+      <img src="<?php echo get_theme_file_uri(); ?>/assets/images/mv-sub-img02@2x.webp" alt="メニューページ" width="1920"
+        height="1280" />
     </picture>
   </div>
   <h2 class="c-sub-mv__title">メニュー</h2>
@@ -58,7 +59,8 @@
               </p>
             </div>
             <div class="c-menu-card__img">
-              <img src="<?php echo get_theme_file_uri(); ?>/assets/images/menu-img01@2x.jpg" alt="ドリンクメニュー" />
+              <img src="<?php echo get_theme_file_uri(); ?>/assets/images/menu-img01@2x.jpg" alt="ドリンクメニュー" width="640"
+                height="426" />
             </div>
           </div>
           <div class="p-page-menu__card c-menu-card c-menu-card--reverse">
@@ -71,7 +73,8 @@
               </p>
             </div>
             <div class="c-menu-card__img">
-              <img src="<?php echo get_theme_file_uri(); ?>/assets/images/menu-img02@2x.jpg" alt="食事メニュー" />
+              <img src="<?php echo get_theme_file_uri(); ?>/assets/images/menu-img02@2x.jpg" alt="食事メニュー" width="640"
+                height="435" />
             </div>
           </div>
         </li>
@@ -84,7 +87,8 @@
               </p>
             </div>
             <div class="c-menu-card__img">
-              <img src="<?php echo get_theme_file_uri(); ?>/assets/images/menu-img03@2x.jpg" alt="本とドリンクのペアリング" />
+              <img src="<?php echo get_theme_file_uri(); ?>/assets/images/menu-img03@2x.jpg" alt="本とドリンクのペアリング"
+                width="960" height="641" />
             </div>
           </div>
           <div class="p-page-menu__card c-menu-card c-menu-card--reverse">
@@ -95,7 +99,8 @@
               </p>
             </div>
             <div class="c-menu-card__img">
-              <img src="<?php echo get_theme_file_uri(); ?>/assets/images/menu-img04@2x.jpg" alt="おすすめ選書サービス" />
+              <img src="<?php echo get_theme_file_uri(); ?>/assets/images/menu-img04@2x.jpg" alt="おすすめ選書サービス"
+                width="960" height="640" />
             </div>
           </div>
           <div class="p-page-menu__card c-menu-card">
@@ -108,7 +113,8 @@
               </p>
             </div>
             <div class="c-menu-card__img">
-              <img src="<?php echo get_theme_file_uri(); ?>/assets/images/menu-img05@2x.jpg" alt="古本の販売・寄付" />
+              <img src="<?php echo get_theme_file_uri(); ?>/assets/images/menu-img05@2x.jpg" alt="古本の販売・寄付" width="960"
+                height="640" />
             </div>
           </div>
         </li>
@@ -123,7 +129,8 @@
               </p>
             </div>
             <div class="c-menu-card__img">
-              <img src="<?php echo get_theme_file_uri(); ?>/assets/images/menu-img06@2x.jpg" alt="ブッククラブ" />
+              <img src="<?php echo get_theme_file_uri(); ?>/assets/images/menu-img06@2x.jpg" alt="ブッククラブ" width="640"
+                height="960" />
             </div>
           </div>
         </li>

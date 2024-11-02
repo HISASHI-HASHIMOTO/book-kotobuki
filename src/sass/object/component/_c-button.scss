@@ -58,9 +58,13 @@
   left:0;
   bottom:0;
 }
+
 .c-button:hover:before,
 .c-button:hover:after{
   width:100%;
   transition:800ms ease all;
 }
 
+.c-button:hover .wpcf7-submit {
+  color: $black ;
+}

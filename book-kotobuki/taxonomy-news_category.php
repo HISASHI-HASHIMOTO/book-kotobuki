@@ -4,9 +4,9 @@
 <div class="p-page-news__mv c-sub-mv">
   <div class="c-sub-mv__img">
     <picture>
-      <source srcset="<?php echo get_theme_file_uri(); ?>/assets/images/mv-sub-img04@2x.jpg"
+      <source srcset="<?php echo get_theme_file_uri(); ?>/assets/images/mv-sub-img04@2x.webp"
         media="(min-width: 768px)" />
-      <img src="<?php echo get_theme_file_uri(); ?>/assets/images/mv-sub-img04@2x.jpg" alt="おすすめ本のお知らせ" />
+      <img src="<?php echo get_theme_file_uri(); ?>/assets/images/mv-sub-img04@2x.webp" alt="おすすめ本のお知らせ" />
     </picture>
   </div>
   <h2 class="c-sub-mv__title">おすすめの本</h2>
