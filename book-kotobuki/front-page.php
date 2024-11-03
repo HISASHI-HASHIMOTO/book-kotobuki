@@ -124,11 +124,7 @@
       </div>
       <div class="p-about__content">
         <figure class="p-about__img">
-          <source srcset="<?php echo get_theme_file_uri(); ?>/assets/images/about-img01@2x.png"
-            media="(min-width: 768px)" alt="店内画像" width="960" height="640" />
-          <img src="<?php echo get_theme_file_uri(); ?>/assets/images/about-img01@2x.png" alt="店内画像" width="960"
-            height="640" />
-          </picture>
+          <img src="<?php echo get_theme_file_uri(); ?>/assets/images/about-img01@2x.png" alt="机の上に勉強の作業をしている画像">
         </figure>
         <div class="p-about__box">
           <p class="p-about__sub-title">物語の中に没入しながら、一杯のコーヒーを<br>ゆったりと味わう至福のひとときを提供します</p>

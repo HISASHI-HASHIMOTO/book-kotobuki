@@ -23,7 +23,7 @@
   background-position: 100% 0; 
   @include mq(md) {
     height: 100vh;
-    background-position: 0%  1%;
+    background-position: 100%  1%;
     }
 }
 

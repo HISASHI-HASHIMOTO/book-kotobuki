@@ -145,12 +145,12 @@
 }
 
 .p-blog__slide-card {
-  max-width: myrem(280);
+
   height: auto;
   width: 100%;
   height: 100%;
   @include mq(md) {
-    max-width: 100%;
+    // max-width: myrem(280);
     // width: 100%;
     // width: myrem(333);
   }

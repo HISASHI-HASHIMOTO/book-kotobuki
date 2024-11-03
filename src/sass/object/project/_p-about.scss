@@ -98,9 +98,14 @@
 }
 
 .p-about__img {
-
   @include mq(md) {
    max-width: myrem(800);
+  }
+}
+
+.p-about__img img {
+  height: auto;
+  @include mq(md) {
   }
 }
 
