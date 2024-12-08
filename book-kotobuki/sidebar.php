@@ -2,7 +2,7 @@
   <div class="p-aside__box">
     <div class="p-aside__header c-aside-header">
       <div class="c-aside-header__img">
-        <img src="<?php echo get_theme_file_uri(); ?>/assets/images/book-icon-category@2x.png" alt="人気記事" />
+        <img src="<?php echo get_theme_file_uri(); ?>/assets/images/book-icon-category.png" alt="人気記事" />
       </div>
       <h2 class="c-aside-header__title">人気記事</h2>
     </div>
@@ -45,7 +45,7 @@
     <div class="p-aside__box">
       <div class="p-aside__header c-aside-header">
         <div class="c-aside-header__img">
-          <img src="<?php echo get_theme_file_uri(); ?>/assets/images/icon-category@2x.png" alt="カテゴリー" />
+          <img src="<?php echo get_theme_file_uri(); ?>/assets/images/icon-category.png" alt="カテゴリー" />
         </div>
         <h2 class="c-aside-header__title">カテゴリー</h2>
       </div>
@@ -114,7 +114,7 @@
     <div class="p-aside__box">
       <div class="p-aside__header c-aside-header">
         <div class="c-aside-header__img">
-          <img src="<?php echo get_theme_file_uri(); ?>/assets/images/icon-archive@2x.png" alt="アーカイブ" />
+          <img src="<?php echo get_theme_file_uri(); ?>/assets/images/icon-archive.png" alt="アーカイブ" />
         </div>
         <h2 class="c-aside-header__title">アーカイブ</h2>
       </div>

@@ -3,9 +3,8 @@
 <div class="p-page-blog__mv c-sub-mv">
   <div class="c-sub-mv__img">
     <picture>
-      <source srcset="<?php echo get_theme_file_uri(); ?>/assets/images/mv-sub-img01@2x.webp"
-        media="(min-width: 768px)" />
-      <img src="<?php echo get_theme_file_uri(); ?>/assets/images/mv-sub-img01@2x.webp" alt="ブログカテゴリーページ" />
+      <source srcset="<?php echo get_theme_file_uri(); ?>/assets/images/mv-sub-img01.webp" media="(min-width: 768px)" />
+      <img src="<?php echo get_theme_file_uri(); ?>/assets/images/mv-sub-img01.webp" alt="ブログカテゴリーページ" />
     </picture>
   </div>
   <h2 class="c-sub-mv__title">ブログ</h2>
@@ -36,7 +35,7 @@
                 <?php if ( has_post_thumbnail() ) : ?>
                 <?php the_post_thumbnail(); ?>
                 <?php else: ?>
-                <img src=" <?php echo get_theme_file_uri(); ?>/assets/images/book-icon02@2x.png"
+                <img src=" <?php echo get_theme_file_uri(); ?>/assets/images/book-icon02.png"
                   alt="<?php the_title(); ?>のアイキャッチ画像" />
                 <?php endif; ?>
               </figure>

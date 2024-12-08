@@ -86,7 +86,7 @@
 
 .p-menu-tab__button:first-of-type .p-menu-tab__text::before {
   @include mq(md) {
-    mask-image: url(/wp-content/themes/book-kotobuki/assets/images/coffee-icon01@2x.png);
+    mask-image: url(/wp-content/themes/book-kotobuki/assets/images/coffee-icon01.png);
     mask-size: 100%;
     mask-position: 50% 50%;
   }
@@ -94,7 +94,7 @@
 
 .p-menu-tab__button:nth-child(2) .p-menu-tab__text::before {
   @include mq(md) {
-    mask-image: url(/wp-content/themes/book-kotobuki/assets/images/book-icon-white@2x.png);
+    mask-image: url(/wp-content/themes/book-kotobuki/assets/images/book-icon-white.png);
     left: 0%;
     mask-size: 100%;
     mask-position: 50% 50%;
@@ -103,7 +103,7 @@
 
 .p-menu-tab__button:nth-child(3) .p-menu-tab__text::before {
   @include mq(md) {
-    mask-image: url(/wp-content/themes/book-kotobuki/assets/images/book-club-icon@2x.png);
+    mask-image: url(/wp-content/themes/book-kotobuki/assets/images/book-club-icon.png);
     mask-size: 100%;
     mask-position: 50% 50%;
   }

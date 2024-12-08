@@ -89,7 +89,7 @@
 .p-service__content-title::before {
   content: "";
   display: inline-block;
-  background-image: url(/wp-content/themes/book-kotobuki/assets/images/coffee-icon01@2x.png);
+  background-image: url(/wp-content/themes/book-kotobuki/assets/images/coffee-icon01.png);
   background-size: contain;
   background-repeat: no-repeat;
   background-position: bottom;
@@ -99,9 +99,8 @@
 }
 
 .p-service__content:nth-child(2) .p-service__content-title::before {
-  background-image: url(/wp-content/themes/book-kotobuki/assets/images/book-icon02@2x.png);
+  background-image: url(/wp-content/themes/book-kotobuki/assets/images/book-icon02.png);
 }
-
 
 
 .p-service__content-text {

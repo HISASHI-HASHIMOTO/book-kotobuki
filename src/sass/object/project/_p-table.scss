@@ -60,6 +60,7 @@
 .p-table__title {
   letter-spacing: 0.04em;
   padding: myrem(8) myrem(9) myrem(9) myrem(16);
+  text-align: left;
 }
 
 .p-table__title,
@@ -76,8 +77,13 @@
   white-space: nowrap;
 }
 
-.p-table__sun {
+.p-table__day.p-table__day--sat {
+  color: blue;
+}
+
+.p-table__day.p-table__day--sun {
   min-width: myrem(60);
+  color: red;
 }
 
 .p-table td  {
@@ -103,11 +109,16 @@
 }
 
 .p-table__text {
-  font-size: myrem(14);
+  font-size: myrem(13);
   letter-spacing: 0.04em;
   margin-left: myrem(7);
   margin-top: myrem(10);
   @include mq(md) {
-    font-size: myrem(16);
+    font-size: myrem(12);
   }
+}
+
+.p-table__text-link {
+  color: $brown;
+  text-decoration: underline $brown;
 }

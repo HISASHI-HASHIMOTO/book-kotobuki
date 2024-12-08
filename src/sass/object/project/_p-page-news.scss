@@ -16,198 +16,21 @@
   }
 } 
 
+.p-page-news__explanatory-box {
+  margin-top: myrem(30);
+}
+
+.p-page-news__explanatory-title {
+  font-size: myrem(18);
+
+}
+
+.p-page-news__explanatory-text {
+  font-size: myrem(15);
+  margin-top: myrem(10);
+}
+
+
 .p-page-news__pagenation {
   margin-top: myrem(50);
 }
-
-// .campaign-page__content.is-active {
-//   display: block;
-// }
-
-// .campaign-page__items {
-//   display: grid;
-//   gap: myrem(40) myrem(20);
-//   grid-template-columns: repeat(1,1fr);
-//   @include mq(md) {
-//     grid-template-columns: repeat(2,1fr);
-//     gap: myrem(80) myrem(40);
-//   }
-// }
-
-// .campaign-page__item {
-//   width: 100%;
-//   max-width: myrem(600);
-//   margin-inline: auto;
-//   @include mq(md) {
-//    width: 100%;
-//    max-width: myrem(520);
-//   }
-// }
-
-// .campaign-page__item.campaign-page__item--small {
-//   width: calc(280/345 * 100%);
-//   max-width: myrem(600);
-//   margin-inline: auto;
-//   @include mq(md) {
-//    width: 100%;
-//    max-width: myrem(520);
-// }
-// }
-
-// .campaign-page-card {
-//   display: flex;
-//   flex-direction: column;
-//   box-shadow: 2px 4px 9px -5px rgba(0, 0, 0, 1);
-//   transition: all 0.3s;
-//   height: 100%;
-// }
-
-// .campaign-page-card__img {
-//   width: 100%;
-// }
-
-// .campaign-page-card__img img {
-//   width: 100%;
-//   aspect-ratio: 280/188;
-//   object-fit: cover;
-//   @include mq(md) {
-//     aspect-ratio: 333/223;
-//   }
-// }
-
-// .campaign-page-card__body {
-//   padding: myrem(19) myrem(16) myrem(24) myrem(16);
-//   display: flex;
-//   flex-direction: column;
-//   flex-grow: 1;
-//   @include mq(md) {
-//     padding: myrem(24) myrem(21) myrem(40) myrem(21);
-//   }
-// }
-
-// .campaign-page-card__campaign-pagebox {
-//   border-bottom: 1px solid $brown;
-//   padding-bottom: myrem(8);
-//   flex-grow: 1;
-// }
-
-// .campaign-page-card__meta {
-//   font-size: myrem(12);
-//   padding: myrem(4) myrem(11);
-//   border: 1px solid $brown;
-//   color: $brown;
-//   display: inline-block;
-//   @include mq(md) {
-//     padding: myrem(6) myrem(16);
-//   }
-// }
-
-// .campaign-page-card__title {
-//   margin-top: myrem(4);
-//   line-height: calc(24 / 16);
-//   @include mq(md) {
-//     font-size: myrem(24);
-//   }
-// }
-
-// .campaign-page-card__box {
-//   margin-top: myrem(9.6);
-//   margin-inline: auto;
-//   max-width: myrem(272);
-//   @include mq(md) {
-//     margin-top: myrem(16);
-//     max-width: 100%;
-//   }
-// }
-
-// .campaign-page-card__menu {
-//   text-align: center;
-//   line-height: calc(24 / 16);
-//   font-size: myrem(14);
-//   @include mq(md) {
-//     margin-left: myrem(-17.6);
-//     font-size: myrem(16);
-//   }
-// }
-
-// .campaign-page-card__price {
-//   margin-top: myrem(8);
-//   display: flex;
-//   gap: myrem(16);
-//   align-items: flex-end;
-//   justify-content: center;
-//   @include mq(md) {
-//     gap: myrem(21);
-//   }
-// }
-
-// .campaign-page-card__original-price {
-//   font-size: myrem(20);
-//   line-height: 1;
-//   font-weight: bold;
-//   position: relative;
-
-//   @include mq(md) {
-//     font-size: myrem(24);
-//   }
-// }
-
-// .campaign-page-card__original-price::after {
-//   content: "";
-//   display: inline-block;
-//   width: 100%;
-//   height: myrem(3);
-//   background-color: red;
-//   position: absolute;
-//   top: 50%;
-//   right: 0;
-// }
-
-// .campaign-page-card__discounted-rate {
-//   font-size: myrem(32);
-//   line-height: 1;
-//   color: $brown;
-//   font-weight: bold;
-//   @include mq(md) {
-//     font-size: myrem(40);
-//   }
-// }
-
-// .campaign-page-card:hover {
-//   @include mq(md) {
-//     opacity: 0.7;
-//   }
-// }
-
-// .campaign-page-card__text {
-//   margin-top: myrem(24);
-//   line-height: calc(24/16);
-
-// }
-
-// .campaign-page-card__time {
-//   line-height: calc(18/16);
-//   color: $brown;
-//   text-align: center;
-//   margin-top: myrem(32);
-// }
-
-// .campaign-page-card__contact-text {
-//   font-size: myrem(14);
-//   line-height: calc(18/14);
-//   text-align: center;
-//   margin-top: myrem(7);
-//   color: $brown;
-// }
-
-// .campaign-page-card__btn {
-//   margin-top: myrem(40);
-//   text-align: center;
-//   @include mq(md) {
-//    margin-top: myrem(16);
-//   }
-// }
-
-// .campaign-page__pagenation {
-//   margin-top: myrem(80);
-// }

@@ -4,9 +4,8 @@
 <div class="p-page-news__mv c-sub-mv">
   <div class="c-sub-mv__img">
     <picture>
-      <source srcset="<?php echo get_theme_file_uri(); ?>/assets/images/mv-sub-img05@2x.webp"
-        media="(min-width: 768px)" />
-      <img src="<?php echo get_theme_file_uri(); ?>/assets/images/mv-sub-img05@2x.webp" alt="お問い合わせページ" width="960"
+      <source srcset="<?php echo get_theme_file_uri(); ?>/assets/images/mv-sub-img05.webp" media="(min-width: 768px)" />
+      <img src="<?php echo get_theme_file_uri(); ?>/assets/images/mv-sub-img05.webp" alt="お問い合わせページ" width="960"
         height="640" />
     </picture>
   </div>

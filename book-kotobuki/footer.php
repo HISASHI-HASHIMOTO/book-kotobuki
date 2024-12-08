@@ -1,10 +1,10 @@
 <!-- access -->
 <section id="access" class="p-access l-access">
   <div class="p-access__inner l-inner p-scroll">
-    <div class="p-access__title">
+    <h2 class="p-access__title">
       <span class="c-section-title__en">access</span>
-      <h2 class="c-section-title__ja">アクセス</h2>
-    </div>
+      <span class="c-section-title__ja">アクセス</span>
+    </h2>
     <div class="p-access__information">
       <div class="p-access__info-box">
         <h2 class="p-access__logo">
@@ -15,7 +15,7 @@
         <address class="p-access__address-box">
           <p class="p-access__tel">tel.<a class="p-access__tel-link" href="tel:+81-03-4579-9011">0123-456-789</a>
           </p>
-          <p class="p-access__address">〒000-0000 兵庫県たつの市揖保川町 </p>
+          <p class="p-access__address">〒000-0000 兵庫県たつの市揖保川町</p>
         </address>
       </div>
       <div class="p-access__table-area p-table">
@@ -28,8 +28,8 @@
               <th class="p-table__day">水</th>
               <th class="p-table__day">木</th>
               <th class="p-table__day">金</th>
-              <th class="p-table__day">土</th>
-              <th class="p-table__day p-table__sun">日/祝</th>
+              <th class="p-table__day p-table__day--sat">土</th>
+              <th class="p-table__day p-table__day--sun">日/祝</th>
             </tr>
             <tr class="p-table__row">
               <td class="p-table__time">13:00~23:00</td>
@@ -44,7 +44,9 @@
             </tr>
           </tbody>
         </table>
-        <p class="p-table__text">営業日変更の際はブログに記載しております</p>
+        <p class="p-table__text">※営業日変更の際は<a href="<?php echo esc_url(home_url("/blog/")) ?>"
+            class="p-table__text-link">ブログ</a>に記載しております
+        </p>
       </div>
     </div>
     <div class="p-access__map p-scroll">
@@ -67,7 +69,6 @@ if ( !is_page( $exclude_pages ) && !is_404() ) {
 ?>
 
 </main>
-
 
 <!-- footerセクション -->
 <footer id="footer" class="p-footer l-footer <?php if (is_404()) { echo 'layout-p-footer--marginnone'; } ?>">
@@ -140,15 +141,14 @@ if ( !is_page( $exclude_pages ) && !is_404() ) {
       </div>
     </div>
     <div class="p-footer__copy">
-      <small
-        class="p-footer__copy-text">Copyright&nbsp;&copy;&nbsp;2024&nbsp;book-kotobuki&nbsp;All&nbsp;Rights&nbsp;Reserved.</small>
+      <small class="p-footer__copy-text">&copy;&nbsp;2024&nbsp;book-kotobuki</small>
     </div>
   </div>
 </footer>
 
 <!-- ページトップボタン -->
 <div class="c-page-top js-page-top">
-  <img src="<?php echo get_theme_file_uri(); ?>/assets/images/page-top-button.jpeg" alt="このボタンを押すとページトップへ戻ります" />
+  <img src="<?php echo get_theme_file_uri(); ?>/assets/images/page-top-button.jpeg" alt="ページトップへ戻る" />
 
 </div>
 <?php wp_footer(); ?>

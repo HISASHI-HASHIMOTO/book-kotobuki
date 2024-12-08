@@ -4,9 +4,8 @@
 <div class="p-page-news__mv c-sub-mv">
   <div class="c-sub-mv__img">
     <picture>
-      <source srcset="<?php echo get_theme_file_uri(); ?>/assets/images/mv-sub-img02@2x.webp"
-        media="(min-width: 768px)" />
-      <img src="<?php echo get_theme_file_uri(); ?>/assets/images/mv-sub-img02@2x.webp" alt="メニューページ" width="1920"
+      <source srcset="<?php echo get_theme_file_uri(); ?>/assets/images/mv-sub-img02.webp" media="(min-width: 768px)" />
+      <img src="<?php echo get_theme_file_uri(); ?>/assets/images/mv-sub-img02.webp" alt="メニューページ" width="1920"
         height="1280" />
     </picture>
   </div>
@@ -54,12 +53,12 @@
             <div class="c-menu-card__body">
               <h2 class="c-menu-card__title c-menu-card__title--cafe">ドリンクメニュー</h2>
               <p class="c-menu-card__text">
-                書をより楽しめるよう工夫されたバラエティ豊かなラインナップが魅力です。<br>コーヒーや紅茶はもちろん、季節限定の特製ドリンクやハーブティー、リラックス効果のあるラテなど、お好みに合わせてお選びいただけます。<br>
+                読書をより楽しめるよう工夫されたバラエティ豊かなラインナップが魅力です。<br>コーヒーや紅茶はもちろん、季節限定の特製ドリンクやハーブティー、リラックス効果のあるラテなど、お好みに合わせてお選びいただけます。<br>
                 本のジャンルや気分に合わせたペアリングも提案し、より充実した読書体験を提供します。心地よい空間で、お好きなドリンクを片手にゆったりとしたひとときをお過ごしください。
               </p>
             </div>
             <div class="c-menu-card__img">
-              <img src="<?php echo get_theme_file_uri(); ?>/assets/images/menu-img01@2x.jpg" alt="ドリンクメニュー" width="640"
+              <img src="<?php echo get_theme_file_uri(); ?>/assets/images/menu-img01.jpg" alt="ドリンクメニュー" width="640"
                 height="426" />
             </div>
           </div>
@@ -73,7 +72,7 @@
               </p>
             </div>
             <div class="c-menu-card__img">
-              <img src="<?php echo get_theme_file_uri(); ?>/assets/images/menu-img02@2x.jpg" alt="食事メニュー" width="640"
+              <img src="<?php echo get_theme_file_uri(); ?>/assets/images/menu-img02.jpg" alt="食事メニュー" width="640"
                 height="435" />
             </div>
           </div>
@@ -87,8 +86,8 @@
               </p>
             </div>
             <div class="c-menu-card__img">
-              <img src="<?php echo get_theme_file_uri(); ?>/assets/images/menu-img03@2x.jpg" alt="本とドリンクのペアリング"
-                width="960" height="641" />
+              <img src="<?php echo get_theme_file_uri(); ?>/assets/images/menu-img03.jpg" alt="本とドリンクのペアリング" width="960"
+                height="641" />
             </div>
           </div>
           <div class="p-page-menu__card c-menu-card c-menu-card--reverse">
@@ -99,8 +98,8 @@
               </p>
             </div>
             <div class="c-menu-card__img">
-              <img src="<?php echo get_theme_file_uri(); ?>/assets/images/menu-img04@2x.jpg" alt="おすすめ選書サービス"
-                width="960" height="640" />
+              <img src="<?php echo get_theme_file_uri(); ?>/assets/images/menu-img04.jpg" alt="おすすめ選書サービス" width="960"
+                height="640" />
             </div>
           </div>
           <div class="p-page-menu__card c-menu-card">
@@ -113,7 +112,7 @@
               </p>
             </div>
             <div class="c-menu-card__img">
-              <img src="<?php echo get_theme_file_uri(); ?>/assets/images/menu-img05@2x.jpg" alt="古本の販売・寄付" width="960"
+              <img src="<?php echo get_theme_file_uri(); ?>/assets/images/menu-img05.jpg" alt="古本の販売・寄付" width="960"
                 height="640" />
             </div>
           </div>
@@ -129,7 +128,7 @@
               </p>
             </div>
             <div class="c-menu-card__img">
-              <img src="<?php echo get_theme_file_uri(); ?>/assets/images/menu-img06@2x.jpg" alt="ブッククラブ" width="640"
+              <img src="<?php echo get_theme_file_uri(); ?>/assets/images/menu-img06.jpg" alt="ブッククラブ" width="640"
                 height="960" />
             </div>
           </div>

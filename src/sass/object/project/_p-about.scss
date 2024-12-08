@@ -14,10 +14,6 @@
 
 .p-about__title {
   font-size: myrem(50);
-  @include mq(md) {
-   font-size: myrem(80);
-   
-  }
 }
 
 .p-about__title-area {
@@ -108,6 +104,14 @@
   @include mq(md) {
   }
 }
+.p-about__swiper-slide img {
+  height: myrem(222);
+  @include mq(md) {   
+    object-fit: cover;
+    height: myrem(222);
+    max-width: 100%;
+  }
+}
 
 .p-about__button  {
   margin-top: myrem(32);
@@ -115,3 +119,6 @@
    margin-top: myrem(72);
   }
 }
+
+
+

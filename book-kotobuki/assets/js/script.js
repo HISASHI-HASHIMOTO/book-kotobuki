@@ -47,30 +47,12 @@ $('.js-hamburger').on('click', function () {
 
 
   // // スワイパー
-  // var slide1 = new Swiper("#slide1", {
-  
-  //     loop: true, // ループ有効
-  //     speed: 6000, // ループの時間
-  //     slidesPerView: "auto",
-  //     spaceBetween: 30,
-  //     autoplay: {
-  //       delay: 0, // 途切れなくループ
-  //     },
-  //     // ナビボタンが必要なら追加
-  //     navigation: {
-  //       nextEl: ".p-blog__button-next",
-  //       prevEl: ".p-blog__button-prev"
-  //     }
-  // });
   document.addEventListener("DOMContentLoaded", function() {
     var slide1 = new Swiper("#slide1", {
       loop: true,
       speed: 6000,
       slidesPerView: "auto",
       spaceBetween: 30,
-      autoplay: {
-        delay: 0,
-      },
       navigation: {
         nextEl: ".p-blog__button-next",
         prevEl: ".p-blog__button-prev"
@@ -92,21 +74,21 @@ $('.js-hamburger').on('click', function () {
   });
 
   // // メインビュー 本がめくれるような動き
-  // let currentPage = 0;
-  // const pages = document.querySelectorAll('.p-mv input');
-  // function flipPage() {
-  //   // 現在のページをチェック
-  //   if (currentPage < pages.length) {
-  //     pages[currentPage].checked = true;
-  //     currentPage++;
-  //   } else {
-  //     // 最後のページに到達したら最初に戻る
-  //     currentPage = 0;
-  //     pages.forEach(page => page.checked = false);
-  //   }
-  // }
-  // // 3秒ごとにページを自動でめくる
-  // setInterval(flipPage, 5000);
+  let currentPage = 0;
+  const pages = document.querySelectorAll('.p-mv input');
+  function flipPage() {
+    // 現在のページをチェック
+    if (currentPage < pages.length) {
+      pages[currentPage].checked = true;
+      currentPage++;
+    } else {
+      // 最後のページに到達したら最初に戻る
+      currentPage = 0;
+      pages.forEach(page => page.checked = false);
+    }
+  }
+  // 3秒ごとにページを自動でめくる
+  setInterval(flipPage, 5000);
 
 
     // mvより下にスクロールするとheederにbox-shadowが付与される
@@ -160,7 +142,7 @@ $('.js-hamburger').on('click', function () {
     if (scroll + windowHeight > footerTop) {
       $('.c-page-top').css({
         position: 'absolute',
-        top: footerTop - 80 + 'px', // フッターの手前にボタンを表示する
+        top: footerTop - 100 + 'px', // フッターの手前にボタンを表示する
         bottom: 'auto' // bottomの指定を無効にする
       });
     } else {
@@ -181,11 +163,36 @@ $('.js-hamburger').on('click', function () {
     return false;
   });
 
-
   // 初期表示のためにロード時にも実行
   $(document).ready(function () {
     PageTopAnime();
   });
+  // スマホ判定関数（画面幅で判定）
+function isMobile() {
+  return window.innerWidth <= 768; // スマホ表示を768px以下と定義
+}
+
+// 初期化とスクロールイベント登録
+$(document).ready(function () {
+  if (isMobile()) {
+      PageTopAnime(); // 初期化
+      $(window).on('scroll touchmove', PageTopAnime); // スクロールとタッチスクロールに対応
+  } else {
+      $('.c-page-top').hide(); // スマホ以外ではボタンを非表示
+  }
+  console.log(document)
+  // ウィンドウリサイズ時の挙動を更新
+  $(window).resize(function () {
+      if (isMobile()) {
+          PageTopAnime();
+          $(window).on('scroll touchmove', PageTopAnime);
+      } else {
+          $('.c-page-top').hide();
+      }
+  });
+});
+
+
 
 
     // タブ

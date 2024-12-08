@@ -6,8 +6,7 @@
     </div>
     <div class="p-contact__button-box">
       <a href="<?php echo esc_url(home_url("/contact")) ?>" class="p-contact__button">
-        <span class="p-contact__button-en-text">contact</span>
-        <span class="p-contact__button-ja-text">お問い合わせはこちら</span>
+        <span class="p-contact__button-text">お問い合わせはこちら</span>
       </a>
     </div>
 

@@ -4,9 +4,8 @@
 <div class="p-page-news__mv c-sub-mv">
   <div class="c-sub-mv__img">
     <picture>
-      <source srcset="<?php echo get_theme_file_uri(); ?>/assets/images/mv-sub-img08@2x.webp"
-        media="(min-width: 768px)" />
-      <img src="<?php echo get_theme_file_uri(); ?>/assets/images/mv-sub-img08@2x.webp" alt="当店説明ページ" width="720"
+      <source srcset="<?php echo get_theme_file_uri(); ?>/assets/images/mv-sub-img08.webp" media="(min-width: 768px)" />
+      <img src="<?php echo get_theme_file_uri(); ?>/assets/images/mv-sub-img08.webp" alt="当店説明ページ" width="720"
         height="960" />
     </picture>
   </div>
@@ -49,7 +48,7 @@
 
     <div class="p-about__content">
       <figure class="p-about__img">
-        <img src="<?php echo get_theme_file_uri(); ?>/assets/images/about-img01@2x.png" alt="机の上に勉強の作業をしている画像">
+        <img src="<?php echo get_theme_file_uri(); ?>/assets/images/about-img01.png" alt="机の上に勉強の作業をしている画像">
       </figure>
       <div class="p-about__box">
         <p class="p-about__sub-title">物語の中に没入しながら、一杯のコーヒーを<br>ゆったりと味わう至福のひとときを提供します</p>
@@ -71,72 +70,52 @@
       <div class="p-about__swiper-wrapper swiper-wrapper">
         <div class="p-about__swiper-slide swiper-slide">
           <picture class="p-about__img">
-            <source srcset="<?php echo get_theme_file_uri(); ?>/assets/images/about-img01@2x.jpg" type="image/webp">
-            <img src="<?php echo get_theme_file_uri(); ?>/assets/images/about-img01@2x.jpg" alt="机にランプと本を広げている様子"
+            <source srcset="<?php echo get_theme_file_uri(); ?>/assets/images/about-img01.jpg" type="image/webp">
+            <img src="<?php echo get_theme_file_uri(); ?>/assets/images/about-img01.jpg" alt="机にランプと本を広げている様子" />
+          </picture>
+        </div>
+        <div class="p-about__swiper-slide swiper-slide">
+          <picture class="p-about__img">
+            <source srcset="<?php echo get_theme_file_uri(); ?>/assets/images/about-img03.jpg" type="image/webp">
+            <img src="<?php echo get_theme_file_uri(); ?>/assets/images/about-img03.jpg" alt="お店の看板が置いている" />
+          </picture>
+        </div>
+        <div class="p-about__swiper-slide swiper-slide">
+          <picture class="p-about__img">
+            <source srcset="<?php echo get_theme_file_uri(); ?>/assets/images/menu-img04.jpg" type="image/webp">
+            <img src="<?php echo get_theme_file_uri(); ?>/assets/images/menu-img04.jpg" alt="香り豊かなコーヒー豆とコーヒーカップ" />
+          </picture>
+        </div>
+        <div class="p-about__swiper-slide swiper-slide">
+          <picture class="p-about__img">
+            <source srcset="<?php echo get_theme_file_uri(); ?>/assets/images/about-img05.jpg" type="image/webp">
+            <img src="<?php echo get_theme_file_uri(); ?>/assets/images/about-img05.jpg" alt="ブックカフェの店内の椅子と机の様子" />
+          </picture>
+        </div>
+        <div class="p-about__swiper-slide swiper-slide">
+          <picture class="p-about__img">
+            <source srcset="<?php echo get_theme_file_uri(); ?>/assets/images/about-img06.jpg" type="image/webp">
+            <img src="<?php echo get_theme_file_uri(); ?>/assets/images/about-img06.jpg" alt="コーヒーカップと香り豊かなコーヒー豆"
               width="315" height="213" />
           </picture>
         </div>
         <div class="p-about__swiper-slide swiper-slide">
           <picture class="p-about__img">
-            <source srcset="<?php echo get_theme_file_uri(); ?>/assets/images/about-img02@2x.jpg" type="image/webp">
-            <img src="<?php echo get_theme_file_uri(); ?>/assets/images/about-img02@2x.jpg" alt="机に本を広げてコーヒーを置いている"
-              width="315" height="213" />
-          </picture>
-        </div>
-        <div class="p-about__swiper-slide swiper-slide">
-          <picture class="p-about__img">
-            <source srcset="<?php echo get_theme_file_uri(); ?>/assets/images/about-img03@2x.jpg" type="image/webp">
-            <img src="<?php echo get_theme_file_uri(); ?>/assets/images/about-img03@2x.jpg" alt="お店の看板が置いている"
-              width="315" height="213" />
-          </picture>
-        </div>
-        <div class="p-about__swiper-slide swiper-slide">
-          <picture class="p-about__img">
-            <source srcset="<?php echo get_theme_file_uri(); ?>/assets/images/menu-img04@2x.jpg" type="image/webp">
-            <img src="<?php echo get_theme_file_uri(); ?>/assets/images/menu-img04@2x.jpg" alt="香り豊かなコーヒー豆とコーヒーカップ"
-              width="315" height="213" />
-          </picture>
-        </div>
-        <div class="p-about__swiper-slide swiper-slide">
-          <picture class="p-about__img">
-            <source srcset="<?php echo get_theme_file_uri(); ?>/assets/images/about-img05@2x.jpg" type="image/webp">
-            <img src="<?php echo get_theme_file_uri(); ?>/assets/images/about-img05@2x.jpg" alt="ブックカフェの店内の椅子と机の様子"
-              width="315" height="213" />
-          </picture>
-        </div>
-        <div class="p-about__swiper-slide swiper-slide">
-          <picture class="p-about__img">
-            <source srcset="<?php echo get_theme_file_uri(); ?>/assets/images/about-img06@2x.jpg" type="image/webp">
-            <img src="<?php echo get_theme_file_uri(); ?>/assets/images/about-img06@2x.jpg" alt="コーヒーカップと香り豊かなコーヒー豆"
-              width="315" height="213" />
-          </picture>
-        </div>
-        <div class="p-about__swiper-slide swiper-slide">
-          <picture class="p-about__img">
-            <source srcset="<?php echo get_theme_file_uri(); ?>/assets/images/about-img07@2x.jpg" type="image/webp">
-            <img src="<?php echo get_theme_file_uri(); ?>/assets/images/about-img07@2x.jpg" alt="厳選されたコーヒー豆を集めてみました"
+            <source srcset="<?php echo get_theme_file_uri(); ?>/assets/images/about-img07.jpg" type="image/webp">
+            <img src="<?php echo get_theme_file_uri(); ?>/assets/images/about-img07.jpg" alt="厳選されたコーヒー豆を集めてみました"
               width=" 315" height="213" />
           </picture>
         </div>
-        <div class="swiper-slide">
+        <div class="p-about__swiper-slide swiper-slide">
           <picture class="p-about__img">
-            <source srcset="<?php echo get_theme_file_uri(); ?>/assets/images/about-img08@2x.jpg" type="image/webp">
-            <img src="<?php echo get_theme_file_uri(); ?>/assets/images/about-img08@2x.jpg" alt="日差しを浴びているコーヒーカップ"
-              width="315" height="213" />
+            <source srcset="<?php echo get_theme_file_uri(); ?>/assets/images/about-img08.jpg" type="image/webp">
+            <img src="<?php echo get_theme_file_uri(); ?>/assets/images/about-img08.jpg" alt="日差しを浴びているコーヒーカップ" />
           </picture>
         </div>
-        <div class="swiper-slide">
+        <div class="p-about__swiper-slide swiper-slide">
           <picture class="p-about__img">
-            <source srcset="<?php echo get_theme_file_uri(); ?>/assets/images/about-img09@2x.jpg" type="image/webp">
-            <img src="<?php echo get_theme_file_uri(); ?>/assets/images/about-img09@2x.jpg" alt="本手を添えて座っている高齢の女性"
-              width="315" height="213" />
-          </picture>
-        </div>
-        <div class="swiper-slide">
-          <picture class="p-about__img">
-            <source srcset="<?php echo get_theme_file_uri(); ?>/assets/images/about-img10@2x.jpg" type="image/webp">
-            <img src="<?php echo get_theme_file_uri(); ?>/assets/images/about-img10@2x.jpg" alt="机に本を広げて日差しが入っている書斎"
-              width="288" height="213" />
+            <source srcset="<?php echo get_theme_file_uri(); ?>/assets/images/about-img09.jpg" type="image/webp">
+            <img src="<?php echo get_theme_file_uri(); ?>/assets/images/about-img09.jpg" alt="本手を添えて座っている高齢の女性" />
           </picture>
         </div>
       </div>
