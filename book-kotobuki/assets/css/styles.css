@@ -21,6 +21,7 @@ html {
 body {
   font-family: "Shippori Mincho", serif;
   color: #1a1917;
+  overflow-x: hidden;
 }
 
 @media screen and (min-width: 768px) {
@@ -161,6 +162,7 @@ button {
 .l-breadcrumb {
   max-width: 37.5rem;
   margin-inline: auto;
+  margin-top: 0.625rem;
 }
 @media screen and (min-width: 768px) {
   .l-breadcrumb {
@@ -964,6 +966,26 @@ button {
 .c-news-card__drink-title {
   color: #76512d;
   font-weight: 700;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.c-news-card__drink-title::before {
+  content: "";
+  display: inline-block;
+  -webkit-mask-image: url(/wp-content/themes/book-kotobuki/assets/images/coffee-break.png);
+          mask-image: url(/wp-content/themes/book-kotobuki/assets/images/coffee-break.png);
+  -webkit-mask-size: 1rem;
+          mask-size: 1rem;
+  -webkit-mask-repeat: no-repeat;
+          mask-repeat: no-repeat;
+  background-color: #76512d;
+  -webkit-mask-position: bottom;
+          mask-position: bottom;
+  width: 1.25rem;
+  height: 1.25rem;
+  margin-top: 0.1875rem;
 }
 
 .c-news-card__drink-text {
@@ -2107,16 +2129,11 @@ button {
 }
 
 .p-contact {
-  padding-top: 3.125rem;
-  padding-bottom: 3.125rem;
+  padding-top: 6.875rem;
+  padding-bottom: 6.875rem;
   padding-left: 1.25rem;
   padding-right: 1.25rem;
   text-align: center;
-  background-image: url(/wp-content/themes/book-kotobuki/assets/images/contact-img01.webp);
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
-  background-repeat: no-repeat;
   position: relative;
 }
 @media screen and (min-width: 768px) {
@@ -2128,9 +2145,23 @@ button {
 }
 
 .p-contact::before {
+  content: "";
   position: absolute;
   width: 100%;
   height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url(/wp-content/themes/book-kotobuki/assets/images/contact-img01.webp);
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  z-index: -1;
+  filter: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg"><filter id="filter"><feComponentTransfer color-interpolation-filters="sRGB"><feFuncR type="linear" slope="0.5" /><feFuncG type="linear" slope="0.5" /><feFuncB type="linear" slope="0.5" /></feComponentTransfer></filter></svg>#filter');
+  -webkit-filter: brightness(0.5);
+          filter: brightness(0.5);
 }
 
 .p-contact__text {
@@ -2215,11 +2246,21 @@ button {
 .p-contact__button-text::before {
   content: "";
   display: inline-block;
-  background-image: url(/wp-content/themes/book-kotobuki/assets/images/mail-icon.png);
+  -webkit-mask-image: url(/wp-content/themes/book-kotobuki/assets/images/mail-icon.png);
+          mask-image: url(/wp-content/themes/book-kotobuki/assets/images/mail-icon.png);
   width: 1.875rem;
   height: 1.875rem;
-  background-size: cover;
+  -webkit-mask-size: cover;
+          mask-size: cover;
   margin-right: 0.625rem;
+  background-color: #1a1917;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  margin-top: 0.1875rem;
+}
+
+.p-contact__button:hover .p-contact__button-text::before {
+  background-color: #fff;
 }
 
 @media screen and (min-width: 768px) {

@@ -66,7 +66,6 @@
   font-size: myrem(18);
 }
 
-
 .c-news-card__title {
   margin-top: myrem(24);
   font-size: myrem(24);
@@ -75,8 +74,6 @@
    margin-top: myrem(8);
   }
 }
-
-
 
 .c-news-card__drink {
   margin-top: auto;
@@ -91,6 +88,20 @@
 .c-news-card__drink-title {
   color: $brown;
   font-weight: 700;
+  display: flex;
+}
+
+.c-news-card__drink-title::before {
+  content: "";
+  display: inline-block;
+  mask-image: url(/wp-content/themes/book-kotobuki/assets/images/coffee-break.png);
+  mask-size: myrem(16);
+  mask-repeat: no-repeat;
+  background-color: $brown;
+  mask-position: bottom;
+  width: myrem(20);
+  height: myrem(20);
+  margin-top: myrem(3);
 }
 
 .c-news-card__drink-text {

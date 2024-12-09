@@ -23,7 +23,7 @@
   <?php wp_body_open(); ?>
 
   <header class="p-header l-header">
-    <div class="p-header__inner l-inner">
+    <div class="p-header__inner ">
       <h1 class="p-header__title">
         <a href="<?php echo esc_url(home_url("/")) ?>" class="p-header__title-link">
           <img src="<?php echo get_theme_file_uri(); ?>/assets/images/site-logo-white.png" alt="book-kotobukiロゴ" />

@@ -3,6 +3,7 @@
 .l-breadcrumb {
   max-width: myrem(600);
   margin-inline: auto;
+  margin-top: myrem(10);
   @include mq(md) {
    max-width: myrem(1230);
   }

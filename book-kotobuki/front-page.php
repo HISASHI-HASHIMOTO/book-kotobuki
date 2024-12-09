@@ -85,25 +85,23 @@
             </div>
             <div class="c-news-card__meta">
               <?php
-                    $taxonomy_terms = get_the_terms(get_the_ID(), 'news_category');
-                    if (!empty($taxonomy_terms)) {
-                      foreach ($taxonomy_terms as $taxonomy_term) {
-                        echo '<span>' . esc_html($taxonomy_term->name) . '</span>';
-                      }
+                  $taxonomy_terms = get_the_terms(get_the_ID(), 'news_category');
+                  if (!empty($taxonomy_terms)) {
+                    foreach ($taxonomy_terms as $taxonomy_term) {
+                      echo '<span>' . esc_html($taxonomy_term->name) . '</span>';
                     }
-                    ?>
+                  }
+                  ?>
             </div>
-
             <p class="c-news-card__text">
               <?php the_content(); ?>
             </p>
-
             <div class="c-news-card__drink">
               <?php 
                     // ドリンクフィールドを取得
                     $news_drink = get_field('news-card__drink'); 
                     // 値が存在する場合に表示
-                    if (!empty($news_drink)) : 
+                    if (!empty($news_drink)) :
                   ?>
               <p class="c-news-card__drink-title">この本に合う一杯：<?php echo esc_html($news_drink); ?></p>
               <?php endif; ?>

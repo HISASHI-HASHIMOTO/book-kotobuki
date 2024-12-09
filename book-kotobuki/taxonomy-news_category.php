@@ -84,11 +84,10 @@
                         echo '<span>' . esc_html($taxonomy_term->name) . '</span>';
                       }
                     }
-                    ?></div>
+                    ?>
+                </div>
 
-                <p class="c-news-card__text">
-                  <?php the_content(); ?>
-                </p>
+                <p class="c-news-card__text"><?php the_content(); ?></p>
 
                 <!-- 本に合う一杯の表示 -->
                 <div class="c-news-card__drink">
@@ -153,10 +152,10 @@
             if (!is_admin() && $query->is_main_query()) {
                 if (wp_is_mobile()) {
                     // SP表示件数
-                    $query->set('.c-wp-pagenavi .page', 4); 
+                    $query->set('.wp-pagenavi .page', 4); 
                 } else {
                     // PC表示件数
-                    $query->set('.c-wp-pagenavi .page', 6); 
+                    $query->set('.wp-pagenavi .page', 6); 
                 }
             }
         }

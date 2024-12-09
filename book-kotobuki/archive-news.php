@@ -42,7 +42,7 @@
           <?php if (have_posts()) : ?>
           <?php while (have_posts()) : the_post(); ?>
           <li class="p-page-news__item">
-            <a class="c-news-card">
+            <div class="c-news-card">
               <figure class="c-news-card__img">
                 <?php if (has_post_thumbnail()) : ?>
                 <?php the_post_thumbnail('full'); ?>
@@ -77,10 +77,8 @@
                         echo '<span>' . esc_html($taxonomy_term->name) . '</span>';
                       }
                     }
-                    ?></div>
-
-
-
+                    ?>
+                </div>
                 <p class="c-news-card__text">
                   <?php the_content(); ?>
                 </p>
@@ -106,7 +104,7 @@
                 </div>
 
               </div>
-            </a>
+            </div>
           </li>
           <? endwhile; endif;?>
         </ul>
@@ -127,10 +125,10 @@
             if (!is_admin() && $query->is_main_query()) {
                 if (wp_is_mobile()) {
                     // SP表示件数
-                    $query->set('.wp-pagenavi .page', 4); 
+                    $query->set('.c-wp-pagenavi .page', 4); 
                 } else {
                     // PC表示件数
-                    $query->set('.wp-pagenavi .page', 6); 
+                    $query->set('.c-wp-pagenavi .page', 6); 
                 }
             }
         }

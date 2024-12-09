@@ -145,6 +145,8 @@ $('.js-hamburger').on('click', function () {
         top: footerTop - 100 + 'px', // フッターの手前にボタンを表示する
         bottom: 'auto' // bottomの指定を無効にする
       });
+      
+
     } else {
       $('.c-page-top').css({
         position: 'fixed',
