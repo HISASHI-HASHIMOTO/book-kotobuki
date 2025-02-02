@@ -50,7 +50,7 @@ $('.js-hamburger').on('click', function () {
   document.addEventListener("DOMContentLoaded", function() {
     var slide1 = new Swiper("#slide1", {
       loop: true,
-      speed: 6000,
+      speed: 3000,
       slidesPerView: "auto",
       spaceBetween: 30,
       navigation: {
@@ -63,7 +63,6 @@ $('.js-hamburger').on('click', function () {
 
     // // スワイパー
     var slide2 = new Swiper("#slide2", {
-  
       loop: true, // ループ有効
       speed: 6000, // ループの時間
       slidesPerView: "auto",
@@ -73,25 +72,25 @@ $('.js-hamburger').on('click', function () {
       },
   });
 
-  // // メインビュー 本がめくれるような動き
-  let currentPage = 0;
-  const pages = document.querySelectorAll('.p-mv input');
-  function flipPage() {
-    // 現在のページをチェック
-    if (currentPage < pages.length) {
-      pages[currentPage].checked = true;
-      currentPage++;
-    } else {
-      // 最後のページに到達したら最初に戻る
-      currentPage = 0;
-      pages.forEach(page => page.checked = false);
-    }
-  }
-  // 3秒ごとにページを自動でめくる
-  setInterval(flipPage, 5000);
+  // // // メインビュー 本がめくれるような動き
+  // let currentPage = 0;
+  // const pages = document.querySelectorAll('.p-mv input');
+  // function flipPage() {
+  //   // 現在のページをチェック
+  //   if (currentPage < pages.length) {
+  //     pages[currentPage].checked = true;
+  //     currentPage++;
+  //   } else {
+  //     // 最後のページに到達したら最初に戻る
+  //     currentPage = 0;
+  //     pages.forEach(page => page.checked = false);
+  //   }
+  // }
+  // // 3秒ごとにページを自動でめくる
+  // setInterval(flipPage, 5000);
 
 
-    // mvより下にスクロールするとheederにbox-shadowが付与される
+    // mvより下にスクロールするとheaderに背景色が付与される
     $(window).on('scroll', function () {
       if ($('.p-mv,.c-sub-mv').height() < $(this).scrollTop()) {
           $('.p-header').addClass('change-color');

@@ -7,11 +7,6 @@
   padding-left: myrem(20);
   padding-right: myrem(20);
   text-align: center;
-  // background-image: url(/wp-content/themes/book-kotobuki/assets/images/contact-img01.webp);
-  // background-size: cover;
-  // background-position: center;
-  // background-attachment: fixed;
-  // background-repeat: no-repeat;
   position: relative;
   @include mq(md) {
     background-size: cover;
@@ -66,10 +61,12 @@
   background-color: $white;
   width: 100%;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  justify-content: flex-end;
   width: 100%; 
   height: auto;
   padding: myrem(30) myrem(30);
+
   @include mq(md) {
     padding: myrem(50) myrem(130);
   }
@@ -81,23 +78,19 @@
   cursor: pointer;
 }
 
-.p-contact__button-en-text {
-  @include mq(md) {
-    font-size: myrem(16);
-    letter-spacing: 0.05em;
-  }
-}
-
 .p-contact__button-text {
   font-weight: 500;
   font-size: myrem(20);  
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-right: myrem(8);
   @include mq(md) {   
-    font-size: myrem(30);  
+    font-size: myrem(30);
+    margin-right: myrem(20);  
   }
 }
+
 
 .p-contact__button-text::before {
   content: "";
@@ -114,4 +107,47 @@
 
 .p-contact__button:hover .p-contact__button-text::before {
   background-color: $white;
+}
+
+.p-contact__arrow {
+  position: relative;
+  width: myrem(20);
+  margin-top: myrem(5);
+
+  @include mq(md) {
+    margin-top: myrem(15);
+    width: myrem(100);
+  }
+}
+
+.p-contact__arrow-line01 {
+  display: inline-block;
+  height: myrem(1);
+  width: 100%;
+  background-color: $black;
+  transition: .3s;
+}
+
+.p-contact__arrow-line02 {
+  position: absolute;
+  top: myrem(18);
+  right: 0;
+  transform-origin: right bottom;
+  width: myrem(10);
+  height: myrem(1);
+  background-color: $black;
+  transform: rotate(45deg);  
+  transition: .3s;
+  @include mq(md) {
+    width: myrem(20);
+  }
+}
+
+.p-contact__button:hover .p-contact__arrow-line01 {
+  background-color: $white;
+  margin-left: myrem(15);
+}
+.p-contact__button:hover .p-contact__arrow-line02 {
+  background-color: $white;
+  right: myrem(-15);
 }

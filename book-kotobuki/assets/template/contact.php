@@ -7,6 +7,10 @@
     <div class="p-contact__button-box">
       <a href="<?php echo esc_url(home_url("/contact")) ?>" class="p-contact__button">
         <span class="p-contact__button-text">お問い合わせはこちら</span>
+        <div class="p-contact__arrow">
+          <span class="p-contact__arrow-line01"></span>
+          <span class="p-contact__arrow-line02"></span>
+        </div>
       </a>
     </div>
 

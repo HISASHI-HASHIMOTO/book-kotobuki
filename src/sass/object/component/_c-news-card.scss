@@ -46,9 +46,16 @@
 
 .c-news-card__meta-box {
   display: flex;
-  justify-content: space-between;
+  flex-wrap: wrap;
+  align-content: space-around;
+  justify-content: flex-start;
   align-items: flex-end;
   // padding-block: myrem(10);
+  @include mq(md) {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
 }
 
 .c-news-card__meta {

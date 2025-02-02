@@ -121,6 +121,11 @@
       <!-- サブループ終了 -->
       <?php wp_reset_postdata(); ?>
     </ul>
+    <div class="p-page-news__explanatory-box">
+      <p class="p-page-news__explanatory-title">＊この本に合う一杯について<br>〜小説と飲み物の特別なペアリング 〜</p>
+      <p class="p-page-news__explanatory-text">
+        本の世界をより深く味わうために、物語と飲み物のペアリングをご提案させて頂きます。<br>作品ごとに選ばれた一杯が、読書体験に新たな彩りを加えます。<br>是非ともお楽しみください。</p>
+    </div>
     <?php else : ?>
     <p class="p-news__message">記事が投稿されていません</p>
     <?php endif; ?>

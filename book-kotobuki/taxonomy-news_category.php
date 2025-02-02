@@ -73,7 +73,7 @@
                   </p>
 
                   <time class="c-news-card__meta-time"
-                    datetime="<?php the_time('Y-m-d'); ?>"><?php the_time('Y.m/d'); ?></time>
+                    datetime="<?php the_time('Y-m-d'); ?>"><?php the_time('Y/m/d'); ?></time>
                 </div>
 
                 <div class="c-news-card__meta">
