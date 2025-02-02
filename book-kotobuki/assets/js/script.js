@@ -64,7 +64,7 @@ $('.js-hamburger').on('click', function () {
     // // スワイパー
     var slide2 = new Swiper("#slide2", {
       loop: true, // ループ有効
-      speed: 6000, // ループの時間
+      speed: 3000, // ループの時間
       slidesPerView: "auto",
       spaceBetween: 30,
       autoplay: {
